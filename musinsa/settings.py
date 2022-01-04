@@ -79,7 +79,7 @@ DATABASES = {
 	'ENGINE': 'django.db.backends.mysql',
         'NAME': 'MUSINSA',
         'USER': 'root',  
-        'PASSWORD': '1124',  
+        'PASSWORD': '12345678',  
         'HOST': '127.0.0.1',
         'PORT': '3306', 
     }
