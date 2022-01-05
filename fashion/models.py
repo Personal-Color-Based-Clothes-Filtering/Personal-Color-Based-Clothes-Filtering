@@ -16,6 +16,8 @@ class Collar(models.Model):
     price = models.TextField(blank=True, null=True)
     discount_price = models.TextField(blank=True, null=True)
     thumbnail = models.TextField(blank=True, null=True)
+    personal_color = models.TextField(blank=True, null=True)
+    color = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -29,6 +31,8 @@ class Hoodie(models.Model):
     price = models.TextField(blank=True, null=True)
     discount_price = models.TextField(blank=True, null=True)
     thumbnail = models.TextField(blank=True, null=True)
+    personal_color = models.TextField(blank=True, null=True)
+    color = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -43,6 +47,8 @@ class Longsleeve(models.Model):
     price = models.TextField(blank=True, null=True)
     discount_price = models.TextField(blank=True, null=True)
     thumbnail = models.TextField(blank=True, null=True)
+    personal_color = models.TextField(blank=True, null=True)
+    color = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -57,6 +63,8 @@ class Shirt(models.Model):
     price = models.TextField(blank=True, null=True)
     discount_price = models.TextField(blank=True, null=True)
     thumbnail = models.TextField(blank=True, null=True)
+    personal_color = models.TextField(blank=True, null=True)
+    color = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -71,6 +79,8 @@ class Shortsleeve(models.Model):
     price = models.TextField(blank=True, null=True)
     discount_price = models.TextField(blank=True, null=True)
     thumbnail = models.TextField(blank=True, null=True)
+    personal_color = models.TextField(blank=True, null=True)
+    color = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -85,6 +95,8 @@ class Sleeveless(models.Model):
     price = models.TextField(blank=True, null=True)
     discount_price = models.TextField(blank=True, null=True)
     thumbnail = models.TextField(blank=True, null=True)
+    personal_color = models.TextField(blank=True, null=True)
+    color = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -99,6 +111,8 @@ class Sweat(models.Model):
     price = models.TextField(blank=True, null=True)
     discount_price = models.TextField(blank=True, null=True)
     thumbnail = models.TextField(blank=True, null=True)
+    personal_color = models.TextField(blank=True, null=True)
+    color = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
@@ -113,6 +127,8 @@ class Sweater(models.Model):
     price = models.TextField(blank=True, null=True)
     discount_price = models.TextField(blank=True, null=True)
     thumbnail = models.TextField(blank=True, null=True)
+    personal_color = models.TextField(blank=True, null=True)
+    color = models.TextField(blank=True, null=True)
 
     class Meta:
         managed = False
