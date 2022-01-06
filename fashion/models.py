@@ -1,4 +1,5 @@
 from django.db import models
+from .tone_extraction import ToneExtraction
 
 # Create your models here.
 
@@ -22,6 +23,7 @@ class Collar(models.Model):
     class Meta:
         managed = False
         db_table = 'collar'
+        
 
 class Hoodie(models.Model):
     index = models.IntegerField(blank=True, primary_key = True)
@@ -133,3 +135,4 @@ class Sweater(models.Model):
     class Meta:
         managed = False
         db_table = 'sweater'
+    
