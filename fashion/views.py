@@ -1,5 +1,3 @@
-# from django.shortcuts import render
-
 # Create your views here.
 from django.shortcuts import render
 
@@ -44,6 +42,7 @@ def face_image_view(request):
         pass
     return render(request, 'fashion/upload_image.html', {'form' : form })
 
+
  # 퍼스널 컬러 판단
 from .crop_face import *
 from .rm_eye_lips import *
@@ -51,11 +50,10 @@ from .roi_cheek import *
 from .models import FaceImage
 
 def success(request):
-    CropFace()
+    faceimg = CropFace()
     RmEyeLips()
     roi = RoiCheek()
-    faceImg = FaceImage.objects.all()
-    return render(request, 'fashion/personal_color.html', {'roi' : roi, 'faceImg' : faceImg})
+    return render(request, 'fashion/personal_color.html', {'roi' : roi, 'faceimg' : faceimg})
 
 
 # 첫 화면

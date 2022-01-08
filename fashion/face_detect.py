@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-
+## 삭제 필요?
 cv2.namedWindow('image')
 # 이미지 파일 읽기
 img = cv2.imread("./fashion/personal_color_check/image/cropped.jpg", cv2.IMREAD_COLOR)

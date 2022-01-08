@@ -2,6 +2,7 @@ import cv2
 import dlib
 import matplotlib.pyplot as plt
 import numpy as np
+import os 
 
 def Resize(img) :
     #print(img.shape)
@@ -13,12 +14,14 @@ def Resize(img) :
     # 확대 INTER_LINEAR
     resize = cv2.resize(img, dsize = (width, height), interpolation = cv2.INTER_AREA)
     # resize = cv2.resize(img, dsize = (0, 0), fx=1.5, fy=1.5, interpolation = cv2.INTER_AREA)
-    #print(resize.shape) 
+    # print(resize.shape) 
     return resize
 
 def CropFace():
   # 이미지 파일 읽기
-  img = cv2.imread("./media/images/im.jpeg", cv2.IMREAD_COLOR)
+  image_list = os.listdir('./media/images') # media/images 폴더 내 저장된 파일명 불러오기 
+  img = cv2.imread("./media/images/" + image_list[-1], cv2.IMREAD_COLOR)
+  image_url = "/media/images/" + image_list[-1]
 
   # 이미지 사이즈 조정 
   img = Resize(img)
@@ -36,5 +39,7 @@ def CropFace():
   for f in faces:
     crop = img[f.top():f.bottom(), f.left():f.right()]
   cv2.imwrite("./fashion/personal_color_check/image/cropped.jpg", crop)
+
+  return image_url
 
 CropFace()
