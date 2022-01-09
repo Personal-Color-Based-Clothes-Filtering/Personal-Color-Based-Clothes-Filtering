@@ -1,4 +1,3 @@
-# import the necessary packages
 from collections import OrderedDict
 import numpy as np
 import cv2
@@ -8,8 +7,7 @@ import imutils
 
 facial_features_cordinates = {}
 
-# define a dictionary that maps the indexes of the facial
-# landmarks to specific face regions
+# 얼굴의 랜드마크 인덱스를 얼굴 부위에 매치시키는 딕셔너리 정의
 FACIAL_LANDMARKS_INDEXES = OrderedDict([
     ("Mouth", (48, 68)),
     ("Right_Eyebrow", (17, 22)),
@@ -22,78 +20,64 @@ FACIAL_LANDMARKS_INDEXES = OrderedDict([
 
 def shape_to_numpy_array(shape, dtype="int"):
     
-    # initialize the list of (x, y)-coordinates
+    # (x, y) 좌표 리스트 초기화
     coordinates = np.zeros((68, 2), dtype=dtype)
 
-    # loop over the 68 facial landmarks and convert them
-    # to a 2-tuple of (x, y)-coordinates
+    # 68 facial landmarks 돌면서 (x, y) -2튜플 좌표로 변환
     for i in range(0, 68):
         coordinates[i] = (shape.part(i).x, shape.part(i).y)
 
-    # return the list of (x, y)-coordinates
+    #(x, y) 좌표 리스트 반환
     return coordinates
 
 
 def visualize_facial_landmarks(image, shape, colors=None, alpha=0.75):
 
-    # create two copies of the input image -- one for the
-    # overlay and one for the final output image
+    # 원본 이미지의 복사본을 2개 만든다. 하나는 overlay, 하나는 최종본 이미지를 위함.
     overlay = image.copy()
     output = image.copy()
 
-    # if the colors list is None, initialize it with a unique
-    # color for each facial landmark region
+    # 검정색으로 눈,코,입술 영역 칠하기
     if colors is None:
         colors = [(0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0), (0, 0, 0)]
 
-    # loop over the facial landmark regions individually
+    # 얼굴 랜드마크로 얼굴 영역을 각각 돈다.
     for (i, name) in enumerate(FACIAL_LANDMARKS_INDEXES.keys()):
-        # grab the (x, y)-coordinates associated with the
-        # face landmark
+        # 얼굴 랜드마크와 연결된 (x, y) 좌표를 알아낸다. 
         (j, k) = FACIAL_LANDMARKS_INDEXES[name]
         pts = shape[j:k]
         facial_features_cordinates[name] = pts
 
-        # compute the convex hull of the facial
-        # landmark coordinates points and display it
+        #얼굴 랜드마크 좌표의 convex hull을 계산하여 표시한다.
         hull = cv2.convexHull(pts)
         cv2.drawContours(overlay, [hull], -1, colors[i], -1)
 
-    # apply the transparent overlay
+    # transparent overlay를 적용시킨다.
     cv2.addWeighted(overlay, alpha, output, 1 - alpha, 0, output)
 
-    # return the output image
-    #print(facial_features_cordinates)
+    # 최종본 이미지를 반환한다.
     return output
 
 
-# initialize dlib's face detector (HOG-based) and then create
-# the facial landmark predictor
+# dlib's face detector 초기화 후 the facial landmark predictor 생성
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
-# load the input image, resize it, and convert it to grayscale
-image = cv2.imread('./fashion/personal_color_check/image/cropped.jpg')
-
+# 원본 이미지 로드, 사이즈 조정, grayscale이미지로 변환.
+image = cv2.imread('./image/skincolor_face.jpg')
 image = imutils.resize(image, width=500)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-# detect faces in the grayscale image
+# grayscale 이미지에서 face detect
 rects = detector(gray, 1)
 
-# loop over the face detections
-def RmEyeLips():
-    for (i, rect) in enumerate(rects):
+# 찾은 모든 face에 대해서, 
+for (i, rect) in enumerate(rects):
 
-        # determine the facial landmarks for the face region, then
-        # convert the landmark (x, y)-coordinates to a NumPy array
-        shape = predictor(gray, rect)
-        shape = shape_to_numpy_array(shape)
-
-        output = visualize_facial_landmarks(image, shape)
-
-        ##cv2.imshow("Image", output)
-        cv2.imwrite("./fashion/personal_color_check/image/removed_eyes.jpg", output)
-        ##cv2.waitKey(0)
+    # 얼굴 영역들에 대한 얼굴 랜드마크를 구하고, 랜드마크 (x,y) 좌표를 NumPy array로 변환한다.
+    shape = predictor(gray, rect)
+    shape = shape_to_numpy_array(shape)
     
-RmEyeLips()
+    output = visualize_facial_landmarks(image, shape)
+
+    cv2.imwrite("./image/removed_eyes.jpg", output)
