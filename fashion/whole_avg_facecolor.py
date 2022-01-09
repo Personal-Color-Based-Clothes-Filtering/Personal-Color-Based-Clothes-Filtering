@@ -4,7 +4,7 @@ from numpy.lib.type_check import imag
 
 while True:
 
-  image_color = cv.imread("./image/removed_eyes.jpg", cv.IMREAD_COLOR)
+  image_color = cv.imread("./fashion/personal_color_check/image/removed_eyes.jpg", cv.IMREAD_COLOR)
   image_color = cv.cvtColor(image_color, cv.COLOR_BGR2LAB)
   img_result = image_color.copy()
 
@@ -25,7 +25,7 @@ while True:
         a = image_color.item(y,x,1)
         b = image_color.item(y,x,2)
 
-        #lab가 검정이 아닐때 (검정에 가까운 회색, 흰색, 흰색에 가까운 회색 포함.)
+        #lab가 검정이 아닐때
         if l*100/255 >= 48 and l*100/255 < 80 and a-128 != 0 and b-128 !=0: 
           count+=1
           mean_l += l 
@@ -36,14 +36,14 @@ while True:
   mean_a = mean_a/count-128
   mean_b = mean_b/count-128
 
-  print("mean_l:", round(mean_l, 2), " mean_a:", round(mean_a, 2), " mean_b:", round(mean_b,2))
+  # print("mean_l:", round(mean_l, 2), " mean_a:", round(mean_a, 2), " mean_b:", round(mean_b,2))
   
-  #if mean_a>=mean_b and mean_a-mean_b>=1:
-  #  print("당신은 여름 쿨톤입니다.\n")
-  #elif mean_a>=mean_b and mean_a-mean_b<1:
-  #  print("당신은 겨울 쿨톤입니다.\n")
-  #elif mean_a<mean_b and mean_l>64:
-  #  print("당신은 봄 웜톤입니다.\n")
-  #else:
-  #  print ("당신은 가을 웜톤입니다.\n")
-  #break;
+  # if mean_a>=mean_b and mean_a-mean_b>=2:
+  #   print("당신은 여름 쿨톤입니다.\n")
+  # elif mean_a>=mean_b and mean_a-mean_b<2:
+  #   print("당신은 겨울 쿨톤입니다.\n")
+  # elif mean_a<mean_b and mean_l>64:
+  #   print("당신은 봄 웜톤입니다.\n")
+  # else:
+  #   print ("당신은 가을 웜톤입니다.\n")
+  break
