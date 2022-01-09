@@ -22,6 +22,8 @@ def CropFace():
   image_list = os.listdir('./media/images') # media/images 폴더 내 저장된 파일명 불러오기 
   img = cv2.imread("./media/images/" + image_list[-1], cv2.IMREAD_COLOR)
   image_url = "/media/images/" + image_list[-1]
+  # print(image_list[-1])
+  # img = cv2.imread("./media/images/jcy.png", cv2.IMREAD_COLOR)
 
   # 이미지 사이즈 조정 
   img = Resize(img)

@@ -69,7 +69,6 @@ def visualize_facial_landmarks(image, shape, colors=None, alpha=0.75):
 
 # loop over the face detections
 def RmEyeLips():
-
     # initialize dlib's face detector (HOG-based) and then create
     # the facial landmark predictor
     detector = dlib.get_frontal_face_detector()

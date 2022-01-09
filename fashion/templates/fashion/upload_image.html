@@ -133,6 +133,7 @@
         <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/image_upload/'">퍼스널 컬러 테스트</a>
         <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/'">쇼핑하기</a>
     </div>
+
     <form method = "post" enctype="multipart/form-data" style="background-color: white;">
         <br>
         <h2>퍼스널 컬러 테스트</h2>
@@ -148,7 +149,6 @@
         </div>
         {% csrf_token %}
         <!--{{ form.as_table }}-->
-
         <br> 
         <p style="font-size:18px; font-weight: bold;">참고사항</p>
         <a>
