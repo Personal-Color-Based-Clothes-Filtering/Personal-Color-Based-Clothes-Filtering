@@ -9,7 +9,6 @@ def Resize(img) :
     width = 800
     ratio = width/img.shape[1] # width * 사진 너비 = 비율
     height = int(ratio*img.shape[0]) # 비율 * 사진 높이
-
     # 축소 INTER_AREA
     # 확대 INTER_LINEAR
     resize = cv2.resize(img, dsize = (width, height), interpolation = cv2.INTER_AREA)

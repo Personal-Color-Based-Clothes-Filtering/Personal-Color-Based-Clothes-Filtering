@@ -10,8 +10,7 @@ def RoiCheek():
   predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
   image_color = cv.imread("./fashion/personal_color_check/image/cropped.jpg", cv.IMREAD_COLOR)
-  #img_result = image_color.copy()
-  #img_result2 = image_color.copy()
+  
   gray_img = cv.cvtColor(image_color, cv.COLOR_BGR2GRAY)
   lab_img = cv.cvtColor(image_color, cv.COLOR_BGR2LAB)
 
@@ -52,12 +51,7 @@ def RoiCheek():
   L2 = m2[0]*100/255
   a2 = m2[1]-128
   b2 = m2[2]-128
-  # print("L=", round(L,2), "a=", round(a,2), "b=", round(b,2))
-  # print("L2=", round(L2,2), "a2=", round(a2,2), "b2=", round(b2,2))
-  # print("L2=", round(m2[0]*100/255,2), "a2=",round(m2[1]-128,2), "b2=",round(m2[2]-128,2)) #break 써주면 1번 출력
   
-  # print("avg_L=", round((mean_l*0.8 + L*0.1 + L2*0.1),2), "avg_a=", round((mean_a*0.8 + a*0.1 + a2*0.1),2), 
-  # "avg_b=",round((mean_b*0.8 + b*0.1 +b2*0.1),2))
 
   weigh_l = round((mean_l*0.8 + L*0.1 + L2*0.1),2)
   weigh_a = round((mean_a*0.8 + a*0.1 + a2*0.1),2)
@@ -69,5 +63,7 @@ def RoiCheek():
     return "겨울 쿨톤"
   elif weigh_a<weigh_b and weigh_l>=65.15:
     return "봄 웜톤"
+  elif weigh_a<weigh_b and weigh_a>=12.8:
+    return "겨울 쿨톤"
   else:
     return "가을 웜톤"

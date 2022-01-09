@@ -60,3 +60,4 @@ def success(request):
 from django.shortcuts import render
 def main(request):
     return render(request, 'fashion/main_page.html')
+
