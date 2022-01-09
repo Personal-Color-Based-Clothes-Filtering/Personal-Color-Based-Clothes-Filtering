@@ -10,9 +10,6 @@ while True:
 
   height,width = image_color.shape[:2] #이미지를 저장할 넘파이 배열 생성
 
-  #피부색 이미지를 저장할 넘파이 배열을 생성
-  #img_skincolor = np.zeros((height, width), np.uint8)
-
 #픽셀 접근방법: for 루프를 돌면서 (x,y)에 있는 픽셀을 하나씩 접근한다.
   count = 0 
   mean_l= 0
@@ -25,7 +22,7 @@ while True:
         a = image_color.item(y,x,1)
         b = image_color.item(y,x,2)
 
-        #lab가 검정이 아닐때
+        #lab가 검정이 아닐때 (검정에 가깝거나 흰색에 가까운 회색 포함)
         if l*100/255 >= 48 and l*100/255 < 80 and a-128 != 0 and b-128 !=0: 
           count+=1
           mean_l += l 
