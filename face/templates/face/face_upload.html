@@ -130,8 +130,8 @@
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
             &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
         </a>
-        <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/image_upload/'">퍼스널 컬러 테스트</a>
-        <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/'">쇼핑하기</a>
+        <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/face'">퍼스널 컬러 테스트</a>
+        <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/fashion'">쇼핑하기</a>
     </div>
 
     <form method = "post" enctype="multipart/form-data" style="background-color: white;">
@@ -144,7 +144,7 @@
             <input class="upload-name" value="파일선택" disabled="disabled">
             <label for="id_faceImg">업로드</label>
             <input type="file" name="faceImg" accept="image/*" id="id_faceImg" class="upload-hidden">
-            <script type="text/javascript" src="upload_image_script.js"></script>
+            <script type="text/javascript" src="../../static/face/js/face_upload.js"></script>
             
         </div>
         {% csrf_token %}
@@ -158,7 +158,7 @@
             4. 배경색이 피부색과 비슷한 사진은 사용하지 말아주세요. <br>
             5. (너무 밝거나 어둡지 않은) 흰 조명 아래 찍은 사진이어야 합니다.</a>
         <br>  <br> 
-        <button type="submit">퍼스널 컬러 테스트하기</button>
+        <button type="submit"><a href="{% url 'face:success' %}" >퍼스널 컬러 테스트하기</a></button>
         <br> 
         <a class="info" style="background-color: white;">
             2021 Sookmyung Women's University dept of IT Engineering Graduation Project Team 6</a>

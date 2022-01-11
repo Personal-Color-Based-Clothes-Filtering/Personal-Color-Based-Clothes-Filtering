@@ -9,7 +9,7 @@ def RoiCheek():
   detector = dlib.get_frontal_face_detector()
   predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 
-  image_color = cv.imread("./fashion/personal_color_check/image/cropped.jpg", cv.IMREAD_COLOR)
+  image_color = cv.imread("./face/personal_color_check/image/cropped.jpg", cv.IMREAD_COLOR)
   
   gray_img = cv.cvtColor(image_color, cv.COLOR_BGR2GRAY)
   lab_img = cv.cvtColor(image_color, cv.COLOR_BGR2LAB)

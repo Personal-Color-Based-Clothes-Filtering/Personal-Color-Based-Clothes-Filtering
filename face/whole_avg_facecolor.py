@@ -4,7 +4,7 @@ from numpy.lib.type_check import imag
 
 while True:
 
-  image_color = cv.imread("./fashion/personal_color_check/image/removed_eyes.jpg", cv.IMREAD_COLOR)
+  image_color = cv.imread("./face/personal_color_check/image/removed_eyes.jpg", cv.IMREAD_COLOR)
   image_color = cv.cvtColor(image_color, cv.COLOR_BGR2LAB)
   img_result = image_color.copy()
 

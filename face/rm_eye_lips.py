@@ -67,7 +67,7 @@ def RmEyeLips():
     predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
     # load the input image, resize it, and convert it to grayscale
-    image = cv2.imread('./fashion/personal_color_check/image/cropped.jpg')
+    image = cv2.imread('./face/personal_color_check/image/cropped.jpg')
 
     image = imutils.resize(image, width=500)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -83,7 +83,7 @@ def RmEyeLips():
     predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
     # 원본 이미지 로드, 사이즈 조정, grayscale 이미지로 변환
-    image = cv2.imread('./fashion/personal_color_check/image/cropped.jpg')
+    image = cv2.imread('./face/personal_color_check/image/cropped.jpg')
 
     image = imutils.resize(image, width=500)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -100,6 +100,6 @@ def RmEyeLips():
 
         output = visualize_facial_landmarks(image, shape)
 
-        cv2.imwrite("./fashion/personal_color_check/image/removed_eyes.jpg", output)
+        cv2.imwrite("./face/personal_color_check/image/removed_eyes.jpg", output)
     
 RmEyeLips()

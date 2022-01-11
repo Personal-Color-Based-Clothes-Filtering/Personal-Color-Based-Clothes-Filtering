@@ -12,4 +12,5 @@ $(document).ready(function(){
         // 추출한 파일명 삽입 
         $(this).siblings('.upload-name').val(filename); 
     }); 
+    console.log('hi')
 });

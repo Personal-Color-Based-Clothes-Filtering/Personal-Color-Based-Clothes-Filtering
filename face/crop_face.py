@@ -39,7 +39,7 @@ def CropFace():
   #얼굴영역 추출 후 사진 저장
   for f in faces:
     crop = img[f.top():f.bottom(), f.left():f.right()]
-  cv2.imwrite("./fashion/personal_color_check/image/cropped.jpg", crop)
+  cv2.imwrite("./face/personal_color_check/image/cropped.jpg", crop)
 
   return image_url
 
