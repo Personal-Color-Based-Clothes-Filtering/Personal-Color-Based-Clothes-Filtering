@@ -2,7 +2,7 @@
 from math import sqrt
 import cv2
 import colorsys
-from .color_extraction import MainColorExtraction
+from color_extraction import MainColorExtraction
 
 class ToneExtraction:
     IMAGE = None
@@ -139,10 +139,8 @@ class ToneExtraction:
         return self.SEASON,self.COLOR_NAME
 
 
-'''
-img = '썸네일 경로'
+img = 'https://image.msscdn.net/images/goods_img/20200928/1628385/1628385_4_500.jpg'
 tone_extraction_instance = ToneExtraction(img)
 tone,color = tone_extraction_instance.extract_tone()
 
-return tone,color 각각 퍼스널컬러 톤,색상명
-'''
+print(tone,color)

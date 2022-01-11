@@ -32,7 +32,24 @@
     <div class="clothes">
      <ul>
         <!-- 의류 항목별 출력은 javascript 이용해야 할 듯-->
-        <div id='collar' class="collar">
+        <!-- 의류 카테고리별로 필터링해서 출력하는 기능은 views.py에서 필터링 기능 추가하면 됩니다!(구글링 참고)-->
+
+        <div id='clothes' class="clothes-list">
+        <!-- <p style="font-size: 20;">1. Collar</p> -->
+        {% for c in clothes %}
+            <li>
+                <a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a> <br>
+                <a href="{{c.url}}"><b>{{ c.brand }}</b><br>{{ c.name }}</a><br>
+                {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                    <del style="color:gray;">{{c.price}}원</del> <b>{{c.discount_price}}원</b>
+                {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                    <b>{{c.price}}원</b>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </div>
+
+        {% comment %} <div id='collar' class="collar">
         <!-- <p style="font-size: 20;">1. Collar</p> -->
         {% for c in collar %}
             <li><a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a> <br>
@@ -44,9 +61,23 @@
                 {% endif %}
             </li>
         {% endfor %}
-        </div>
+        </div> {% endcomment %}
+
+        {% comment %} <div id='collar' class="collar">
+        <!-- <p style="font-size: 20;">1. Collar</p> -->
+        {% for c in collar %}
+            <li><a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a> <br>
+                <a href="{{c.url}}"><b>{{ c.brand }}</b><br>{{ c.name }}</a><br>
+                {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                    <del style="color:gray;">{{c.price}}원</del> <b>{{c.discount_price}}원</b>
+                {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                    <b>{{c.price}}원</b>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </div> {% endcomment %}
         
-        <div id='hoodie' class="hoodie">
+        {% comment %} <div id='hoodie' class="hoodie">
         {% for h in hoodie %}
             <li><a href="{{h.url}}"><img src="{{ h.thumbnail }}" alt="{{s.name}}" width=150 height=150></a><br>
                 <a href="{{h.url}}"><b>{{h.brand }}</b><br>{{h.name }}</a><br>
@@ -135,7 +166,7 @@
                 {% endif %} 
             </li>
         {% endfor %}
-        </div> 
+        </div>  {% endcomment %}
      </ul>
     </div>
 
