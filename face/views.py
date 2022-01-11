@@ -14,11 +14,12 @@ from .models import FaceImage
 
 def face_image_view(request):
     form = FaceForm(request.POST, request.FILES)
-
+    print('save')
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(reverse('success'))
+            print('save')
+            return redirect('/face/success')
     else:
         pass
     return render(request, 'face/face_upload.html', {'form' : form })
