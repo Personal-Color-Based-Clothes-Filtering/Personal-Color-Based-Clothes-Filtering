@@ -1,6 +1,7 @@
 import cv2
 import matplotlib.pyplot as plt
 import numpy as np
+import requests
 from sklearn.cluster import KMeans
 from collections import Counter
 
@@ -10,8 +11,8 @@ class MainColorExtraction:
     COLOR_NAME = ''
     CLUSTERS = 3
 
-    def __init__(self,image):
-        self.IMAGE = image
+    def __init__(self,image_url):
+        self.URL = image_url
     
     #1)mean_shift filtering 기법을 이용해 색상을 단순화
     def mean_shift_color(self,image):
@@ -94,7 +95,10 @@ class MainColorExtraction:
 
     #main)메인색 추출 메소드
     def extract_main_color(self):
-        img = cv2.imread(self.IMAGE)
+        #https://nyagya.tistory.com/8 url이미지 처리
+        image_nparray = np.asarray(bytearray(requests.get(self.URL).content), dtype=np.uint8)
+        img = cv2.imdecode(image_nparray, cv2.IMREAD_COLOR)
+        # img = cv2.imread(self.URL)
         img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 
         mean = self.mean_shift_color(img)

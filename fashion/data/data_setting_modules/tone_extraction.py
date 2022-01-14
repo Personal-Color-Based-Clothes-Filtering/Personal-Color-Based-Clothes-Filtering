@@ -139,8 +139,8 @@ class ToneExtraction:
         return self.SEASON,self.COLOR_NAME
 
 
-img = 'https://image.msscdn.net/images/goods_img/20200928/1628385/1628385_4_500.jpg'
-tone_extraction_instance = ToneExtraction(img)
-tone,color = tone_extraction_instance.extract_tone()
+# img = 'https://image.msscdn.net/images/goods_img/20190905/1144999/1144999_3_500.jpg'
+# tone_extraction_instance = ToneExtraction(img)
+# tone,color = tone_extraction_instance.extract_tone()
 
-print(tone,color)
+# print(tone,color)

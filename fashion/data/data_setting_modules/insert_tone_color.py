@@ -6,24 +6,25 @@ import numpy as np
 import urllib.request
 from tone_extraction import *
 
-def url_to_image(url):
-  resp = urllib.request.urlopen(url)
-  image = np.asarray(bytearray(resp.read()), dtype='uint8')
-  image = cv2.imdecode(image, cv2.IMREAD_COLOR)
+pd.set_option('mode.chained_assignment',  None)
+df = pd.read_csv('../dataset/clothes.csv', index_col = 0)
+# df.drop(['Unnamed: 0.1'], axis = 1, inplace = True)
+# df.drop(['Unnamed: 0.1.1'], axis = 1, inplace = True)
+# print(df)
 
-  return image
-
-df = pd.read_csv('../dataset/all.csv')
+# df.to_csv('../dataset/dataset3.csv')
 
 for i in range(0,len(df)):
-    url = df['thumbnail'][i]
-    image = url_to_image(url)
-   
-    tone_extraction_instance = ToneExtraction(url)
-    tone,color = tone_extraction_instance.extract_tone()
+    if df['thumbnail'][i]:  
+      url = df['thumbnail'][i]
+    
+      tone_extraction_instance = ToneExtraction(url)
+      tone,color = tone_extraction_instance.extract_tone()
 
-    df['tone'][i] = tone 
-    df['color'][i] = color
+      print(i,',df["tone"]:',tone)
+      print(i,',df["color"]:',color)
+      df['tone'][i] = tone 
+      df['color'][i] = color
 
 df.to_csv('../dataset/final_dataset.csv')
 
