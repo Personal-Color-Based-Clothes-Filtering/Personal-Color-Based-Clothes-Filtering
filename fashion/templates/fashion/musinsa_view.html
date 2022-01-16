@@ -14,7 +14,9 @@
     <div class="category">
         <nav class="clearfix">
           <ul class="clearfix">
-            <li><a href="#collar">피케/카라 티셔츠</a></li>
+            <li>
+                <a href="#collar">피케/카라 티셔츠</a>
+            </li>
             <li><a href="#hoodie">후드 티셔츠</a></li>
             <li><a href="#shirt">셔츠/블라우스</a></li>
             <li><a href="#longsleeve">긴팔 티셔츠</a></li>
@@ -29,155 +31,35 @@
     <div class="pcolor">
         <a>[퍼스널 컬러 nav]</a>
     </div>
+
     <div class="clothes">
      <ul>
-        <!-- 의류 항목별 출력은 javascript 이용해야 할 듯-->
         <!-- 의류 카테고리별로 필터링해서 출력하는 기능은 views.py에서 필터링 기능 추가하면 됩니다!(구글링 참고)-->
 
         <div id='clothes' class="clothes-list">
-        <!-- <p style="font-size: 20;">1. Collar</p> -->
         {% for c in clothes %}
             <li>
-                <a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a> <br>
-                <a href="{{c.url}}"><b>{{ c.brand }}</b><br>{{ c.name }}</a><br>
+                <a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a><br>
+                <a href="{{c.url}}"><b style="font-weight: bold;">{{ c.brand }}</b><br>{{ c.name }}</a><br>{{c.category}}
                 {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
-                    <del style="color:gray;">{{c.price}}원</del> <b>{{c.discount_price}}원</b>
+                    <del style="color:gray;">{{c.price}}원</del> <b style="font-weight: bold;">{{c.discount_price}}원</b>
                 {% else %} <!--discount_price 값이 없으면 정가로 출력-->
-                    <b>{{c.price}}원</b>
+                    <b style="font-weight: bold;">{{c.price}}원</b>
                 {% endif %}
             </li>
         {% endfor %}
         </div>
-
-        {% comment %} <div id='collar' class="collar">
-        <!-- <p style="font-size: 20;">1. Collar</p> -->
-        {% for c in collar %}
-            <li><a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a> <br>
-                <a href="{{c.url}}"><b>{{ c.brand }}</b><br>{{ c.name }}</a><br>
-                {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
-                    <del style="color:gray;">{{c.price}}원</del> <b>{{c.discount_price}}원</b>
-                {% else %} <!--discount_price 값이 없으면 정가로 출력-->
-                    <b>{{c.price}}원</b>
-                {% endif %}
-            </li>
-        {% endfor %}
-        </div> {% endcomment %}
-
-        {% comment %} <div id='collar' class="collar">
-        <!-- <p style="font-size: 20;">1. Collar</p> -->
-        {% for c in collar %}
-            <li><a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a> <br>
-                <a href="{{c.url}}"><b>{{ c.brand }}</b><br>{{ c.name }}</a><br>
-                {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
-                    <del style="color:gray;">{{c.price}}원</del> <b>{{c.discount_price}}원</b>
-                {% else %} <!--discount_price 값이 없으면 정가로 출력-->
-                    <b>{{c.price}}원</b>
-                {% endif %}
-            </li>
-        {% endfor %}
-        </div> {% endcomment %}
-        
-        {% comment %} <div id='hoodie' class="hoodie">
-        {% for h in hoodie %}
-            <li><a href="{{h.url}}"><img src="{{ h.thumbnail }}" alt="{{s.name}}" width=150 height=150></a><br>
-                <a href="{{h.url}}"><b>{{h.brand }}</b><br>{{h.name }}</a><br>
-                {% if h.discount_price %} 
-                    <del style="color:gray;">{{h.price}}원</del> <b>{{h.discount_price}}원</b>
-                {% else %} 
-                    <b>{{h.price}}원</b>
-                {% endif %} 
-            </li>
-        {% endfor %}
-        </div> 
-        
-        <div id='shirt'>
-        {% for s in shirt %}
-            <li><a href="{{s.url}}"><img src="{{ s.thumbnail }}" alt="{{s.name}}" width=150 height=150></a><br>
-                <a href="{{s.url}}"><b>{{s.brand }}</b><br>{{s.name }}</a><br>
-                {% if s.discount_price %} 
-                    <del style="color:gray;">{{s.price}}원</del> <b>{{s.discount_price}}원</b>
-                {% else %} 
-                    <b>{{s.price}}원</b>
-                {% endif %} 
-            </li>
-        {% endfor %}
-        </div> 
-
-        <div id='longsleeve'>
-            {% for l in longsleeve %}
-                <li><a href="{{l.url}}"><img src="{{ l.thumbnail }}" alt="{{s.name}}" width=150 height=150></a><br>
-                    <a href="{{l.url}}"><b>{{l.brand }}</b><br>{{l.name }}</a><br>
-                    {% if l.discount_price %} 
-                        <del style="color:gray;">{{l.price}}원</del> <b>{{l.discount_price}}원</b>
-                    {% else %} 
-                        <b>{{l.price}}원</b>
-                    {% endif %} 
-                </li>
-            {% endfor %}
-            </div> 
-
-        <div id='shortsleeve'>
-        {% for s in shortsleeve %}
-            <li><a href="{{s.url}}"><img src="{{ s.thumbnail }}" alt="{{s.name}}" width=150 height=150></a><br>
-                <a href="{{s.url}}"><b>{{s.brand }}</b><br>{{s.name }}</a><br>
-                {% if s.discount_price %} 
-                    <del style="color:gray;">{{s.price}}원</del> <b>{{s.discount_price}}원</b>
-                {% else %} 
-                    <b>{{s.price}}원</b>
-                {% endif %} 
-            </li>
-        {% endfor %}
-        </div> 
-
-        <div id='sleeveless'>
-            {% for s in sleeveless %}
-                <li><a href="{{s.url}}"><img src="{{ s.thumbnail }}" alt="{{s.name}}" width=150 height=150></a><br>
-                    <a href="{{s.url}}"><b>{{s.brand }}</b><br>{{s.name }}</a><br>
-                    {% if s.discount_price %} 
-                        <del style="color:gray;">{{s.price}}원</del> <b>{{s.discount_price}}원</b>
-                    {% else %} 
-                        <b>{{s.price}}원</b>
-                    {% endif %} 
-                </li>
-            {% endfor %}
-            </div> 
-
-        <div id='sweat'>
-        {% for s in sweat %}
-            <li><a href="{{s.url}}"><img src="{{ s.thumbnail }}" alt="{{s.name}}" width=150 height=150></a><br>
-                <a href="{{s.url}}"><b>{{s.brand }}</b><br>{{s.name }}</a><br>
-                {% if s.discount_price %} 
-                    <del style="color:gray;">{{s.price}}원</del> <b>{{s.discount_price}}원</b>
-                {% else %} 
-                    <b>{{s.price}}원</b>
-                {% endif %} 
-            </li>
-        {% endfor %}
-        </div>
-            
-        <div id='sweater'>
-        {% for s in sweater %}
-            <li><a href="{{s.url}}"><img src="{{ s.thumbnail }}" alt="{{s.name}}" width=150 height=150></a><br>
-                <a href="{{s.url}}"><b>{{s.brand }}</b><br>{{s.name }}</a><br>
-                {% if s.discount_price %} 
-                    <del style="color:gray;">{{s.price}}</del> <b>{{s.discount_price}}</b>
-                {% else %} 
-                    <b>{{s.price}}원</b>
-                {% endif %} 
-            </li>
-        {% endfor %}
-        </div>  {% endcomment %}
      </ul>
     </div>
-
+    
     <!-- https://yj-code.tistory.com/3 -->
     <div class="page_wrap">
-        <div class="page_nation">
+        <div class="page_nation" id="page_nation">
            <a class="arrow pprev" href="#hoodie">&lt;&lt;</a>
            <a class="arrow prev" href="#hoodie">&lt;</a>
-           <a href="#collar" class="active">1</a>
-           <a href="#hoodie">2</a>
-           <a href="#hoodie">3</a>
+           <a href="#" class="active">1</a>
+           <a href="#">2</a>
+           <a href="#">3</a>
            <a href="#">4</a>
            <a href="#">5</a>
            <a href="#">6</a>

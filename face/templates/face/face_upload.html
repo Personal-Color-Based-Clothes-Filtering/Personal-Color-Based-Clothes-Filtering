@@ -11,12 +11,12 @@
 <body>
     {% block body %}
     <form method="post" enctype="multipart/form-data">
-        <br>
-        <h2>퍼스널 컬러 테스트</h2>
-        <img src="/static/face/image/upload.png" alt="upload.png" width=300 height=300>
         <br><br>
-
-        <div class="filebox">
+        <h2>퍼스널 컬러 테스트</h2>
+        <br>
+        <div class="filebox preview-image">
+            <img id="preview-image" src="/static/face/image/upload.png" alt="upload.png" width=300 height=300>
+            <br><br>
             <input class="upload-name" value="파일선택" disabled="disabled">
             <label for="id_faceImg">업로드</label>
             <input type="file" name="faceImg" accept="image/*" id="id_faceImg" class="upload-hidden">
@@ -25,19 +25,22 @@
         </div>
         {% csrf_token %}
         <!--{{ form.as_table }}-->
-        <br> 
-        <p style="font-size:18px; font-weight: bold;">참고사항</p>
+        <br> <br> 
+        <p style="font-size:18px; font-weight: bold;">참고사항</p> <br>
         <a>
             1. 손이나 팔을 올리지 않아야 합니다. <br>
             2. 민낯으로 찍은 정면 사진이어야 합니다. <br>
             3. 여자의 경우 머리를 풀면 인식을 더 잘하며, 밝은 탈색모의 사진은 피해주세요. <br>
             4. 배경색이 피부색과 비슷한 사진은 사용하지 말아주세요. <br>
             5. (너무 밝거나 어둡지 않은) 흰 조명 아래 찍은 사진이어야 합니다.</a>
-        <br>  <br> 
-        <button type="submit"퍼스널 컬러 테스트하기</button>
+        <br><br><br> 
+        <button type="submit">퍼스널 컬러 테스트하기</button>
         {% comment %} <button type="submit"><a href="{% url 'face:success' %}" >퍼스널 컬러 테스트하기</a></button> {% endcomment %}
        
     </form>
     {% endblock body %}
 </body>
 </html>
+
+
+
