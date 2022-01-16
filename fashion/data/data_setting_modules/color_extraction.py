@@ -6,7 +6,7 @@ from sklearn.cluster import KMeans
 from collections import Counter
 
 class MainColorExtraction:
-    IMAGE = None
+    URL = None
     COLOR = None
     COLOR_NAME = ''
     CLUSTERS = 3
@@ -93,13 +93,11 @@ class MainColorExtraction:
         f.tight_layout()
         plt.show()
 
+        
     #main)메인색 추출 메소드
     def extract_main_color(self):
-        #https://nyagya.tistory.com/8 url이미지 처리
-        image_nparray = np.asarray(bytearray(requests.get(self.URL).content), dtype=np.uint8)
-        img = cv2.imdecode(image_nparray, cv2.IMREAD_COLOR)
-        # img = cv2.imread(self.URL)
-        img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+        image_type = self.URL[-3:]
+        img = self.read_image(image_type)
 
         mean = self.mean_shift_color(img)
         grabcut = self.grabcut(mean)
@@ -107,9 +105,32 @@ class MainColorExtraction:
         main_color = self.get_main_color(cluster)
         
         self.COLOR = main_color
-        print('rgb:',self.COLOR)
-
         # palette = self.rgb_palette(main_color)
         # self.show_img_compar(img,palette)
         
         return self.COLOR
+
+
+    def read_image(self,image_type):
+        if image_type == 'gif':
+            img = self.get_gif_image(self.URL)
+        else:
+            img = self.get_normal_image(self.URL)
+
+        img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+        return img
+        
+    def get_gif_image(self,url):
+        gif = cv2.VideoCapture(url)
+        ret,frame = gif.read()
+
+        if ret:
+            return frame
+        
+        
+    def get_normal_image(self,url):
+        #jpg,png 이미지 파일 처리
+        image_nparray = np.asarray(bytearray(requests.get(url).content), dtype=np.uint8)
+        image = cv2.imdecode(image_nparray, cv2.IMREAD_COLOR)
+
+        return image

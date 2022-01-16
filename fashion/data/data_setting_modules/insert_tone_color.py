@@ -6,18 +6,21 @@ import numpy as np
 import urllib.request
 from tone_extraction import *
 
+#경고 안뜨게 설정
 pd.set_option('mode.chained_assignment',  None)
+
 df = pd.read_csv('../dataset/clothes.csv', index_col = 0)
+# 이상한 열 제거
 # df.drop(['Unnamed: 0.1'], axis = 1, inplace = True)
 # df.drop(['Unnamed: 0.1.1'], axis = 1, inplace = True)
 # print(df)
-
 # df.to_csv('../dataset/dataset3.csv')
 
+# 데이터 삽입
 for i in range(0,len(df)):
     if df['thumbnail'][i]:  
       url = df['thumbnail'][i]
-    
+      print(url)
       tone_extraction_instance = ToneExtraction(url)
       tone,color = tone_extraction_instance.extract_tone()
 
