@@ -3,31 +3,47 @@
 import pandas as pd
 import cv2
 import numpy as np
-import urllib.request
+from urllib.request import urlopen
+from urllib.error import URLError, HTTPError
+
 from tone_extraction import *
 
 #경고 안뜨게 설정
 pd.set_option('mode.chained_assignment',  None)
+pd.set_option('display.max_colwidth', -1)
 
 df = pd.read_csv('../dataset/clothes.csv', index_col = 0)
-# 이상한 열 제거
-# df.drop(['Unnamed: 0.1'], axis = 1, inplace = True)
-# df.drop(['Unnamed: 0.1.1'], axis = 1, inplace = True)
-# print(df)
-# df.to_csv('../dataset/dataset3.csv')
 
+
+
+print('df타입:',type(df))
+print('길이:',len(df))
+
+i = 0
 # 데이터 삽입
-for i in range(0,len(df)):
-    if df['thumbnail'][i]:  
-      url = df['thumbnail'][i]
-      print(url)
+# https://korbillgates.tistory.com/210 404에러 잡기
+for url in df.loc[:,'thumbnail']:
+  print(url,':',type(url))
+  try:
+    res = urlopen(url)
+    print(res.status)
+    if res.status == 200 or res.status != 404:
       tone_extraction_instance = ToneExtraction(url)
       tone,color = tone_extraction_instance.extract_tone()
 
       print(i,',df["tone"]:',tone)
       print(i,',df["color"]:',color)
-      df['tone'][i] = tone 
-      df['color'][i] = color
+      df.loc[i,'tone'] = tone 
+      df.loc[i,'color'] = color
+    else:
+      df.drop([i],axis=0)
+  except HTTPError as e:
+    err = e.read()
+    code = e.getcode()
+    print(code) ## 404
+    df.drop([i],axis=0)
+
+  i += 1
 
 df.to_csv('../dataset/final_dataset.csv')
 
