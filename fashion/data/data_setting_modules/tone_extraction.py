@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
 from math import sqrt
 import cv2
-import colorsys
 from color_extraction import MainColorExtraction
+import colorsys
 
-class ToneExtraction:
-    IMAGE = None
+class ToneExtraction(MainColorExtraction):
     PCCS = ''
     SEASON = ''
-    COLOR_NAME = ''
-
     # PCCS tone dataset [v(명도), s(채도), PCCS tone]
     PCCS_TONE_DATASET = [
         [93.75, 22.22222222, 'p'], [93.75, 55.55555555, 'lt'], [87.5, 88.88888888, 'b'],
@@ -17,7 +14,6 @@ class ToneExtraction:
         [37.5, 22.22222222, 'g'], [37.5, 55.55555555, 'd'], [18.75, 88.88888888, 'dp'],
         [12.5, 22.22222222, 'dkg'], [12.5, 55.55555555, 'd']
     ]
-
     # season
     SPRING = ['p', 'lt', 'b', 'v']
     SUMMER = ['p', 'lt', 'b', 'ltg', 'sf', 'g', 'd']
@@ -25,18 +21,9 @@ class ToneExtraction:
     WINTER = ['s', 'v', 'dp', 'dkg', 'dk']
 
 
-    def __init__(self,image):
-        self.IMAGE = image
+    def __init__(self,image_url):
+        self.URL = image_url
     
-    def convert_rgb_to_hsv(self,main_color):
-        hsv = colorsys.rgb_to_hsv(main_color[0][0] / 255, main_color[0][1] / 255, main_color[0][2] / 255)
-        #h는 0~360,s와 v는 0~100로 정규화
-        hue = round(hsv[0] * 360) 
-        saturation = round(hsv[1] * 100)  
-        value = round(hsv[2] * 100) 
-
-        return hue, saturation, value
-
     def get_closet_personal_color(self,hue,saturation,value):
         main_color_saturation_and_value = [value, saturation]
         main_color_tone = self.get_neighbors(self.PCCS_TONE_DATASET, main_color_saturation_and_value)
@@ -57,45 +44,7 @@ class ToneExtraction:
                 result = 'summer'
             else:
                 result = 'winter'
-        return result
-
-    def get_color_name(self,h,s,v):
-        color_name = ''
-        if s <= 5:
-            if v < 5:
-                color_name = 'black'
-            elif v > 95:
-                color_name = 'white'
-            else: 
-                color_name = 'gray'
-        elif s > 5:
-            if h >= 343 or h <= 10:
-                if s > 5 and s <= 20 and v >= 50 and v <= 80:
-                    color_name = 'pink'
-                elif s >= 20 and s <= 100 and v >= 12 and v <= 50:
-                    color_name = 'brown'
-                else:
-                    color_name = 'red'
-            elif h >= 11 and h <= 37:
-                if s > 5 and s <= 20 and v >= 50 and v <= 80:
-                    color_name = 'beige'
-                elif s >= 20 and s <= 100 and v >= 12 and v <= 50:
-                    color_name = 'brown'
-                else:
-                    color_name = 'orange'
-            elif h >= 38 and h <= 64:
-                color_name = 'yellow'
-            elif h >= 65 and h <= 170:
-                color_name = 'green'
-            elif h >= 171 and h <= 254:
-                color_name = 'blue'
-            elif h >= 255 and h <= 295:
-                color_name = 'purple'
-            elif h >= 296 and h <= 342:
-                color_name = 'pink'
-            
-        return color_name
-            
+        return result            
 
     # Euclidean distance
     # row = [v, s, tone]
@@ -119,29 +68,19 @@ class ToneExtraction:
             neighbors.append(distances[i][0])
 
         return neighbors
-
     
     def extract_tone(self):
-        img = self.IMAGE
+        self.get_main_color()
+        hue,saturation,value = self.convert_rgb_to_hsv(self.COLOR)
+        self.PCCS,self.SEASON = self.get_closet_personal_color(hue,saturation,value)
 
-        main_color_instance = MainColorExtraction(img)
-        main_color = main_color_instance.extract_main_color()
-        hue,saturation,value = self.convert_rgb_to_hsv(main_color)
-        pccs,season = self.get_closet_personal_color(hue,saturation,value)
-        color_name = self.get_color_name(hue,saturation,value)
-
-        self.PCCS = pccs
-        self.SEASON = season
-        self.COLOR_NAME = color_name
-        
-        print('hue:',hue,'\ns(채도):',saturation,'\nv(명도):', value, '\n색상명:', self.COLOR_NAME, '\n세부pccs톤:',self.PCCS, '\n계절 퍼스널컬러:',self.SEASON)
-
-        return self.SEASON,self.COLOR_NAME
+        return self.SEASON
 
 
-# # img = 'https://image.msscdn.net/images/goods_img/20190905/1144999/1144999_3_500.jpg'
-# img = 'https://image.msscdn.net/images/goods_img/20210914/2129973/2129973_1_500.gif'
-# tone_extraction_instance = ToneExtraction(img)
-# tone,color = tone_extraction_instance.extract_tone()
+# img = 'https://image.msscdn.net/images/goods_img/20190905/1144999/1144999_3_500.jpg'
+img = 'https://image.msscdn.net/images/goods_img/20210914/2129973/2129973_1_500.gif'
+tone_extraction_instance = ToneExtraction(img)
+tone = tone_extraction_instance.extract_tone()
+color = tone_extraction_instance.get_color_name()
 
-# print(tone,color)
+print(tone,color)

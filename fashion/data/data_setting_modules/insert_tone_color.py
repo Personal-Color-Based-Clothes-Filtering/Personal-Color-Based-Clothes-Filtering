@@ -28,8 +28,9 @@ for url in df.loc[:,'thumbnail']:
     res = urlopen(url)
     print(res.status)
     if res.status == 200 or res.status != 404:
-      tone_extraction_instance = ToneExtraction(url)
-      tone,color = tone_extraction_instance.extract_tone()
+      tone_extraction_instance = ToneExtraction(img)
+      tone = tone_extraction_instance.extract_tone()
+      color = tone_extraction_instance.get_color_name()
 
       print(i,',df["tone"]:',tone)
       print(i,',df["color"]:',color)
