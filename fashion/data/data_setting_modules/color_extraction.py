@@ -12,6 +12,45 @@ class MainColorExtraction:
     COLOR_NAME = ''
     CLUSTERS = 3
 
+    COLOR_DATASET = [
+        [16711680,'red'],[16770048,'yellow'],[16735744,'orange'],
+        [16711935,'pink'],[14076065,'beige'],[10041344,'brown'],
+        [4325178,'green'],[21759,'blue'],[6226175,'purple'],
+        [12632256,'gray'],[0,'black'],[16777215,'white']
+    ]
+
+    # # Euclidean distance
+    # # row = [v, s, tone]
+    # def euclidean_distance(self, input_hex, color_dataset):
+    #     distance = 0.0
+    #     for i in range(len(input_hex)):
+    #         distance += (input_hex[i] - color_dataset[i][0]) ** 2
+    #     return sqrt(distance)
+
+    # # 가장 가까운 점 찾기(num_neighbors개)
+    # def get_neighbors(self, color_dataset, main_rgb_hex, num_neighbors=1):
+    #     distances = list()
+    #     for tone_row in color_dataset:
+    #         distance = self.euclidean_distance(main_rgb_hex, tone_row)
+    #         distances.append((tone_row, distance))
+    #     distances.sort(key=lambda x: x[1])
+
+    #     neighbors = list()
+    #     for i in range(num_neighbors):
+    #         neighbors.append(distances[i][0])
+
+    #     return neighbors
+    
+    # def rgb_to_hex10(self,rgb):
+    #     r = rgb[0][0]
+    #     g = rgb[0][1]
+    #     b = rgb[0][2]
+
+    #     tohex = hex(r)[2:].zfill(2) + hex(g)[2:].zfill(2) + hex(b)[2:].zfill(2)
+        
+    #     hex10 = int(tohex,16)
+    #     return hex10
+    
     def __init__(self,image_url):
         self.URL = image_url
 
@@ -20,13 +59,18 @@ class MainColorExtraction:
         image_type = self.URL[-3:]
         img = self.read_rgb_image(image_type)
 
+        # mean_img = self.mean_shift_color(img)
         grabcut_img = self.grabcut(img)
-        mean_img = self.mean_shift_color(grabcut_img)
-        cluster = self.clustering_image_color(mean_img)
+        cluster = self.clustering_image_color(grabcut_img)
         self.COLOR = self.extract_main_color(cluster)
         
-        # palette = self.rgb_palette(main_color)
-        # self.show_img_compar(img,palette)
+        # hexcolor = self.rgb_to_hex10(self.COLOR) 
+
+        # main_color_name = self.get_neighbors(self.COLOR_DATASET, hexcolor)
+        # print(main_color_name)
+
+        palette = self.rgb_palette(self.COLOR)
+        self.show_img_compar(grabcut_img,palette)
         
         return self.COLOR
 
@@ -38,15 +82,16 @@ class MainColorExtraction:
         img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 
         return img
-        
+
+    #gif 이미지 파일 처리    
     def get_gif_image(self):
         gif = cv2.VideoCapture(self.URL)
         ret,frame = gif.read()
         if ret:
             return frame
-        
+
+    #jpg,png 이미지 파일 처리    
     def get_normal_image(self):
-        #jpg,png 이미지 파일 처리
         image_nparray = np.asarray(bytearray(requests.get(self.URL).content), dtype=np.uint8)
         image = cv2.imdecode(image_nparray, cv2.IMREAD_COLOR)
 
@@ -62,8 +107,18 @@ class MainColorExtraction:
         cv2.grabCut(image,init_mask,rect,background_model,foreground_model,5,cv2.GC_INIT_WITH_RECT)
         closet_mask = np.where((init_mask==2)|(init_mask==0),0,1).astype('uint8') #배경인 곳은 0, 그 외에는 1로 설정한 마스크
         image = image * closet_mask[:,:,np.newaxis]
-
+        
+        image = self.remove_grabcut_bg(image)
         return image
+
+    #grabcut 적용 시 생기는 검정 배경 제거
+    def remove_grabcut_bg(self,image):
+        tmp = cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
+        _,alpha = cv2.threshold(tmp,0,255,cv2.THRESH_BINARY)
+        r, g, b = cv2.split(image)
+        rgba = [r,g,b,alpha]
+        dst = cv2.merge(rgba,4)
+        return dst
 
     #mean_shift filtering 기법을 이용해 색상을 단순화
     def mean_shift_color(self,image):
@@ -102,7 +157,7 @@ class MainColorExtraction:
 
         #비율 순서대로 객체 정렬
         sorted(clustering_color_list,key=lambda color:color['perc']) 
-        #가장 비율이 높은 색의 r,g,b의 값이 모두 2보다 작으면 배경색인 검정으로 간주하고 제거
+        # 가장 비율이 높은 색의 r,g,b의 값이 모두 2보다 작으면 배경색인 검정으로 간주하고 제거
         if clustering_color_list[0]['r'] < 2 and clustering_color_list[0]['g'] < 2 and clustering_color_list[0]['b'] < 2:
             del clustering_color_list[0] 
 
@@ -179,4 +234,9 @@ class MainColorExtraction:
         return hue, saturation, value
         
         
-    
+
+img = 'https://image.msscdn.net/images/goods_img/20190905/1144999/1144999_3_500.jpg'
+orange = 'https://image.msscdn.net/images/goods_img/20200904/1584002/1584002_1_500.jpg'
+gray = 'https://image.msscdn.net/images/goods_img/20210914/2129973/2129973_1_500.gif'
+tone_extraction_instance = MainColorExtraction(img)
+color = tone_extraction_instance.get_main_color()

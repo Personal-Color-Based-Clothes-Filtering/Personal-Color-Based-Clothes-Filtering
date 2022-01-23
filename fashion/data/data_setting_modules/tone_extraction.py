@@ -78,9 +78,9 @@ class ToneExtraction(MainColorExtraction):
 
 
 # img = 'https://image.msscdn.net/images/goods_img/20190905/1144999/1144999_3_500.jpg'
-img = 'https://image.msscdn.net/images/goods_img/20210914/2129973/2129973_1_500.gif'
-tone_extraction_instance = ToneExtraction(img)
-tone = tone_extraction_instance.extract_tone()
-color = tone_extraction_instance.get_color_name()
+# img = 'https://image.msscdn.net/images/goods_img/20210914/2129973/2129973_1_500.gif'
+# tone_extraction_instance = ToneExtraction(img)
+# tone = tone_extraction_instance.extract_tone()
+# color = tone_extraction_instance.get_color_name()
 
-print(tone,color)
+# print(tone,color)

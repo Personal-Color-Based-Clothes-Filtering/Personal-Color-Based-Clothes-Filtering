@@ -14,28 +14,25 @@ pd.set_option('display.max_colwidth', -1)
 
 df = pd.read_csv('../dataset/clothes.csv', index_col = 0)
 
-
-
 print('df타입:',type(df))
 print('길이:',len(df))
 
-i = 0
 # 데이터 삽입
-# https://korbillgates.tistory.com/210 404에러 잡기
+i = 0
 for url in df.loc[:,'thumbnail']:
   print(url,':',type(url))
   try:
     res = urlopen(url)
     print(res.status)
     if res.status == 200 or res.status != 404:
-      tone_extraction_instance = ToneExtraction(img)
+      tone_extraction_instance = ToneExtraction(url)
       tone = tone_extraction_instance.extract_tone()
-      color = tone_extraction_instance.get_color_name()
+      # color = tone_extraction_instance.get_color_name()
 
       print(i,',df["tone"]:',tone)
-      print(i,',df["color"]:',color)
+      # print(i,',df["color"]:',color)
       df.loc[i,'tone'] = tone 
-      df.loc[i,'color'] = color
+      # df.loc[i,'color'] = color
     else:
       df.drop([i],axis=0)
   except HTTPError as e:
@@ -46,5 +43,5 @@ for url in df.loc[:,'thumbnail']:
 
   i += 1
 
-df.to_csv('../dataset/final_dataset.csv')
+df.to_csv('../dataset/insert_tone_dataset.csv')
 
