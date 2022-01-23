@@ -18,29 +18,35 @@ def Resize(img) :
 
 def CropFace():
   # 이미지 파일 읽기
-  image_list = os.listdir('media/images/') # media/images 폴더 내 저장된 파일명 불러오기 
-  img = cv2.imread("media/images/" + image_list[-1], cv2.IMREAD_COLOR)
-  image_url = "/media/images/" + image_list[-1]
-  # print(image_list[-1])
-  # img = cv2.imread("./media/images/jcy.png", cv2.IMREAD_COLOR)
+  try:
+    image_list = os.listdir('media/images/') # media/images 폴더 내 저장된 파일명 불러오기 
+    img = cv2.imread("media/images/" + image_list[-1], cv2.IMREAD_COLOR)
+    image_url = "/media/images/" + image_list[-1]
+    cv2.imwrite("./face/personal_color_check/image/original.jpg", img)
+    
+    image_url = '/face/personal_color_check/image/original.jpg'
+    # print(image_url)
 
-  # 이미지 사이즈 조정 
-  img = Resize(img)
+    # 이미지 사이즈 조정 
+    img = Resize(img)
 
-  # 얼굴 검출기와 랜드마크 검출기 생성 --- ①
-  detector = dlib.get_frontal_face_detector()
-  #predictor = dlib.shape_predictor('./shape_predictor_68_face_landmarks.dat')
+    # 얼굴 검출기와 랜드마크 검출기 생성 --- ①
+    detector = dlib.get_frontal_face_detector()
+    #predictor = dlib.shape_predictor('./shape_predictor_68_face_landmarks.dat')
 
-  #img = cv2.imread("./images/me.jpg")
-  gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-  # 얼굴 영역 검출 --- ②
-  faces = detector(gray)
+    #img = cv2.imread("./images/me.jpg")
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # 얼굴 영역 검출 --- ②
+    faces = detector(gray)
 
-  #얼굴영역 추출 후 사진 저장
-  for f in faces:
-    crop = img[f.top():f.bottom(), f.left():f.right()]
-  cv2.imwrite("./face/personal_color_check/image/cropped.jpg", crop)
+    #얼굴영역 추출 후 사진 저장
+    for f in faces:
+      crop = img[f.top():f.bottom(), f.left():f.right()]
+    cv2.imwrite("./face/personal_color_check/image/cropped.jpg", crop)
 
-  return image_url
+    return image_url
+    
+  except:
+    pass
 
 CropFace()

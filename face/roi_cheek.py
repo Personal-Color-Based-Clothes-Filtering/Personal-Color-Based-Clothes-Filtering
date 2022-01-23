@@ -3,6 +3,7 @@ import numpy as np
 from imutils import face_utils
 import dlib
 from .whole_avg_facecolor import mean_l, mean_a, mean_b
+# from whole_avg_facecolor import mean_l, mean_a, mean_b
 
 def RoiCheek():
   #face detection part
