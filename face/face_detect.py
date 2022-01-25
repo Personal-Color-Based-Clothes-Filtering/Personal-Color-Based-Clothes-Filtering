@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 def FaceDetect():
-    #cv2.namedWindow('image')
+    
     # 이미지 파일 읽기
     img = cv2.imread("./face/personal_color_check/image/cropped.jpg", cv2.IMREAD_COLOR)
 
