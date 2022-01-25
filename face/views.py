@@ -30,6 +30,7 @@ def face_image_view(request):
 
 def success(request):
     faceimg = CropFace()
+    FaceDetect()
     RmEyeLips()
     roi = RoiCheek()
     DelImg()
