@@ -18,11 +18,11 @@ def CropFace():
   try:
     image_list = os.listdir('media/images/') # media/images 폴더 내 저장된 파일명 불러오기 
     img = cv2.imread("media/images/" + image_list[-1], cv2.IMREAD_COLOR)
-    image_url = "/media/images/" + image_list[-1]
-    cv2.imwrite("./face/personal_color_check/image/original.jpg", img)
     
-    image_url = '/face/personal_color_check/image/original.jpg'
-    # print(image_url)
+    cv2.imwrite("./media/origin/original.jpg", img)
+    image_url = '/media/origin/original.jpg'
+    # cv2.imwrite("./face/personal_color_check/image/original.jpg", img)
+    # image_url = '/face/personal_color_check/image/original.jpg'
 
     # 이미지 사이즈 조정 
     img = Resize(img)

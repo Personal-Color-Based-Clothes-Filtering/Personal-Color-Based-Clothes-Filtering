@@ -12,6 +12,7 @@ from .models import FaceImage
 from .crop_face import *
 from .rm_eye_lips import *
 from .roi_cheek import *
+from .face_detect import *
 from .delete_img import *
 from .models import FaceImage
 
@@ -34,4 +35,6 @@ def success(request):
     RmEyeLips()
     roi = RoiCheek()
     DelImg()
+    # if roi == 'fail':
+    #     pass
     return render(request, 'face/face_result.html', {'roi' : roi, 'faceimg' : faceimg})

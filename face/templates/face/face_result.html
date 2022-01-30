@@ -6,7 +6,7 @@
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'face/css/face_result.css' %}">
 {% endblock %}
- 
+
 
 <body>
     <!-- 상단 네비게이션 바 제외한 실제 콘텐츠가 들어가는 블록-->
@@ -58,7 +58,7 @@
                 <img src="/static/face/image/summer.png" alt="summer.png" width=500 height=auto>
             </div>
 
-        {% else %} <!-- 겨울 쿨톤-->
+        {% elif roi == "겨울 쿨톤" %} <!-- 겨울 쿨톤-->
             <div class='personal_color_result'>
                 <img src="{{faceimg}}" alt="upload.png" width=230 height=230 style="float: left; padding-right: 1%;"> 
                 <img src="/static/face/image/winter_text.png" alt="winter.png" width=auto height=230 style="float: left;"> 
@@ -72,6 +72,13 @@
                 <h4>Your Color Palette</h4>
                 <img src="/static/face/image/winter.png" alt="winter.png" width=500 height=auto>
             </div>
+
+            {% elif roi == "fail" %}
+                <script type="text/javascript">
+                    alert("퍼스널 컬러 인식에 실패했습니다. 참고사항을 유의하여 사진을 업로드해 주세요.")
+                    histroy.go(-1);
+                </script>
+                <!--<h3>퍼스널 컬러 인식에 실패했습니다. 참고사항을 유의하여 사진을 다시 업로드해 주세요.</h3>-->
         {% endif %}
         
         <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping'">어울리는 의류 보러가기</button>
