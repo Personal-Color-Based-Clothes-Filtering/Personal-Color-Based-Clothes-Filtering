@@ -1,0 +1,54 @@
+/* 메인 로고 */
+body{
+    background:black;
+}
+
+/* 배경 + 정보 */
+.main-page {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), 
+                        url("/static/main/image/main_thumbnail.jpg");
+    background-repeat : no-repeat;
+    background-size : cover;
+    text-align: center;
+    width: 100%;
+    height: calc(100% - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+}
+.title{
+    font-size: 80px;
+    font-weight: 700;
+}
+.subtitle{
+    margin:20px;
+    font-size: 18px;
+}
+
+/* 이동 */
+.navigator-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:50px; 
+}
+.navigator-button button {
+    font-size: 20px;
+    width: 300px;
+    height: 70px;
+    text-align: center;
+    color: #fff;
+    border: #747474 solid 1px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 10px;
+}
+.navigator-button button:hover {
+    color: #000000;
+    background-color: #ffffff;
+    border: #ffffff solid 1px;
+    font-weight: bold;
+    transition:0.2s;
+}

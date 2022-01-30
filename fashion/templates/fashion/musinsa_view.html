@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- extra_head:css,스크립트파일(js) 넣는 블록-->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'fashion/css/musinsa_view.css' %}">
+{% endblock %}
+ 
+
+ <body topmargin="0">
+    {% block body %}
+    <!-- https://mibolee.tistory.com/19 -->
+    <!-- nav바 제외한 콘텐츠 영역, nav는 base.html로 이동-->
+    <div class="category">
+        <nav class="clearfix">
+          <ul class="clearfix">
+            <li><a href="http://127.0.0.1:8000/shopping/">ALL</a></li>
+            <li><a href="?category=collar">피케/카라 티셔츠</a></li>
+            <li><a href="?category=hoodie">후드 티셔츠</a></li>
+            <li><a href="?category=shirt">셔츠/블라우스</a></li>
+            <li><a href="?category=longsleeve">긴팔 티셔츠</a></li>
+            <li><a href="?category=shortsleeve">반팔 티셔츠</a></li>
+            <li><a href="?category=sleeveless">민소매 티셔츠</a></li>
+            <li><a href="?category=sweat">맨투맨/스웨트셔츠</a></li>
+            <li><a href="?category=sweater">니트/스웨터</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="pcolor">
+        <a>[퍼스널 컬러 nav]</a>
+    </div>
+
+    <div class="clothes">
+     <ul>
+        <!-- 의류 카테고리별로 필터링해서 출력하는 기능은 views.py에서 필터링 기능 추가하면 됩니다!(구글링 참고)-->
+
+        <div id='clothes' class="clothes-list">
+            <script type="text/javascript" src="../../static/fashion/js/category_filter.js"></script>    
+
+            {% if category == "collor" %}
+                {% for c in collar %}
+                    <li>
+                        <a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a><br>
+                        <a href="{{c.url}}"><b style="font-weight: bold;">{{ c.brand }}</b><br>{{ c.name }}</a><br>{{c.category}}
+                        {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                            <del style="color:gray;">{{c.price}}원</del> <b style="font-weight: bold;">{{c.discount_price}}원</b>
+                        {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                            <b style="font-weight: bold;">{{c.price}}원</b>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+
+            {% else %}
+                {% for c in clothes %}
+                    <li>
+                        <a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a><br>
+                        <a href="{{c.url}}"><b style="font-weight: bold;">{{ c.brand }}</b><br>{{ c.name }}</a><br>{{c.category}}
+                        {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                            <del style="color:gray;">{{c.price}}원</del> <b style="font-weight: bold;">{{c.discount_price}}원</b>
+                        {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                            <b style="font-weight: bold;">{{c.price}}원</b>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </div>
+     </ul>
+    </div>
+    
+    <!-- https://yj-code.tistory.com/3 -->
+    <div class="page_wrap">
+        <div class="page_nation" id="paging">
+           <a class="arrow pprev" href="#hoodie">&lt;&lt;</a>
+           <a class="arrow prev" href="#hoodie">&lt;</a>
+           <a href="#" class="active">1</a>
+           <a href="#">2</a>
+           <a href="#">3</a>
+           <a href="#">4</a>
+           <a href="#">5</a>
+           <a href="#">6</a>
+           <a href="#">7</a>
+           <a href="#">8</a>
+           <a href="#">9</a>
+           <a href="#">10</a>
+           <a class="arrow next" href="#">&gt;</a>
+           <a class="arrow nnext" href="#">&gt;&gt;</a>
+        </div>
+    </div>
+    
+    {% endblock %}
+ </body>

@@ -1,0 +1,42 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>IT 졸업 프로젝트 6조</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        {% block extra_head %}
+        
+        {% endblock %}
+
+    </head>
+    <body>
+        {% block nav %}
+        <nav class="navbar">
+            <a class="logo" type="submit" onClick="location.href='http://127.0.0.1:8000/'">SMWU X MUSINSA</a>
+            
+            <div class="menu">
+                <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/face'">퍼스널 컬러 테스트</a>
+                <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/'">쇼핑하기</a>
+            </div>
+        </nav>
+        {% endblock %}
+            
+        <main>
+        {% block body %}
+            
+        {% endblock %}
+        </main>
+
+        {% block footer %}
+        <footer>
+            <small>2021 Sookmyung Women's University dept of IT Engineering Graduation Project Team 6</small>
+        </footer>
+        {% endblock %}
+
+        {% block script %}
+        {% endblock %}
+    </body>
+</html>
