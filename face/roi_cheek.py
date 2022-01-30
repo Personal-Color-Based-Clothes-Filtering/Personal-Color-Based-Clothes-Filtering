@@ -2,7 +2,11 @@ import cv2 as cv
 import numpy as np
 from imutils import face_utils
 import dlib
+from .crop_face import *
+from .face_detect import *
+from .rm_eye_lips import *
 from .whole_avg_facecolor import mean_l, mean_a, mean_b
+# from whole_avg_facecolor import mean_l, mean_a, mean_b
 
 def RoiCheek():
   #face detection part
@@ -57,13 +61,36 @@ def RoiCheek():
   weigh_a = round((mean_a*0.8 + a*0.1 + a2*0.1),2)
   weigh_b = round((mean_b*0.8 + b*0.1 +b2*0.1),2)
   
-  if weigh_a>=weigh_b and weigh_a-weigh_b>=2:
+  print("weigh_l:", round(weigh_l, 2), " weigh_a:", round(weigh_a, 2), " weigh_b:", round(weigh_b,2))
+  
+  if weigh_a>=16 and weigh_l>=71.2:
+    return "봄 웜톤"
+    
+  elif weigh_a>=16 and weigh_a-weigh_b>10:
+    return "겨울 쿨톤"
+    
+  elif weigh_a>=16 and weigh_b>27:
+    return "겨울 쿨톤"
+    
+  elif weigh_a>=16:
     return "여름 쿨톤"
+    
+  elif weigh_a>=weigh_b and weigh_a-weigh_b>=2:
+    return "여름 쿨톤"
+    
   elif weigh_a>=weigh_b and weigh_a-weigh_b<2:
     return "겨울 쿨톤"
+    
+  elif weigh_a<weigh_b and weigh_a>=14.6:
+    return "겨울 쿨톤"
+    
+  elif weigh_a<weigh_b and weigh_b>20.3:
+    return "가을 웜톤"
+    
   elif weigh_a<weigh_b and weigh_l>=65.15:
     return "봄 웜톤"
-  elif weigh_a<weigh_b and weigh_a>=12.8:
-    return "겨울 쿨톤"
+    
   else:
     return "가을 웜톤"
+    
+RoiCheek()
