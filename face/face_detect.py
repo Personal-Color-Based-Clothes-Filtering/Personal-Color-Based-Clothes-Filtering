@@ -16,12 +16,6 @@ def FaceDetect():
 
     #경계선 찾음
     contours, hierarchy = cv2.findContours(img_person, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE) # 아래 코드에서 오류 발생해서 수정함(다영)
-<<<<<<< HEAD
-    #_, contours, hierarchy = cv2.findContours(img_person, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
-=======
-    # _, contours, hierarchy = cv2.findContours(img_person, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
->>>>>>> 6fd93d32067f6f89af0a249834377f5955e9c2f3
-
     # 가장 큰 영역 찾기
     max = 0
     maxcnt = None
