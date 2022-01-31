@@ -1,3 +1,5 @@
+from ast import Del
+from urllib import request
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -10,6 +12,8 @@ from .models import FaceImage
 from .crop_face import *
 from .rm_eye_lips import *
 from .roi_cheek import *
+from .face_detect import *
+from .delete_img import *
 from .models import FaceImage
 
 def face_image_view(request):
@@ -27,6 +31,10 @@ def face_image_view(request):
 
 def success(request):
     faceimg = CropFace()
+    FaceDetect()
     RmEyeLips()
     roi = RoiCheek()
+    DelImg()
+    # if roi == 'fail':
+    #     pass
     return render(request, 'face/face_result.html', {'roi' : roi, 'faceimg' : faceimg})

@@ -59,31 +59,15 @@ def visualize_facial_landmarks(image, shape, colors=None, alpha=0.75):
     return output
 
 
-# loop over the face detections
 def RmEyeLips():
-    # initialize dlib's face detector (HOG-based) and then create
-    # the facial landmark predictor
-    detector = dlib.get_frontal_face_detector()
-    predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
-
-    # load the input image, resize it, and convert it to grayscale
-    image = cv2.imread('./face/personal_color_check/image/cropped.jpg')
-
-    image = imutils.resize(image, width=500)
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    # detect faces in the grayscale image
-    rects = detector(gray, 1)
-
-def RmEyeLips():
-
+    
     # dlib의 face detector울 초기화한다
     # facial landmark predictor 생성
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 
-    # 원본 이미지 로드, 사이즈 조정, grayscale 이미지로 변환
-    image = cv2.imread('./face/personal_color_check/image/cropped.jpg')
+   # 원본 이미지 로드, 사이즈 조정, grayscale 이미지로 변환
+    image = cv2.imread('./face/personal_color_check/image/skincolor_face.jpg')
 
     image = imutils.resize(image, width=500)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
