@@ -5,11 +5,12 @@ import dlib
 from .crop_face import *
 from .face_detect import *
 from .rm_eye_lips import *
-from .whole_avg_facecolor import mean_l, mean_a, mean_b
+from .whole_avg_facecolor import abc, mean_l, mean_a, mean_b
 # from whole_avg_facecolor import mean_l, mean_a, mean_b
 
-def RoiCheek():
+def RoiCheek(image_color):
   try:
+    print("count = ", abc)
     #face detection part
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
@@ -97,3 +98,18 @@ def RoiCheek():
     return "fail"
 
 RoiCheek()
+
+
+def Check2():
+  image_color = cv.imread("./image/cropped.jpg", cv.IMREAD_COLOR)
+  result = RoiCheek(image_color)
+
+  image_color = cv.imread("./image/removed_eyes.jpg", cv.IMREAD_COLOR)
+  result2 = RoiCheek(image_color)
+
+  if result != result2:
+    return "unsuccessful processing2"
+  else:
+    return "successful processing2"
+
+Check2()

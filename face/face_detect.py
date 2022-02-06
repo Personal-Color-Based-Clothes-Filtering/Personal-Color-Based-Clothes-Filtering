@@ -41,5 +41,40 @@ def FaceDetect():
 
     # 이미지 보여주기
     cv2.imwrite("./face/personal_color_check/image/skincolor_face.jpg", img_person)
+    print("2")
 
 FaceDetect()
+
+
+def Check():
+    while True:
+      image_color = cv2.imread("./face/personal_color_check/image/skincolor_face.jpg", cv2.IMREAD_COLOR)
+      image_color = cv2.cvtColor(image_color, cv2.COLOR_BGR2LAB)
+
+      height,width = image_color.shape[:2] #이미지를 저장할 넘파이 배열 생성
+
+    #픽셀 접근방법: for 루프를 돌면서 (x,y)에 있는 픽셀을 하나씩 접근한다.
+      count = 0
+      count_valid =0 
+
+      for y in range(0, height):
+        for x in range(0, width):
+            #컬러이미지의 (x,y)픽셀에 있는 픽셀의 l,a,b채널을 읽는다
+          l = image_color.item(y,x,0)
+          a = image_color.item(y,x,1)
+          b = image_color.item(y,x,2)
+
+          #lab가 검정이 아닐때 (검정에 가깝거나 흰색에 가까운 회색 포함)
+          if l*100/255 >= 48 and l*100/255 < 80 and a-128 != 0 and b-128 !=0: 
+            count+=1
+          
+          if not (l*100/255 >= 48 and l*100/255 < 80 and a-128 != 0 and b-128 !=0):
+            count_valid += 1
+          
+      if count_valid/(count_valid + count) > 0.7:
+        return "unsuccessful processing"
+    
+      else:
+        return "successful processing"
+
+Check()

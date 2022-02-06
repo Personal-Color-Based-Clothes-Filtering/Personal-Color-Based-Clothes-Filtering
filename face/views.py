@@ -1,4 +1,5 @@
 from ast import Del
+import imp
 from urllib import request
 from django.shortcuts import render
 from django.urls import reverse
@@ -10,9 +11,9 @@ from .forms import *
 from .models import FaceImage
  # 퍼스널 컬러 판단
 from .crop_face import *
+from .face_detect import *
 from .rm_eye_lips import *
 from .roi_cheek import *
-from .face_detect import *
 from .delete_img import *
 from .models import FaceImage
 
@@ -32,8 +33,10 @@ def face_image_view(request):
 def success(request):
     faceimg = CropFace()
     FaceDetect()
+    check = Check()
     RmEyeLips()
     roi = RoiCheek()
+    check2 = Check2()
     DelImg()
     # if roi == 'fail':
     #     pass
