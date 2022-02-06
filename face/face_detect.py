@@ -43,7 +43,7 @@ def FaceDetect():
     cv2.imwrite("./face/personal_color_check/image/skincolor_face.jpg", img_person)
     print("2")
 
-FaceDetect()
+#FaceDetect()
 
 
 def Check():
@@ -55,7 +55,7 @@ def Check():
 
     #픽셀 접근방법: for 루프를 돌면서 (x,y)에 있는 픽셀을 하나씩 접근한다.
       count = 0
-      count_valid =0 
+      count_invalid =0 
 
       for y in range(0, height):
         for x in range(0, width):
@@ -69,12 +69,12 @@ def Check():
             count+=1
           
           if not (l*100/255 >= 48 and l*100/255 < 80 and a-128 != 0 and b-128 !=0):
-            count_valid += 1
+            count_invalid += 1
           
-      if count_valid/(count_valid + count) > 0.7:
+      if count_invalid/(count_invalid + count) > 0.7:
         return "unsuccessful processing"
     
       else:
         return "successful processing"
 
-Check()
+#Check()

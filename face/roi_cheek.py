@@ -8,13 +8,19 @@ from .rm_eye_lips import *
 from .whole_avg_facecolor import mean_l, mean_a, mean_b
 # from whole_avg_facecolor import mean_l, mean_a, mean_b
 
+def Reset():
+  print("mean_l:", mean_l," mean_a:", mean_a," mean_b:", mean_b)
+  #mean_l = 0
+  #mean_a = 0
+  #mean_b = 0
+
 def RoiCheek(image_color):
   try:
     
     #face detection part
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-    
+
     gray_img = cv.cvtColor(image_color, cv.COLOR_BGR2GRAY)
     lab_img = cv.cvtColor(image_color, cv.COLOR_BGR2LAB)
 
@@ -109,4 +115,4 @@ def Check2():
   else:
     return "successful processing2"
 
-Check2()
+#Check2()
