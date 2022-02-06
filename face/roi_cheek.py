@@ -5,12 +5,12 @@ import dlib
 from .crop_face import *
 from .face_detect import *
 from .rm_eye_lips import *
-from .whole_avg_facecolor import abc, mean_l, mean_a, mean_b
+from .whole_avg_facecolor import mean_l, mean_a, mean_b
 # from whole_avg_facecolor import mean_l, mean_a, mean_b
 
 def RoiCheek(image_color):
   try:
-    print("count = ", abc)
+    
     #face detection part
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
@@ -64,7 +64,8 @@ def RoiCheek(image_color):
     weigh_b = round((mean_b*0.8 + b*0.1 +b2*0.1),2)
     
     print("weigh_l:", round(weigh_l, 2), " weigh_a:", round(weigh_a, 2), " weigh_b:", round(weigh_b,2))
-    
+    print("5")
+
     if weigh_a>=16 and weigh_l>=71.2:
       return "봄 웜톤"
       
@@ -96,8 +97,6 @@ def RoiCheek(image_color):
       return "가을 웜톤"
   except:
     return "fail"
-
-RoiCheek()
 
 
 def Check2():

@@ -35,7 +35,8 @@ def success(request):
     FaceDetect()
     check = Check()
     RmEyeLips()
-    roi = RoiCheek()
+    image_color = cv.imread("./image/cropped.jpg", cv.IMREAD_COLOR)
+    roi = RoiCheek(image_color)
     check2 = Check2()
     DelImg()
     # if roi == 'fail':
