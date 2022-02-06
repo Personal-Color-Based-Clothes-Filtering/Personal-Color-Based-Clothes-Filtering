@@ -72,9 +72,11 @@ def Check():
             count_invalid += 1
           
       if count_invalid/(count_invalid + count) > 0.7:
+        print("unsuccessful processing")
         return "unsuccessful processing"
     
       else:
+        print("successful processing")
         return "successful processing"
 
 #Check()

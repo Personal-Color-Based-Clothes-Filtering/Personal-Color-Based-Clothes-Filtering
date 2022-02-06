@@ -40,7 +40,6 @@ def success(request):
     roi = RoiCheek(image_color)
     check2 = Check2()
     DelImg()
-    Reset()
     # if roi == 'fail':
     #     pass
     return render(request, 'face/face_result.html', {'check' : check, 'check2' : check2, 'roi' : roi, 'faceimg' : faceimg})
