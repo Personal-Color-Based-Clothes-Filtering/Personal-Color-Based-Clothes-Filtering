@@ -1,9 +1,7 @@
 index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 0,https://store.musinsa.com/app/goods/1557508,이벳필드,베츠 어센틱 맨투맨 그레이,"59,000","47,200",https://image.msscdn.net/images/goods_img/20200820/1557508/1557508_3_500.jpg,3,sweat,summer
-1,https://store.musinsa.com/app/goods/2188843,브렌슨,[기모] 오버핏 트레이닝 셋업,"69,900","49,900",https://image.msscdn.net/images/goods_img/20211020/2188843/2188843_1_500.jpg,3,sweat,spring
 2,https://store.musinsa.com/app/goods/947068,무신사 스탠다드,스웨트 셔츠 [멜란지 그레이],"20,900","17,690",https://image.msscdn.net/images/goods_img/20190201/947068/947068_3_500.jpg,3,sweat,summer
 3,https://store.musinsa.com/app/goods/1628383,예일,2 TONE ARCH CREWNECK GRAY,"69,000","48,300",https://image.msscdn.net/images/goods_img/20200928/1628383/1628383_3_500.jpg,3,sweat,summer
-4,https://store.musinsa.com/app/goods/1718760,더블유브이프로젝트,[세트] 프레니 세트 4종(맨투맨MJMT7407 + 팬츠CJLP7442),"67,800","59,800",https://image.msscdn.net/images/goods_img/20201210/1718760/1718760_1_500.jpg,3,sweat,fall
 5,https://store.musinsa.com/app/goods/1742346,마크 곤잘레스,엔젤 와펜 맨투맨 그레이,"59,000","41,300",https://image.msscdn.net/images/goods_img/20210111/1742346/1742346_2_500.jpg,3,sweat,fall
 6,https://store.musinsa.com/app/goods/1163604,나이키,클럽 맨투맨 그레이,"89,000","63,100",https://image.msscdn.net/images/goods_img/20190923/1163604/1163604_2_500.jpg,3,sweat,fall
 7,https://store.musinsa.com/app/goods/643173,어텐션로우,로코 피그먼트 리버시블 헤비 맨투맨 (다크그레이),"88,000","52,800",https://image.msscdn.net/images/goods_img/20170926/643173/643173_4_500.jpg,3,sweat,summer
@@ -20,14 +18,12 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 18,https://store.musinsa.com/app/goods/2159062,리,리버스위브 기모 스몰 트위치 로고 맨투맨 그레이,"69,000","48,000",https://image.msscdn.net/images/goods_img/20211001/2159062/2159062_2_500.jpg,3,sweat,fall
 19,https://store.musinsa.com/app/goods/620638,멜란지 마스터,스탠다드 스웨트 셔츠 - 멜란지 그레이,"22,900","18,290",https://image.msscdn.net/images/goods_img/20170831/620638/620638_5_500.jpg,3,sweat,summer
 20,https://store.musinsa.com/app/goods/1571357,리,빅 트위치 루즈핏 크루넥 그레이,"69,000","55,000",https://image.msscdn.net/images/goods_img/20200831/1571357/1571357_9_500.jpg,3,sweat,summer
-21,https://store.musinsa.com/app/goods/407345,게인스보로,로고 아노락 풀오버 하프집업 그레이,"65,000","58,500",https://image.msscdn.net/images/goods_img/20160907/407345/407345_17_500.jpg,3,sweat,
 22,https://store.musinsa.com/app/goods/2140537,리트리버클럽,RETRIEVER FRIENDS CREWNECK [MELANGE GRAY],"72,000","61,200",https://image.msscdn.net/images/goods_img/20210917/2140537/2140537_1_500.jpg,3,sweat,summer
 23,https://store.musinsa.com/app/goods/2163398,예일,[ONEMILE WEAR] SMALL ARCH CREWNECK GRAY,"59,000","41,300",https://image.msscdn.net/images/goods_img/20211006/2163398/2163398_1_500.jpg,3,sweat,summer
 24,https://store.musinsa.com/app/goods/2198118,지프,[기모]Half  Zip-Up M-Logo Sweat  (JM5TSU738LR),"69,000","58,650",https://image.msscdn.net/images/goods_img/20211026/2198118/2198118_3_500.jpg,3,sweat,fall
 25,https://store.musinsa.com/app/goods/2060993,아웃스탠딩,REVERSE HEAVY SWEAT_3% MELANGE GRAY,"69,000","55,200",https://image.msscdn.net/images/goods_img/20210812/2060993/2060993_3_500.jpg,3,sweat,fall
 26,https://store.musinsa.com/app/goods/1565920,더블유브이프로젝트,프레니 맨투맨 그레이 MJMT7407,"33,900",,https://image.msscdn.net/images/goods_img/20200827/1565920/1565920_1_500.jpg,3,sweat,fall
 27,https://store.musinsa.com/app/goods/1948146,마크 곤잘레스,슈무 와펜 맨투맨 그레이,"59,000","41,300",https://image.msscdn.net/images/goods_img/20210512/1948146/1948146_2_500.jpg,3,sweat,fall
-28,https://store.musinsa.com/app/goods/1110028,커버낫,레이아웃 로고 맨투맨 멜란지 그레이,"59,000","38,350",https://image.msscdn.net/images/goods_img/20190805/1110028/1110028_3_500.jpg,3,sweat,
 29,https://store.musinsa.com/app/goods/1725756,나이키,NSW 클럽 맨투맨 5종류,"89,000","48,500",https://image.msscdn.net/images/goods_img/20201217/1725756/1725756_4_500.jpg,3,sweat,fall
 30,https://store.musinsa.com/app/goods/2077010,디스이즈네버댓,Arch-Logo Crewneck Heather Grey,"72,000","50,400",https://image.msscdn.net/images/goods_img/20210821/2077010/2077010_1_500.jpg,3,sweat,summer
 31,https://store.musinsa.com/app/goods/2105429,커버낫,럭비 맨투맨 헤더그레이,"79,000","63,200",https://image.msscdn.net/images/goods_img/20210902/2105429/2105429_1_500.jpg,3,sweat,summer
@@ -52,7 +48,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 50,https://store.musinsa.com/app/goods/2171557,필루미네이트,오버핏 아치 로고 스웨트 셔츠-멜란지 그레이,"54,000","39,900",https://image.msscdn.net/images/goods_img/20211011/2171557/2171557_3_500.jpg,3,sweat,fall
 51,https://store.musinsa.com/app/goods/2082743,커버낫,빅 엠블럼 로고 맨투맨 헤더그레이,"69,000","51,750",https://image.msscdn.net/images/goods_img/20210824/2082743/2082743_1_500.jpg,3,sweat,
 52,https://store.musinsa.com/app/goods/1804899,무신사 스탠다드,콘트라스트 스티치 스웨트셔츠 [미디엄 그레이],"23,900","20,290",https://image.msscdn.net/images/goods_img/20210219/1804899/1804899_1_500.jpg,3,sweat,summer
-53,https://store.musinsa.com/app/goods/910498,커버낫,스몰 어센틱 로고 맨투맨 멜란지 그레이,"69,000","44,850",https://image.msscdn.net/images/goods_img/20181122/910498/910498_9_500.jpg,3,sweat,
 54,https://store.musinsa.com/app/goods/1118294,마하그리드,THIRD LOGO CREWNECK GREY(MG2BSMM481A),"49,000","39,200",https://image.msscdn.net/images/goods_img/20190814/1118294/1118294_3_500.jpg,3,sweat,summer
 55,https://store.musinsa.com/app/goods/2317428,예일,ARCH EMBLEM CREWNECK GRAY,"69,000","62,100",https://image.msscdn.net/images/goods_img/20220120/2317428/2317428_1_500.jpg,3,sweat,summer
 56,https://store.musinsa.com/app/goods/2318774,클라이드앤,셋업 LUMIERE 레터링 티셔츠 멜란지그레이 FMATS611FMGY,"29,800",,https://image.msscdn.net/images/goods_img/20220121/2318774/2318774_1_500.jpg,3,sweat,fall
@@ -81,12 +76,9 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 79,https://store.musinsa.com/app/goods/2295636,나이스고스트클럽,[논기모] 구미 베어 &amp; 로고 스웻셔츠_차콜(NG2CSUM440A),"59,000","47,200",https://image.msscdn.net/images/goods_img/20220106/2295636/2295636_1_500.jpg,3,sweat,winter
 80,https://store.musinsa.com/app/goods/2312094,디폴트벨류,2PACK SET (SWEAT SHIRTS + TROOPER HAT) LIGHT GREY,"121,000",,https://image.msscdn.net/images/goods_img/20220118/2312094/2312094_1_500.jpg,3,sweat,fall
 81,https://store.musinsa.com/app/goods/1809659,지프,M-Logo Sweat 2  (JM5TSU831MG),"59,000","44,250",https://image.msscdn.net/images/goods_img/20210223/1809659/1809659_2_500.jpg,3,sweat,fall
-82,https://store.musinsa.com/app/goods/2297281,아디다스,오버사이즈 스웨트셔츠 - 그레이 / H33538,"89,000","69,900",https://image.msscdn.net/images/goods_img/20220107/2297281/2297281_1_500.jpg,3,sweat,
-83,https://store.musinsa.com/app/goods/2311063,빌리언즈,B 빅 로고 아플리케 후드 스웨트 셔츠 &amp; 스트레이트 스웨트 팬츠 셋업 (KHAKI),"207,100","69,000",https://image.msscdn.net/images/goods_img/20220117/2311063/2311063_3_500.jpg,3,sweat,fall
 84,https://store.musinsa.com/app/goods/2310992,아스트랄 프로젝션,오버핏 드롭숄더 메트릭스 달고나 맨투맨_멜란지,"79,000",,https://image.msscdn.net/images/goods_img/20220117/2310992/2310992_1_500.jpg,3,sweat,fall
 85,https://store.musinsa.com/app/goods/2310332,클라이드앤,남성 LIBERTE 레터링 맨투맨 멜란지그레이 FMATS152MMGY,"39,800",,https://image.msscdn.net/images/goods_img/20220117/2310332/2310332_1_500.jpg,3,sweat,spring
 86,https://store.musinsa.com/app/goods/2311124,폴라로이드,폴라 아이콘 맨투맨 M.GREY,"69,000",,https://image.msscdn.net/images/goods_img/20220117/2311124/2311124_1_500.jpg,3,sweat,fall
-87,https://store.musinsa.com/app/goods/2311059,빌리언즈,포인트 절개 언택트 티셔츠 &amp; 사이드 심리스 로고 스웨트 팬츠 셋업 (MELANGE GREY),"207,100","69,000",https://image.msscdn.net/images/goods_img/20220117/2311059/2311059_3_500.jpg,3,sweat,fall
 88,https://store.musinsa.com/app/goods/2310682,론론,COUCH SWEATSHIRT GRAY,"69,000","51,750",https://image.msscdn.net/images/goods_img/20220117/2310682/2310682_1_500.jpg,3,sweat,fall
 89,https://store.musinsa.com/app/goods/1139358,엘무드,에센셜 오버핏 맨투맨 멜란지,"54,000","43,200",https://image.msscdn.net/images/goods_img/20190902/1139358/1139358_3_500.jpg,3,sweat,summer
 90,https://store.musinsa.com/app/goods/2057223,아웃스탠딩,V.S.C SWEAT (WISCONSIN)_RED,"69,000","55,200",https://image.msscdn.net/images/goods_img/20210811/2057223/2057223_1_500.jpg,11,sweat,summer
@@ -96,7 +88,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 94,https://store.musinsa.com/app/goods/1590987,세인트페인,SP 베리에이션 로고 크루넥-레드,"48,000","24,000",https://image.msscdn.net/images/goods_img/20200908/1590987/1590987_1_500.jpg,11,sweat,summer
 95,https://store.musinsa.com/app/goods/2301079,게스,엠보삼각 맨투맨_NM1K9133,"58,000","52,200",https://image.msscdn.net/images/goods_img/20220111/2301079/2301079_1_500.jpg,11,sweat,summer
 96,https://store.musinsa.com/app/goods/2299533,피지컬 에듀케이션 디파트먼트,PHYPS® BEARS BASKETBALL DIET CREWNECK RED,"72,000","64,800",https://image.msscdn.net/images/goods_img/20220110/2299533/2299533_2_500.jpg,11,sweat,summer
-97,https://store.musinsa.com/app/goods/2295179,배드블러드,아치 로고 플리스 숏 맨투맨 - 스칼렛,"79,000",,https://image.msscdn.net/images/goods_img/20220106/2295179/2295179_3_500.jpg,11,sweat,
 98,https://store.musinsa.com/app/goods/947072,무신사 스탠다드,스웨트 셔츠 [레드],"20,900",,https://image.msscdn.net/images/goods_img/20190201/947072/947072_3_500.jpg,11,sweat,summer
 99,https://store.musinsa.com/app/goods/620641,멜란지 마스터,스탠다드 스웨트 셔츠 - 레드,"22,900","15,990",https://image.msscdn.net/images/goods_img/20170831/620641/620641_5_500.jpg,11,sweat,fall
 100,https://store.musinsa.com/app/goods/2193561,하버드,아치로고 맨투맨  (PA5TSU805DR),"55,000","27,500",https://image.msscdn.net/images/goods_img/20211022/2193561/2193561_1_500.jpg,11,sweat,winter
@@ -135,7 +126,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 133,https://store.musinsa.com/app/goods/2056104,마하그리드,HHC SWEATSHIRT RED(MG2BFMM467A),"59,000","47,200",https://image.msscdn.net/images/goods_img/20210810/2056104/2056104_1_500.jpg,11,sweat,winter
 134,https://store.musinsa.com/app/goods/637026,크리틱,DROP 스웻 셔츠 Red,"62,000","30,900",https://image.msscdn.net/images/goods_img/20170919/637026/637026_1_500.jpg,11,sweat,winter
 135,https://store.musinsa.com/app/goods/2200913,슬로우애시드,[슬로우애시드 X JTBC 아는형님] 아플리케 로고 스웨트셔츠 (레드),"65,000","52,000",https://image.msscdn.net/images/goods_img/20211027/2200913/2200913_1_500.jpg,11,sweat,winter
-136,https://store.musinsa.com/app/goods/1263581,길단,맨투맨 티셔츠 18000,"31,500","21,900",https://image.msscdn.net/images/goods_img/20200106/1263581/1263581_4_500.jpg,11,sweat,fall
 137,https://store.musinsa.com/app/goods/1263216,5252 바이 오아이오아이,COLOR BLOCK JUMPER_red,"84,000","58,800",https://image.msscdn.net/images/goods_img/20200106/1263216/1263216_1_500.jpg,11,sweat,spring
 138,https://store.musinsa.com/app/goods/1551340,[클리어런스],레이블 로고 스웨트셔츠 (엠버),"69,000","19,900",https://image.msscdn.net/images/goods_img/20200817/1551340/1551340_1_500.jpg,11,sweat,spring
 139,https://store.musinsa.com/app/goods/1181804,메인부스,MNBTH Sweatshirt(CARROT),"59,000","41,300",https://image.msscdn.net/images/goods_img/20191010/1181804/1181804_2_500.jpg,11,sweat,fall
@@ -148,13 +138,11 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 146,https://store.musinsa.com/app/goods/1617795,청,로고 그래픽 프린트 레드 스웨트셔츠,"250,000","50,000",https://image.msscdn.net/images/goods_img/20200923/1617795/1617795_2_500.jpg,11,sweat,spring
 147,https://store.musinsa.com/app/goods/2114216,마리떼,MARITHE VINTAGE SWEATSHIRT red,"99,000","79,200",https://image.msscdn.net/images/goods_img/20210907/2114216/2114216_3_500.jpg,11,sweat,fall
 148,https://store.musinsa.com/app/goods/1668768,헤인즈,무지 기모 맨투맨 크루넥 레드,"40,000","16,900",https://image.msscdn.net/images/goods_img/20201029/1668768/1668768_2_500.jpg,11,sweat,summer
-149,https://store.musinsa.com/app/goods/1596627,[클리어런스],로고 오버핏 맨투맨 티셔츠 RD,"65,000","18,900",https://image.msscdn.net/images/goods_img/20200911/1596627/1596627_1_500.jpg,11,sweat,summer
 150,https://store.musinsa.com/app/goods/1549403,[클리어런스],모블러x권트윈스 클라우드 맨투맨 [레드],"69,000","19,900",https://image.msscdn.net/images/goods_img/20200814/1549403/1549403_4_500.png,11,sweat,summer
 151,https://store.musinsa.com/app/goods/1583553,예스아이씨,Acid Sweatshirts Red,"79,000","31,600",https://image.msscdn.net/images/goods_img/20200903/1583553/1583553_1_500.jpg,11,sweat,summer
 152,https://store.musinsa.com/app/goods/1774439,그레이버,[UNISEX]백 드로잉도그 화이트클립 맨투맨_레드,"65,000","45,500",https://image.msscdn.net/images/goods_img/20210203/1774439/1774439_1_500.jpg,11,sweat,summer
 153,https://store.musinsa.com/app/goods/1315285,메리제임스,VEDITO SWEAT SHIRT - RED CHILI,"76,400","30,560",https://image.msscdn.net/images/goods_img/20200220/1315285/1315285_1_500.jpg,11,sweat,fall
 154,https://store.musinsa.com/app/goods/1013929,원인어밀리언,패치맨투맨-red,"89,000","25,000",https://image.msscdn.net/images/goods_img/20190414/1013929/1013929_2_500.jpg,11,sweat,spring
-155,https://store.musinsa.com/app/goods/1606023,락트개러지,[UNISEX] 스트라이프 롱 슬리브 맨투맨 2종,"58,000","38,000",https://image.msscdn.net/images/goods_img/20200916/1606023/1606023_1_500.jpg,11,sweat,spring
 156,https://store.musinsa.com/app/goods/1672472,플렉서블,오버사이즈 소프트 기모 쮸리 미러링 후로피 나염 맨투맨 티셔츠,"59,000","41,300",https://image.msscdn.net/images/goods_img/20201102/1672472/1672472_2_500.jpg,11,sweat,spring
 157,https://store.musinsa.com/app/goods/2239080,코닥,KODACOLOR 맨투맨 RED,"99,000",,https://image.msscdn.net/images/goods_img/20211118/2239080/2239080_1_500.jpg,11,sweat,summer
 158,https://store.musinsa.com/app/goods/1791888,디스이즈네버댓,Small T-Logo Crewneck Red,"69,000","34,500",https://image.msscdn.net/images/goods_img/20210212/1791888/1791888_1_500.jpg,11,sweat,spring
@@ -165,7 +153,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 163,https://store.musinsa.com/app/goods/2068715,원더 비지터,Stella sweat-shirts [Red],"65,000","58,500",https://image.msscdn.net/images/goods_img/20210818/2068715/2068715_1_500.jpg,11,sweat,spring
 164,https://store.musinsa.com/app/goods/1528893,프린트스타,219-MLC 무지 맨투맨 브라이트 레드,"22,000","16,900",https://image.msscdn.net/images/goods_img/20200728/1528893/1528893_1_500.jpg,11,sweat,summer
 165,https://store.musinsa.com/app/goods/1622166,슬로우애시드,컬러타이틀 자수 피치스킨  스웨트셔츠 (기모 / 레드),"59,000","29,500",https://image.msscdn.net/images/goods_img/20200924/1622166/1622166_2_500.jpg,11,sweat,summer
-166,https://store.musinsa.com/app/goods/1282916,아코스튜디오스페이스,AQO ARC GRAPHIC SWEATSHIRTS RED,"59,000","17,700",https://image.msscdn.net/images/goods_img/20200129/1282916/1282916_1_500.jpg,11,sweat,summer
 167,https://store.musinsa.com/app/goods/1545701,스텝온리,POST SWEATSHIRT (RED),"56,000","25,200",https://image.msscdn.net/images/goods_img/20200812/1545701/1545701_1_500.jpg,11,sweat,summer
 168,https://store.musinsa.com/app/goods/1250766,[클리어런스],[RCRV]크래프트 홀마크 크루넥 [레드],"63,000","18,900",https://image.msscdn.net/images/goods_img/20191213/1250766/1250766_1_500.jpg,11,sweat,summer
 169,https://store.musinsa.com/app/goods/2060039,하버드,엠블럼 맨투맨 (PA5TSU803RD),"59,000","29,500",https://image.msscdn.net/images/goods_img/20210812/2060039/2060039_3_500.jpg,11,sweat,winter
@@ -200,8 +187,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 198,https://store.musinsa.com/app/goods/2314820,엠엘비,다이아 모노그램 전판 프린트 맨투맨 NY (Pink),"119,000",,https://image.msscdn.net/images/goods_img/20220119/2314820/2314820_1_500.jpg,10,sweat,summer
 199,https://store.musinsa.com/app/goods/2288500,리올그,KACK SKATEBOARD FOXES SWEATSHIRTS LIGHT PINK,"69,000","62,100",https://image.msscdn.net/images/goods_img/20220103/2288500/2288500_1_500.jpg,10,sweat,fall
 200,https://store.musinsa.com/app/goods/2300945,다이나핏,WINDY (윈디) 여성 맨투맨_Pink,"109,000",,https://image.msscdn.net/images/goods_img/20220111/2300945/2300945_1_500.jpg,10,sweat,summer
-201,https://store.musinsa.com/app/goods/1842003,소버먼트,980g pigment mtm-coral-,"74,000","46,400",https://image.msscdn.net/images/goods_img/20210312/1842003/1842003_3_500.jpg,10,sweat,spring
-202,https://store.musinsa.com/app/goods/949544,트래블,백 마운틴 피그먼트 스웨트셔츠 핑크 야로우,"56,000","29,900",https://image.msscdn.net/images/goods_img/20190209/949544/949544_1_500.jpg,10,sweat,winter
 203,https://store.musinsa.com/app/goods/2296646,디스커버리 익스페디션,아웃포켓 트레이닝 맨투맨 (PINK),"89,000",,https://image.msscdn.net/images/goods_img/20220107/2296646/2296646_1_500.jpg,10,sweat,spring
 204,https://store.musinsa.com/app/goods/1541887,이스트쿤스트,로고 와펜 피그먼트 스웻셔츠_핑크(IK2AFMM443A),"59,000","23,600",https://image.msscdn.net/images/goods_img/20200807/1541887/1541887_1_500.jpg,10,sweat,summer
 205,https://store.musinsa.com/app/goods/1528096,키르시,빅 체리 스웻셔츠 JA [핫핑크],"59,000","41,300",https://image.msscdn.net/images/goods_img/20200727/1528096/1528096_2_500.jpg,10,sweat,spring
@@ -221,7 +206,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 219,https://store.musinsa.com/app/goods/872920,챈스챈스,CEC SWEATSHIRT(Pink/기모),"63,000",,https://image.msscdn.net/images/goods_img/20181004/872920/872920_2_500.jpg,10,sweat,summer
 220,https://store.musinsa.com/app/goods/2223269,[클리어런스],프리미엄 베이직 스웨트셔츠(핑크),"59,000","16,900",https://image.msscdn.net/images/goods_img/20211109/2223269/2223269_1_500.jpg,10,sweat,fall
 221,https://store.musinsa.com/app/goods/1258327,마하그리드,LICENSE PIGMENT CREWNECK PINK(MG2ASMM490A),"59,000","47,200",https://image.msscdn.net/images/goods_img/20191230/1258327/1258327_1_500.jpg,10,sweat,summer
-222,https://store.musinsa.com/app/goods/2126181,무신사 스탠다드,우먼즈 벌룬 슬리브 스웨트셔츠 [데저트 핑크],"23,900",,https://image.msscdn.net/images/goods_img/20210913/2126181/2126181_2_500.jpg,10,sweat,spring
 223,https://store.musinsa.com/app/goods/1741897,클로티,BIG CC SWEAT-SHIRT PINK(CY2BSFM440A),"49,000","29,400",https://image.msscdn.net/images/goods_img/20210111/1741897/1741897_1_500.jpg,10,sweat,summer
 224,https://store.musinsa.com/app/goods/1737605,키르시,빅 체리 스웻셔츠 KS [핑크],"59,000","41,300",https://image.msscdn.net/images/goods_img/20210106/1737605/1737605_1_500.jpg,10,sweat,summer
 225,https://store.musinsa.com/app/goods/1543820,타게토,DIARY CLUB SWEAT SHIRT_DARK PINK,"59,000","29,500",https://image.msscdn.net/images/goods_img/20200810/1543820/1543820_3_500.jpg,10,sweat,summer
@@ -235,13 +219,11 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 233,https://store.musinsa.com/app/goods/1033222,해즈,컬러 블럭 스웨트셔츠 L.PINK,"34,900","10,500",https://image.msscdn.net/images/goods_img/20190502/1033222/1033222_1_500.jpg,10,sweat,spring
 234,https://store.musinsa.com/app/goods/2045338,디스커버리 익스페디션,덴버 스몰로고 맨투맨 (PINK),"69,000",,https://image.msscdn.net/images/goods_img/20210730/2045338/2045338_2_500.jpg,10,sweat,summer
 235,https://store.musinsa.com/app/goods/2067010,노스페이스,NM5MM51C 화이트라벨 엔에스이 스웨트셔츠,"85,000","64,600",https://image.msscdn.net/images/goods_img/20210817/2067010/2067010_1_500.jpg,10,sweat,spring
-236,https://store.musinsa.com/app/goods/2131449,클리브랜드 골프,레이온기모 우븐포켓 스웻셔츠 여성 맨투맨 긴팔티셔츠/골프웨어_CGKWTS1704,"105,000","81,900",https://image.msscdn.net/images/goods_img/20210914/2131449/2131449_1_500.jpg,10,sweat,fall
 237,https://store.musinsa.com/app/goods/1545411,필루미네이트,유니섹스 오버핏 레트로 스웨트 셔츠-핑크,"54,000","37,800",https://image.msscdn.net/images/goods_img/20200811/1545411/1545411_2_500.jpg,10,sweat,spring
 238,https://store.musinsa.com/app/goods/2161383,유쓰배쓰,기모 오버핏 스웻셔츠_다이노버건디,"76,000","49,500",https://image.msscdn.net/images/goods_img/20211005/2161383/2161383_4_500.jpg,10,sweat,summer
 239,https://store.musinsa.com/app/goods/1155958,소버먼트,10주년 silky 930g 10th mtm-coral pink-[스탠다드핏],"64,000","41,600",https://image.msscdn.net/images/goods_img/20190917/1155958/1155958_2_500.jpg,10,sweat,spring
 240,https://store.musinsa.com/app/goods/1800786,어피스오브케이크,Bear Patch Crewneck_Pink,"62,000","40,300",https://image.msscdn.net/images/goods_img/20210218/1800786/1800786_2_500.jpg,10,sweat,summer
 241,https://store.musinsa.com/app/goods/1338250,[클리어런스],XTM011 오버랩 로고 맨투맨 (PINK),"55,000","15,900",https://image.msscdn.net/images/goods_img/20200306/1338250/1338250_3_500.jpg,10,sweat,summer
-242,https://store.musinsa.com/app/goods/1538013,클로티,SMALL CC SWEAT-SHIRT PINK(CY2AFFM442A),"49,000","29,400",https://image.msscdn.net/images/goods_img/20200805/1538013/1538013_3_500.jpg,10,sweat,
 243,https://store.musinsa.com/app/goods/1744033,투엑스유,우먼 데이아웃 스웨트셔츠 X0LL13891DPK,"99,000","19,800",https://image.msscdn.net/images/goods_img/20210112/1744033/1744033_1_500.jpg,10,sweat,fall
 244,https://store.musinsa.com/app/goods/1787316,논로컬,Curved Line Sweatshirt - Pink,"69,000","65,550",https://image.msscdn.net/images/goods_img/20210209/1787316/1787316_1_500.jpg,10,sweat,spring
 245,https://store.musinsa.com/app/goods/2095443,헤지스,[HIS] 남녀공용 더스티핑크 코튼트윌 맨투맨 티셔츠 HZTS1C801P3,"119,000","82,110",https://image.msscdn.net/images/goods_img/20210828/2095443/2095443_2_500.jpg,10,sweat,spring
@@ -253,7 +235,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 251,https://store.musinsa.com/app/goods/2280088,디스커버리 익스페디션,덴버(DENVER) 맨투맨 (PINK),"69,000",,https://image.msscdn.net/images/goods_img/20211223/2280088/2280088_1_500.jpg,10,sweat,fall
 252,https://store.musinsa.com/app/goods/1861908,프리즘웍스,OG PIGMENT DYEING SWEATSHIRT 002 _ PINK,"69,000","55,200",https://image.msscdn.net/images/goods_img/20210324/1861908/1861908_2_500.jpg,10,sweat,summer
 253,https://store.musinsa.com/app/goods/903884,왕관,피그먼트 오버핏 맨투맨 (Pink),"89,000","44,500",https://image.msscdn.net/images/goods_img/20181112/903884/903884_7_500.jpg,10,sweat,summer
-254,https://store.musinsa.com/app/goods/1155942,소버먼트,10주년 silky 930g 10th mtm-old rose pink-[스탠다드핏],"64,000","41,600",https://image.msscdn.net/images/goods_img/20190917/1155942/1155942_2_500.jpg,10,sweat,spring
 255,https://store.musinsa.com/app/goods/1126924,잇터,핑크 슬리브 포인트 스웻셔츠,"59,000","35,400",https://image.msscdn.net/images/goods_img/20190823/1126924/1126924_1_500.jpg,10,sweat,fall
 256,https://store.musinsa.com/app/goods/1726116,[클리어런스],NECK STRIPE SWEAT SHIRTS (PINK),"48,000","13,900",https://image.msscdn.net/images/goods_img/20201218/1726116/1726116_1_500.jpg,10,sweat,summer
 257,https://store.musinsa.com/app/goods/1649380,[클리어런스],여성 하이넥 루즈핏 기모 스웻셔츠 PINK / FF0WMT14F58,"69,000","19,900",https://image.msscdn.net/images/goods_img/20201015/1649380/1649380_1_500.jpg,10,sweat,spring
@@ -283,7 +264,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 281,https://store.musinsa.com/app/goods/2106719,질스튜어트 스포츠 뉴욕,뉴욕 모던 에센셜 면혼방 뉴욕 빅로고 그래픽 맨투맨 (JMTS1D616),"79,000","59,250",https://image.msscdn.net/images/goods_img/20210902/2106719/2106719_4_500.jpg,12,sweat,fall
 282,https://store.musinsa.com/app/goods/954591,어텐션로우,로코 피그먼트 리버시블 헤비 맨투맨 (리빙코랄),"88,000","52,800",https://image.msscdn.net/images/goods_img/20190215/954591/954591_4_500.jpg,12,sweat,spring
 283,https://store.musinsa.com/app/goods/1582539,디스이즈네버댓,T-Logo Crewneck Orange (003),"72,000","64,800",https://image.msscdn.net/images/goods_img/20200903/1582539/1582539_1_500.jpg,12,sweat,spring
-284,https://store.musinsa.com/app/goods/1245687,비슬로우,[오리지널스]ARC LOGO SWEAT SHIRT ORANGE,"59,000","41,300",https://image.msscdn.net/images/goods_img/20191206/1245687/1245687_8_500.jpg,12,sweat,
 285,https://store.musinsa.com/app/goods/1172352,레투,2로고 스웻셔츠 [오렌지],"49,000","26,950",https://image.msscdn.net/images/goods_img/20191001/1172352/1172352_3_500.jpg,12,sweat,spring
 286,https://store.musinsa.com/app/goods/855199,블랭크룸,데일리 핏 스웻 셔츠_브릭 레드,"46,000",,https://image.msscdn.net/images/goods_img/20180911/855199/855199_1_500.jpg,12,sweat,fall
 287,https://store.musinsa.com/app/goods/839625,세컨모놀로그,에스엠씨오씨엘 케이.오버사이즈 스웻 셔츠 다크오렌지,"59,000","49,000",https://image.msscdn.net/images/goods_img/20180828/839625/839625_3_500.jpg,12,sweat,spring
@@ -297,12 +277,10 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 295,https://store.musinsa.com/app/goods/862551,카파,222반다 컬렉션 맨투맨 - 오렌지 / KJRL391MD-ORG,"79,000","19,900",https://image.msscdn.net/images/goods_img/20180919/862551/862551_2_500.jpg,12,sweat,spring
 296,https://store.musinsa.com/app/goods/1596673,예스아이씨,Y.E.S Trick Sweatshirts Orange,"89,000","35,600",https://image.msscdn.net/images/goods_img/20200911/1596673/1596673_1_500.jpg,12,sweat,spring
 297,https://store.musinsa.com/app/goods/1596517,트립션,CONTINUE LOGO 크루넥 - 오렌지,"75,000","45,900",https://image.msscdn.net/images/goods_img/20200911/1596517/1596517_1_500.jpg,12,sweat,spring
-298,https://store.musinsa.com/app/goods/2102640,타미진스,베이직 타미 뱃지 스웨트셔츠 (T32B7TTO06TMT2SEF),"148,000","103,600",https://image.msscdn.net/images/goods_img/20210901/2102640/2102640_3_500.jpg,12,sweat,spring
 299,https://store.musinsa.com/app/goods/1276954,필루미네이트,유니섹스 오버핏 타이다이 스웨트 셔츠-오렌지,"59,000","41,300",https://image.msscdn.net/images/goods_img/20200121/1276954/1276954_3_500.jpg,12,sweat,spring
 300,https://store.musinsa.com/app/goods/1597093,위캔더스,FOSL SWEATSHIRT (ORANGE),"89,000","44,500",https://image.msscdn.net/images/goods_img/20200911/1597093/1597093_1_500.jpg,12,sweat,spring
 301,https://store.musinsa.com/app/goods/2235089,케즈,베이직 기모 맨투맨(KD2POD4103XORE),"89,000","62,300",https://image.msscdn.net/images/goods_img/20211116/2235089/2235089_2_500.jpg,12,sweat,spring
 302,https://store.musinsa.com/app/goods/1609829,트립션,BURGER FLOOR 크루넥 - 오렌지,"75,000","45,900",https://image.msscdn.net/images/goods_img/20200918/1609829/1609829_1_500.jpg,12,sweat,spring
-303,https://store.musinsa.com/app/goods/2282895,느와,P Sweatshirts,"59,000","41,300",https://image.msscdn.net/images/goods_img/20211225/2282895/2282895_1_500.jpg,12,sweat,summer
 304,https://store.musinsa.com/app/goods/1564632,카비시,SCRIPT LOGO SWEATSHIRT ORANGE(CV2AFUM461A),"49,000",,https://image.msscdn.net/images/goods_img/20200826/1564632/1564632_1_500.jpg,12,sweat,spring
 305,https://store.musinsa.com/app/goods/1155936,소버먼트,10주년 silky 930g 10th mtm-amber-[스탠다드핏],"64,000","41,600",https://image.msscdn.net/images/goods_img/20190917/1155936/1155936_2_500.jpg,12,sweat,fall
 306,https://store.musinsa.com/app/goods/2062203,카멜워크,트래블러 스웨트셔츠(라이트오렌지),"45,000","40,000",https://image.msscdn.net/images/goods_img/20210813/2062203/2062203_2_500.jpg,12,sweat,fall
@@ -419,7 +397,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 417,https://store.musinsa.com/app/goods/2097104,블랙블론드,비비디 클레식 스마일 로고 크루넥 스웻셔츠 (옐로우),"88,000",,https://image.msscdn.net/images/goods_img/20210830/2097104/2097104_1_500.jpg,9,sweat,spring
 418,https://store.musinsa.com/app/goods/1824580,예스아이씨,Mashed Arch Crewneck Yellow,"74,000","37,000",https://image.msscdn.net/images/goods_img/20210304/1824580/1824580_1_500.jpg,9,sweat,spring
 419,https://store.musinsa.com/app/goods/2177297,클리브랜드 골프,레터링 로고 테리 크루넥 여성 긴팔 스웻셔츠_CGKWTS1066YE,"178,000","54,300",https://image.msscdn.net/images/goods_img/20211014/2177297/2177297_1_500.jpg,9,sweat,fall
-420,https://store.musinsa.com/app/goods/2219871,듀이하트듀이,코듀로이 탑_옐로우,"99,000",,https://image.msscdn.net/images/goods_img/20211105/2219871/2219871_1_500.jpg,9,sweat,fall
 421,https://store.musinsa.com/app/goods/1782944,프리고네로,카모마일 플라워 시리즈 맨투맨_머스타드,"76,500",,https://image.msscdn.net/images/goods_img/20210207/1782944/1782944_1_500.png,9,sweat,spring
 422,https://store.musinsa.com/app/goods/1013928,원인어밀리언,패치맨투맨-lime,"89,000","25,000",https://image.msscdn.net/images/goods_img/20190414/1013928/1013928_2_500.jpg,9,sweat,spring
 423,https://store.musinsa.com/app/goods/1844735,카비시,SELLER OUTLINE LOGO SWEATSHIRT YELLOW(CV2BSMM460A),"54,000",,https://image.msscdn.net/images/goods_img/20210315/1844735/1844735_1_500.jpg,9,sweat,spring
@@ -432,7 +409,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 430,https://store.musinsa.com/app/goods/1299921,크리틱,ETHNIC FLEECE 스웻 셔츠 Yellow,"72,000","50,400",https://image.msscdn.net/images/goods_img/20200211/1299921/1299921_1_500.jpg,9,sweat,spring
 431,https://store.musinsa.com/app/goods/2208568,코닥,35 피그먼트 오버핏 맨투맨 YELLOW,"99,000",,https://image.msscdn.net/images/goods_img/20211101/2208568/2208568_1_500.jpg,9,sweat,spring
 432,https://store.musinsa.com/app/goods/2080773,슬로코스터,[Disney] Alice oysters_스웻셔츠[옐로우],"65,000","61,750",https://image.msscdn.net/images/goods_img/20210823/2080773/2080773_1_500.jpg,9,sweat,spring
-433,https://store.musinsa.com/app/goods/1859628,코데즈컴바인,제네바 맨투맨 조거 세트 머스타드,"69,000","55,200",https://image.msscdn.net/images/goods_img/20210323/1859628/1859628_1_500.jpg,9,sweat,fall
 434,https://store.musinsa.com/app/goods/2182179,월트해머,에반스톤 클래식 스웻셔츠  옐로1321SW102YW,"85,000","76,500",https://image.msscdn.net/images/goods_img/20211016/2182179/2182179_1_500.jpg,9,sweat,spring
 435,https://store.musinsa.com/app/goods/1617796,청,로고 그래픽 프린트 엘로우 스웨트셔츠,"250,000","50,000",https://image.msscdn.net/images/goods_img/20200923/1617796/1617796_2_500.jpg,9,sweat,spring
 436,https://store.musinsa.com/app/goods/1220036,어널러코드,어널러 크루넥 스웻셔츠 (옐로우),"59,000","23,600",https://image.msscdn.net/images/goods_img/20191111/1220036/1220036_1_500.jpg,9,sweat,spring
@@ -443,11 +419,8 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 441,https://store.musinsa.com/app/goods/1119377,레이어 유니온,CIRCLE LOGO OVER SWEATSHIRT MUSTARD,"58,000","29,000",https://image.msscdn.net/images/goods_img/20190816/1119377/1119377_1_500.jpg,9,sweat,spring
 442,https://store.musinsa.com/app/goods/309092,디어가든,GAM-040 GRAPHY ROBOT,"58,000","39,900",https://image.msscdn.net/images/goods_img/20160219/309092/309092_1_500.jpg,9,sweat,spring
 443,https://store.musinsa.com/app/goods/1273829,유베스코,코코 맨투맨 옐로우 DEMT8073,"27,900","22,300",https://image.msscdn.net/images/goods_img/20200117/1273829/1273829_1_500.jpg,9,sweat,fall
-444,https://store.musinsa.com/app/goods/1261685,애스플래폼,AU01HL01 레터링 후디 스웻셔츠_옐로우,"109,000",,https://image.msscdn.net/images/goods_img/20200103/1261685/1261685_1_500.jpg,9,sweat,spring
 445,https://store.musinsa.com/app/goods/1716922,볼컴,베이직 스몰스톤 기모 맨투맨(옐로우),"79,000",,https://image.msscdn.net/images/goods_img/20201208/1716922/1716922_1_500.jpg,9,sweat,spring
-446,https://store.musinsa.com/app/goods/2116198,객,[SET UP] GAC SIGNATURE MTM SET yellow,"138,000","110,400",https://image.msscdn.net/images/goods_img/20210908/2116198/2116198_3_500.jpg,9,sweat,spring
 447,https://store.musinsa.com/app/goods/426482,드라이프,BASEBALL CREWNECK-MUSTARD,"69,000","17,900",https://image.msscdn.net/images/goods_img/20161011/426482/426482_1_500.jpg,9,sweat,spring
-448,https://store.musinsa.com/app/goods/1801810,도미넌트,배색 절개 헤비 맨투맨 옐로우,"69,000","27,600",https://image.msscdn.net/images/goods_img/20210218/1801810/1801810_1_500.jpg,9,sweat,
 449,https://store.musinsa.com/app/goods/427552,드라이프,GYM CREWNECK-MUSTARD,"69,000","17,900",https://image.msscdn.net/images/goods_img/20161012/427552/427552_1_500.jpg,9,sweat,spring
 450,https://store.musinsa.com/app/goods/2057226,아웃스탠딩,V.S.C SWEAT (MINNESOTA)_GREEN,"69,000","55,200",https://image.msscdn.net/images/goods_img/20210811/2057226/2057226_1_500.jpg,6,sweat,fall
 451,https://store.musinsa.com/app/goods/1336836,브렌슨,[패키지] Errday 루즈핏 맨투맨 2`nd,"85,800","42,900",https://image.msscdn.net/images/goods_img/20200305/1336836/1336836_13_500.jpg,6,sweat,fall
@@ -465,11 +438,9 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 463,https://store.musinsa.com/app/goods/2295643,나이스고스트클럽,[논기모] 스몰 로고 레이지 구미베어 스웻셔츠_그린(NG2CSUM442A),"59,000","47,200",https://image.msscdn.net/images/goods_img/20220106/2295643/2295643_1_500.jpg,6,sweat,summer
 464,https://store.musinsa.com/app/goods/2310702,론론,STRIPE COLLAR SWEATSHIRT GREEN,"72,000","54,000",https://image.msscdn.net/images/goods_img/20220117/2310702/2310702_1_500.jpg,6,sweat,spring
 465,https://store.musinsa.com/app/goods/2306896,커버낫,스티치 아치로고 오버핏 맨투맨 그린,"75,000",,https://image.msscdn.net/images/goods_img/20220113/2306896/2306896_1_500.jpg,6,sweat,fall
-466,https://store.musinsa.com/app/goods/897633,트래블,캠프 바시티 피그먼트 스웨트셔츠 버리디안 그린,"56,000","45,900",https://image.msscdn.net/images/goods_img/20181104/897633/897633_1_500.jpg,6,sweat,
 467,https://store.musinsa.com/app/goods/2305871,토마스모어,TC1-TS0110 사커스웨트-올리버,"63,000",,https://image.msscdn.net/images/goods_img/20220113/2305871/2305871_1_500.jpg,6,sweat,spring
 468,https://store.musinsa.com/app/goods/2311117,폴라로이드,시그니처 네임로고 맨투맨 GREEN,"69,000",,https://image.msscdn.net/images/goods_img/20220117/2311117/2311117_1_500.jpg,6,sweat,fall
 469,https://store.musinsa.com/app/goods/2306449,패블러스아카이브,우먼즈 크롭 르 리스 발포 엠보자수 맨투맨 다크그린(FCB4TS360W),"79,000","55,300",https://image.msscdn.net/images/goods_img/20220113/2306449/2306449_2_500.jpg,6,sweat,winter
-470,https://store.musinsa.com/app/goods/2113059,커버낫,커버낫 x 리젠서울 아치 클로버 에코 맨투맨 헤더그레이,"69,000","51,750",https://image.msscdn.net/images/goods_img/20210907/2113059/2113059_1_500.jpg,6,sweat,
 471,https://store.musinsa.com/app/goods/2057232,아웃스탠딩,V.S.C HOOD SWEAT (DARTMOUTH)_GREEN,"79,000","63,200",https://image.msscdn.net/images/goods_img/20210811/2057232/2057232_1_500.jpg,6,sweat,fall
 472,https://store.musinsa.com/app/goods/2299413,골스튜디오,FC TEAMWORK GRAPHIC SWEAT-GREEN,"99,000",,https://image.msscdn.net/images/goods_img/20220110/2299413/2299413_1_500.jpg,6,sweat,fall
 473,https://store.musinsa.com/app/goods/2050573,에노우,벤쿠버 스웻셔츠_그린(EN2BFMM445A),"69,000","48,300",https://image.msscdn.net/images/goods_img/20210805/2050573/2050573_1_500.jpg,6,sweat,fall
@@ -493,8 +464,6 @@ index,url,brand,name,price,discount_price,thumbnail,color,category,tone
 491,https://store.musinsa.com/app/goods/2306883,커버낫,그리너리 맨투맨 그린,"69,000",,https://image.msscdn.net/images/goods_img/20220113/2306883/2306883_1_500.jpg,6,sweat,fall
 492,https://store.musinsa.com/app/goods/2220642,아디다스,모던 레트로 크루 - 블랙:그린 / HC0379,"89,000","59,900",https://image.msscdn.net/images/goods_img/20211105/2220642/2220642_1_500.jpg,6,sweat,fall
 493,https://store.musinsa.com/app/goods/2181699,아미,남성 체인스티치 하트 로고 맨투맨 - 그린 / A21HJ007730300,"335,000","247,000",https://image.msscdn.net/images/goods_img/20211015/2181699/2181699_1_500.jpg,6,sweat,spring
-494,https://store.musinsa.com/app/goods/2311308,아크네 스튜디오,로고 프린트 맨투맨 민트 그린 BI0082,"392,000",,https://image.msscdn.net/images/goods_img/20220117/2311308/2311308_1_500.jpg,6,sweat,spring
 495,https://store.musinsa.com/app/goods/2317319,아크메드라비,CHRISTMAS HOMER - SWEATSHIRT (GREEN),"99,000",,https://image.msscdn.net/images/goods_img/20220120/2317319/2317319_1_500.jpg,6,sweat,spring
 496,https://store.musinsa.com/app/goods/2317939,아크메드라비,DONUT WORRY SWEATSHIRTS WASHING GREEN,"109,000",,https://image.msscdn.net/images/goods_img/20220120/2317939/2317939_1_500.jpg,6,sweat,summer
-497,https://store.musinsa.com/app/goods/2311307,아크네 스튜디오,로고 오버핏 모크넥 맨투맨 펀 그린 BI0078,"321,000",,https://image.msscdn.net/images/goods_img/20220117/2311307/2311307_1_500.jpg,6,sweat,spring
 498,https://store.musinsa.com/app/goods/2299531,피지컬 에듀케이션 디파트먼트,PHYPS® YOGA BEGINNER CLASS CREWNECK GREEN,"72,000","64,800",https://image.msscdn.net/images/goods_img/20220110/2299531/2299531_2_500.jpg,6,sweat,fall
