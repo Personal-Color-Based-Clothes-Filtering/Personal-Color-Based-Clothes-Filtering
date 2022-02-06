@@ -100,10 +100,10 @@ def RoiCheek(image_color):
 
 
 def Check2():
-  image_color = cv.imread("./image/cropped.jpg", cv.IMREAD_COLOR)
+  image_color = cv.imread("./face/personal_color_check/image/cropped.jpg", cv.IMREAD_COLOR)
   result = RoiCheek(image_color)
 
-  image_color = cv.imread("./image/removed_eyes.jpg", cv.IMREAD_COLOR)
+  image_color = cv.imread("./face/personal_color_check/image/removed_eyes.jpg", cv.IMREAD_COLOR)
   result2 = RoiCheek(image_color)
 
   if result != result2:
