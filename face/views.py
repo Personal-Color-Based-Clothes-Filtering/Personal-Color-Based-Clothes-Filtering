@@ -3,6 +3,7 @@ import imp
 from urllib import request
 from django.shortcuts import render
 from django.urls import reverse
+import cv2 as cv
 
 # 얼굴 사진 업로드
 from django.http import HttpResponse

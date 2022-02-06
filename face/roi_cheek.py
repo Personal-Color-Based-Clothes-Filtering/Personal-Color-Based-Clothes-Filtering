@@ -14,8 +14,6 @@ def RoiCheek(image_color):
     #face detection part
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-
-    image_color = cv.imread("./face/personal_color_check/image/cropped.jpg", cv.IMREAD_COLOR)
     
     gray_img = cv.cvtColor(image_color, cv.COLOR_BGR2GRAY)
     lab_img = cv.cvtColor(image_color, cv.COLOR_BGR2LAB)
@@ -103,8 +101,8 @@ def Check2():
   image_color = cv.imread("./face/personal_color_check/image/cropped.jpg", cv.IMREAD_COLOR)
   result = RoiCheek(image_color)
 
-  image_color = cv.imread("./face/personal_color_check/image/removed_eyes.jpg", cv.IMREAD_COLOR)
-  result2 = RoiCheek(image_color)
+  image_color2 = cv.imread("./face/personal_color_check/image/removed_eyes.jpg", cv.IMREAD_COLOR)
+  result2 = RoiCheek(image_color2)
 
   if result != result2:
     return "unsuccessful processing2"

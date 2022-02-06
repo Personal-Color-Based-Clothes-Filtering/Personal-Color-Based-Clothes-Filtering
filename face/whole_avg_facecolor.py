@@ -10,7 +10,7 @@ while True:
 
   height,width = image_color.shape[:2] #이미지를 저장할 넘파이 배열 생성
 
-#픽셀 접근방법: for 루프를 돌면서 (x,y)에 있는 픽셀을 하나씩 접근한다.
+  #픽셀 접근방법: for 루프를 돌면서 (x,y)에 있는 픽셀을 하나씩 접근한다.
   count = 0 
   mean_l= 0
   mean_a= 0
