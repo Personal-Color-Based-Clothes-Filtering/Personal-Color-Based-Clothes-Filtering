@@ -7,5 +7,6 @@ from django.conf import settings
 app_name = 'fashion'
 
 urlpatterns = [
+    path('list/', views.all_list, name='all_list'), 
     path('', views.musinsa_fashion, name='musinsa'),  
 ]

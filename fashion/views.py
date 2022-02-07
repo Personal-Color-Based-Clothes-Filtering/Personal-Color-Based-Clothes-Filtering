@@ -2,6 +2,7 @@
 from nis import cat
 from unicodedata import category
 from django.shortcuts import render
+import random
 
 # 무신사 데이터 가져오기
 from .models import Clothes
@@ -64,3 +65,18 @@ def musinsa_fashion(request):
 
 
 
+def all_list(request):
+    clothes = Clothes.objects.all() # 전체
+
+    num = random.randrange(1, 401)
+    numRange = num + 4
+
+    print(num,numRange)
+    # 톤 분류
+    spring = Clothes.objects.filter(tone="spring")[num:numRange]
+    summer = Clothes.objects.filter(tone="summer")[num:numRange]
+    autumn = Clothes.objects.filter(tone="autumn")[num:numRange]
+    winter = Clothes.objects.filter(tone="winter")[num:numRange]
+
+    return render(request, 'fashion/all_list.html', 
+    {'spring' : spring, 'summer' : summer, 'autumn' : autumn, 'winter' : winter})

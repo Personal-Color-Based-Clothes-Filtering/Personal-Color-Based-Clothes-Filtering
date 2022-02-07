@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- extra_head:css,스크립트파일(js) 넣는 블록-->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'fashion/css/all_list.css' %}">
+{% endblock %}
+ 
+
+ <body topmargin="0">
+    {% block body %}
+    <article class="product-container">
+        <section class="category-title">
+            <h2>봄 웜톤 추천 의류</h2>
+            <button>전체보기 &rarr;</button>
+        </section>
+        <section class="product-wrapper">
+            {% for s in spring %}
+            <div class="product">
+                <img src={{ s.thumbnail }} alt="thumbnail"/>
+                <p class="brand">{{ s.brand }}</p>
+                <p class="name">{{ s.name }}</p>
+                <p class="price">{{ s.price }}원 </p>
+            </div>
+            {% endfor %}
+        </section>
+    </article>
+    
+    
+    {% endblock %}
+ </body>
