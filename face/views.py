@@ -14,6 +14,7 @@ from .models import FaceImage
 from .crop_face import *
 from .face_detect import *
 from .rm_eye_lips import *
+#from .whole_avg_facecolor import *
 from .roi_cheek import *
 from .delete_img import *
 from .models import FaceImage
