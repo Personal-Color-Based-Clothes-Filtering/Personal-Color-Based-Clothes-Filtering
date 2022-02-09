@@ -62,6 +62,11 @@ li a:hover{
     height: 50;
 }
 
+.pcolor a {
+    font-size: 20pt;
+    padding: 10px;
+}
+
 /* 의류 출력 */
 ul div li {
     list-style: none;
