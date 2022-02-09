@@ -38,10 +38,11 @@ def CropFace():
     for f in faces:
       crop = img[f.top():f.bottom(), f.left():f.right()]
     cv2.imwrite("./face/personal_color_check/image/cropped.jpg", crop)
+    print("1")
 
     return image_url
     
   except:
     pass
 
-CropFace()
+#CropFace()

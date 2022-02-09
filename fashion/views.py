@@ -1,6 +1,3 @@
-# Create your views here.
-from nis import cat
-from unicodedata import category
 from django.shortcuts import render
 import random
 

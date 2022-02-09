@@ -85,5 +85,6 @@ def RmEyeLips():
         output = visualize_facial_landmarks(image, shape)
 
         cv2.imwrite("./face/personal_color_check/image/removed_eyes.jpg", output)
+        print("3")
     
-RmEyeLips()
+#RmEyeLips()
