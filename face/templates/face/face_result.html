@@ -37,6 +37,7 @@
                 <h4>Your Color Palette</h4>
                 <img src="/static/face/image/spring.png" alt="spring.png" width=500 height=auto>
             </div>
+            <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/?tone=spring'">어울리는 의류 보러가기</button>
         
         {% elif roi == "가을 웜톤" %} 
             <div class='personal_color_result'>
@@ -52,7 +53,7 @@
                 <h4>Your Color Palette</h4>
                 <img src="/static/face/image/autumn.png" alt="autumn.png" width=500 height=auto>
             </div>
-
+            <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/?tone=autumn'">어울리는 의류 보러가기</button>
         {% elif roi == "여름 쿨톤" %}
             <div class='personal_color_result'>
                 <img src="{{faceimg}}" alt="upload.png" width=230 height=230 style="float: left; padding-right: 1%;"> 
@@ -67,7 +68,7 @@
                 <h4>Your Color Palette</h4>
                 <img src="/static/face/image/summer.png" alt="summer.png" width=500 height=auto>
             </div>
-
+            <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/?tone=summer'">어울리는 의류 보러가기</button>
         {% elif roi == "겨울 쿨톤" %} <!-- 겨울 쿨톤-->
             <div class='personal_color_result'>
                 <img src="{{faceimg}}" alt="upload.png" width=230 height=230 style="float: left; padding-right: 1%;"> 
@@ -82,16 +83,17 @@
                 <h4>Your Color Palette</h4>
                 <img src="/static/face/image/winter.png" alt="winter.png" width=500 height=auto>
             </div>
-
-            {% elif roi == "fail" %}
-                <script type="text/javascript">
-                    alert("퍼스널 컬러 인식에 실패했습니다. 참고사항을 유의하여 사진을 업로드해 주세요.")
-                    histroy.go(-1);
-                </script>
-                <!--<h3>퍼스널 컬러 인식에 실패했습니다. 참고사항을 유의하여 사진을 다시 업로드해 주세요.</h3>-->
+            <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/?tone=winter'">어울리는 의류 보러가기</button>
+        {% elif roi == "fail" %}
+            <script type="text/javascript">
+                alert("퍼스널 컬러 인식에 실패했습니다. 참고사항을 유의하여 사진을 업로드해 주세요.")
+                histroy.go(-1);
+            </script>
+            <!--<h3>퍼스널 컬러 인식에 실패했습니다. 참고사항을 유의하여 사진을 다시 업로드해 주세요.</h3>-->
         {% endif %}
         
-        <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping'">어울리는 의류 보러가기</button>
+        <!--<button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping'">어울리는 의류 보러가기</button>-->
+
 
     </div>
     {% endblock body %}
