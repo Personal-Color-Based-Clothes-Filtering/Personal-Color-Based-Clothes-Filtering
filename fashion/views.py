@@ -94,14 +94,14 @@ def musinsa_fashion(request):
 def all_list(request):
     clothes = Clothes.objects.all() # 전체
 
-    num = random.randrange(1, 401)
-    numRange = num + 4
+    num = random.randrange(1, 200)
+    numRange = num + 8
 
     print(num,numRange)
     # 톤 분류
     spring = Clothes.objects.filter(tone="spring")[num:numRange]
     summer = Clothes.objects.filter(tone="summer")[num:numRange]
-    autumn = Clothes.objects.filter(tone="autumn")[num:numRange]
+    autumn = Clothes.objects.filter(tone="fall")[num:numRange]
     winter = Clothes.objects.filter(tone="winter")[num:numRange]
 
     return render(request, 'fashion/all_list.html', 

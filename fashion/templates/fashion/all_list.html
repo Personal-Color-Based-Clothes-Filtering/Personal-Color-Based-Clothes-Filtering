@@ -9,23 +9,104 @@
 
  <body topmargin="0">
     {% block body %}
+    <!-- spring : 봄 웜톤-->
     <article class="product-container">
-        <section class="category-title">
-            <h2>봄 웜톤 추천 의류</h2>
-            <button>전체보기 &rarr;</button>
-        </section>
-        <section class="product-wrapper">
-            {% for s in spring %}
-            <div class="product">
-                <img src={{ s.thumbnail }} alt="thumbnail"/>
-                <p class="brand">{{ s.brand }}</p>
-                <p class="name">{{ s.name }}</p>
-                <p class="price">{{ s.price }}원 </p>
-            </div>
-            {% endfor %}
-        </section>
+        <div class="container-wrapper">
+            <section class="category-title">
+                <h2>봄 웜톤 추천 의류</h2>
+                <button>전체보기 &rarr;</button>
+            </section>
+            <section id="spring" class="product-wrapper">
+                {% for s in spring %}
+                <div class="product">
+                    <img src={{ s.thumbnail }} alt="thumbnail"/>
+                    <p class="brand">{{ s.brand }}</p>
+                    <p class="name">{{ s.name }}</p>
+                    <p class="price">{{ s.price }}원 </p>
+                </div>
+                {% endfor %}
+            </section>
+            <section class="carousel-button">
+                <button id="spring-prev" class="prev" onclick="slideCarousel(event);"></button>
+                <button id="spring-next" class="next" onclick="slideCarousel(event);"></button>
+            </section>
+        </div>
     </article>
-    
-    
+
+    <!-- summer : 여름 쿨톤-->
+    <article class="product-container">
+        <div class="container-wrapper">
+            <section class="category-title">
+                <h2>여름 쿨톤 추천 의류</h2>
+                <button>전체보기 &rarr;</button>
+            </section>
+            <section id="summer" class="product-wrapper">
+                {% for sm in summer %}
+                <div class="product">
+                    <img src={{ sm.thumbnail }} alt="thumbnail"/>
+                    <p class="brand">{{ sm.brand }}</p>
+                    <p class="name">{{ sm.name }}</p>
+                    <p class="price">{{ sm.price }}원 </p>
+                </div>
+                {% endfor %}
+            </section>
+            <section class="carousel-button">
+                <button id="summer-prev" class="prev" onclick="slideCarousel(event);"></button>
+                <button id="summer-next" class="next" onclick="slideCarousel(event);"></button>
+            </section>
+        </div>
+    </article>
+
+    <!-- autumn : 가을 웜톤-->
+    <article class="product-container">
+        <div class="container-wrapper">
+            <section class="category-title">
+                <h2>가을 웜톤 추천 의류</h2>
+                <button>전체보기 &rarr;</button>
+            </section>
+            <section id="autumn" class="product-wrapper">
+                {% for at in autumn %}
+                <div class="product">
+                    <img src={{ at.thumbnail }} alt="thumbnail"/>
+                    <p class="brand">{{ at.brand }}</p>
+                    <p class="name">{{ at.name }}</p>
+                    <p class="price">{{ at.price }}원 </p>
+                </div>
+                {% endfor %}
+            </section>
+            <section class="carousel-button">
+                <button id="autumn-prev" class="prev" onclick="slideCarousel(event);"></button>
+                <button id="autumn-next" class="next" onclick="slideCarousel(event);"></button>
+            </section>
+        </div>
+    </article>
+
+    <!-- winter : 겨울 쿨톤-->
+    <article class="product-container">
+        <div class="container-wrapper">
+            <section class="category-title">
+                <h2>겨울 쿨톤 추천 의류</h2>
+                <button>전체보기 &rarr;</button>
+            </section>
+            <section id="winter" class="product-wrapper">
+                {% for wt in winter %}
+                <div class="product">
+                    <img src={{ wt.thumbnail }} alt="thumbnail"/>
+                    <p class="brand">{{ wt.brand }}</p>
+                    <p class="name">{{ wt.name }}</p>
+                    <p class="price">{{ wt.price }}원 </p>
+                </div>
+                {% endfor %}
+            </section>
+            <section class="carousel-button">
+                <button id="winter-prev" class="prev" onclick="slideCarousel(event);"></button>
+                <button id="winter-next" class="next" onclick="slideCarousel(event);"></button>
+            </section>
+        </div>
+    </article>
+    {% endblock %}
+
+    {% block script %}
+        <script src="{% static 'fashion/js/carousel_button.js' %}"></script>
     {% endblock %}
  </body>
