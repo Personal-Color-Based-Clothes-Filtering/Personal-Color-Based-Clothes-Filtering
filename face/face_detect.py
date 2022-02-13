@@ -73,5 +73,3 @@ def Check():
     else:
       print("successful processing")
       return "successful processing"
-
-Check()
