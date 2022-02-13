@@ -8,5 +8,6 @@ app_name = 'fashion'
 
 urlpatterns = [
     path('list/', views.all_list, name='all_list'), 
-    path('', views.musinsa_fashion, name='musinsa'),  
+    # path('', views.musinsa_fashion, name='musinsa'),  
+    path('', views.tmp_musinsa_view, name='musinsa'),  
 ]

@@ -1,0 +1,115 @@
+.clerfix{
+    display: flex;
+}
+.clerfix button{
+    width:50px;
+    height:24px;
+    color:white;
+    border:none;
+    background:transparent;
+}
+.category-container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    max-width: 100%;
+    background-position: center;
+    background-size:cover;
+    background-color: #000000;
+    color: #333;
+}
+
+/* 퍼스널 컬러 섹션*/
+.pcolor {
+    text-align: center;
+    line-height: 50px;
+    height: 50;
+}
+
+.pcolor a {
+    font-size: 20pt;
+    padding: 10px;
+}
+
+/* 의류 출력 */
+ul div li {
+    list-style: none;
+    float: left;
+    margin-left: 60;
+    margin-bottom: 50;
+    word-wrap: break-word;
+    height: 250;
+    width: 150;
+}
+.clothes a:link {
+    color: #000;
+    font-weight:normal;
+    text-decoration:none 
+}
+.clothes a:visited {
+    color: #000;
+    font-weight:normal;
+}
+
+/* 페이징 */
+.page_wrap {
+text-align:center;
+font-size:0;
+}
+.page_nation {
+    display:inline-block;
+}
+.page_nation .none {
+    display:none;
+}
+.page_nation a {
+    display:block;
+    margin:0 3px;
+    float:left;
+    border:1px solid #e6e6e6;
+    width:28px;
+    height:28px;
+    line-height:28px;
+    text-align:center;
+    background-color:#fff;
+    font-size:13px;
+    color:#999999;
+    text-decoration:none;
+}
+.page_nation .arrow {
+    border:1px solid #ccc;
+}
+.page_nation .pprev {
+    background:#f8f8f8 no-repeat center center;
+    margin-left:0;
+}
+.page_nation .prev {
+    background:#f8f8f8 no-repeat center center;
+    margin-right:7px;
+}
+.page_nation .next {
+    background:#f8f8f8  no-repeat center center;
+    margin-left:7px;
+}
+.page_nation .nnext {
+    background:#f8f8f8  no-repeat center center;
+    margin-right:0;
+}
+.page_nation a.active {
+    background-color:#42454c;
+    color:#fff;
+    border:1px solid #000000;
+}
+
+/* 정보 */
+.info {
+    text-align: center;
+    position:relative;
+    bottom:0;
+    width: 99%;  
+    color:lightgray;
+    line-height: 50px;
+    height: 50;
+}

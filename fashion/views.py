@@ -48,7 +48,7 @@ def musinsa_fashion(request):
 
     # 카테고리 분류
     category = request.GET.get('category', None)
-
+    print(category,tone,color)
     if category == "collar":
         clothes = Clothes.objects.filter(category="collar")
     elif category == "hoodie":
@@ -89,20 +89,50 @@ def musinsa_fashion(request):
     #'context' = ctx )
 
 
+def tmp_musinsa_view(request):
+    #로직: q에 먼저 get으로 받은 값을 저장하고, 결과로 전달할 clothes를 필터링한다.
+    clothes = Clothes.objects.all()[:50] # 전체
+    
+    
+    category = request.GET.get('category',None)
+    color = request.GET.get('color',None)
+    tone = request.GET.get('tone',None)
+
+    q = Q() # 쿼리스트링
+    if category and category != 'all':
+        q &= Q(category=category)
+        print(category)
+    if color and color != 'all':
+        q &= Q(color=color)
+        print(color)
+    if tone and tone != 'all':
+        q &= Q(tone=tone)
+        print(tone)
+    
+    print(q)
+    clothes = Clothes.objects.filter(q)[:50]
+
+    return render(request,'fashion/tmp_musinsa_view.html',{
+        'clothes':clothes
+    })
+    
+
+
+
 
 
 def all_list(request):
     clothes = Clothes.objects.all() # 전체
 
     num = random.randrange(1, 200)
-    numRange = num + 8
+    num_range = num + 8
 
-    print(num,numRange)
+    print(num,num_range)
     # 톤 분류
-    spring = Clothes.objects.filter(tone="spring")[num:numRange]
-    summer = Clothes.objects.filter(tone="summer")[num:numRange]
-    autumn = Clothes.objects.filter(tone="fall")[num:numRange]
-    winter = Clothes.objects.filter(tone="winter")[num:numRange]
+    spring = Clothes.objects.filter(tone="spring")[num:num_range]
+    summer = Clothes.objects.filter(tone="summer")[num:num_range]
+    autumn = Clothes.objects.filter(tone="fall")[num:num_range]
+    winter = Clothes.objects.filter(tone="winter")[num:num_range]
 
     return render(request, 'fashion/all_list.html', 
     {'spring' : spring, 'summer' : summer, 'autumn' : autumn, 'winter' : winter})

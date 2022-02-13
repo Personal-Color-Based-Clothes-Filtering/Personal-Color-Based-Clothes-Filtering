@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!-- extra_head:css,스크립트파일(js) 넣는 블록-->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'fashion/css/tmp_musinsa_view.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+{% endblock %}
+ 
+
+ <body topmargin="0">
+    {% block body %}
+    <div class="category-container">
+        <nav class="clearfix">
+            <button id='all' class="category" onclick="setOption(event);">ALL</button>
+            <button id='collar' class="category" onclick="setOption(event);">피케/카라 티셔츠</button>
+            <button id='hoodie' class="category" onclick="setOption(event);">후드 티셔츠</button>
+            <button id='shirt' class="category" onclick="setOption(event);">셔츠/블라우스</button>
+            <button id='longsleeve' class="category" onclick="setOption(event);">긴팔 티셔츠</button>
+            <button id='shortsleeve' class="category" onclick="setOption(event);">반팔 티셔츠</button>
+            <button id='sleeveless' class="category" onclick="setOption(event);">민소매 티셔츠</button>
+            <button id='sweat' class="category" onclick="setOption(event);">맨투맨/스웨트셔츠</button>
+            <button id='sweater' class="category" onclick="setOption(event);">니트/스웨터</button>
+        </nav>
+    </div>
+
+    <div class="pcolor">
+        <button id='3' class="color" onclick="setOption(event);">회색</button>
+        <button id='11' class="color" onclick="setOption(event);">빨간색</button>
+        <button id='10' class="color" onclick="setOption(event);">분홍색</button>
+        <button id='12' class="color" onclick="setOption(event);">주황색</button>
+        <button id='9' class="color" onclick="setOption(event);">노란색</button>
+        <button id='6' class="color" onclick="setOption(event);">녹색</button>
+        <button id='7' class="color" onclick="setOption(event);">파란색</button>
+        <button id='8' class="color" onclick="setOption(event);">보라색</button>
+        <button id='4' class="color" onclick="setOption(event);">갈색</button>
+        <button id='29' class="color" onclick="setOption(event);">샌드</button>
+    </div>
+
+    <div class="tone-container">
+        <button id='spring' class="tone" onclick="setOption(event);">봄웜톤</button>
+        <button id='summer' class="tone" onclick="setOption(event);">여름쿨톤</button>
+        <button id='autumn' class="tone" onclick="setOption(event);">가을웜톤</button>
+        <button id='winter' class="tone" onclick="setOption(event);">겨울쿨톤</button>
+    </div>
+
+    <div class="clothes">
+     <ul>
+        <!-- 의류 카테고리별로 필터링해서 출력하는 기능은 views.py에서 필터링 기능 추가하면 됩니다!(구글링 참고)-->
+
+        <div id='clothes' class="clothes-list">  
+            {% for c in clothes %}
+                <li id="clothes-listlist">
+                    <a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a><br>
+                    <a href="{{c.url}}"><b style="font-weight: bold;">{{ c.brand }}</b><br>{{ c.name }}</a><br>{{c.category}} {{c.color}} {{c.tone}}<br>
+                    {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                        <del style="color:gray;">{{c.price}}원</del> <b style="font-weight: bold;">{{c.discount_price}}원</b>
+                    {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                        <b style="font-weight: bold;">{{c.price}}원</b>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </div>
+     </ul>
+    </div>
+    
+    <!-- https://yj-code.tistory.com/3 -->
+    <!-- <div class="page_wrap">
+        <div class="page_nation" id="paging">
+           <a class="arrow pprev" href="#hoodie">&lt;&lt;</a>
+           <a class="arrow prev" href="#hoodie">&lt;</a>
+           <a href="#" class="active">1</a>
+           <a href="#">2</a>
+           <a href="#">3</a>
+           <a href="#">4</a>
+           <a href="#">5</a>
+           <a href="#">6</a>
+           <a href="#">7</a>
+           <a href="#">8</a>
+           <a href="#">9</a>
+           <a href="#">10</a>
+           <a class="arrow next" href="#">&gt;</a>
+           <a class="arrow nnext" href="#">&gt;&gt;</a>
+        </div>
+    </div> -->
+    
+    {% endblock %}
+    {% block script %}
+        <script type="text/javascript" src="../../static/fashion/js/queryString.js"></script>  
+    {% endblock %}
+ </body>
