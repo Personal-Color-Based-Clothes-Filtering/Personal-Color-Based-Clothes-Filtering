@@ -14,7 +14,7 @@
         <div class="container-wrapper">
             <section class="category-title">
                 <h2>봄 웜톤 추천 의류</h2>
-                <button>전체보기 &rarr;</button>
+                <button onclick="location.href='/shopping/?tone=spring';">전체보기 &rarr;</button>
             </section>
             <section id="spring" class="product-wrapper">
                 {% for s in spring %}
@@ -42,7 +42,7 @@
         <div class="container-wrapper">
             <section class="category-title">
                 <h2>여름 쿨톤 추천 의류</h2>
-                <button>전체보기 &rarr;</button>
+                <button onclick="location.href='/shopping/?tone=summer';">전체보기 &rarr;</button>
             </section>
             <section id="summer" class="product-wrapper">
                 {% for sm in summer %}
@@ -70,7 +70,7 @@
         <div class="container-wrapper">
             <section class="category-title">
                 <h2>가을 웜톤 추천 의류</h2>
-                <button>전체보기 &rarr;</button>
+                <button onclick="location.href='/shopping/?tone=autumn';">전체보기 &rarr;</button>
             </section>
             <section id="autumn" class="product-wrapper">
                 {% for at in autumn %}
@@ -98,7 +98,7 @@
         <div class="container-wrapper">
             <section class="category-title">
                 <h2>겨울 쿨톤 추천 의류</h2>
-                <button>전체보기 &rarr;</button>
+                <button onclick="location.href='/shopping/?tone=winter';">전체보기 &rarr;</button>
             </section>
             <section id="winter" class="product-wrapper">
                 {% for wt in winter %}
