@@ -1,6 +1,4 @@
 # Create your views here.
-from nis import cat
-from unicodedata import category
 from django.shortcuts import render
 
 # 무신사 데이터 가져오기

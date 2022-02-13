@@ -14,7 +14,7 @@ def FaceDetect():
   img_person = cv2.inRange(img_hsv, lower, upper) #살색 범위를 출력
 
   #경계선 찾음
-  contours, hierarchy = cv2.findContours(img_person, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE) # 아래 코드에서 오류 발생해서 수정함(다영)
+  contours, hierarchy = cv2.findContours(img_person, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE) 
   #_, contours, hierarchy = cv2.findContours(img_person, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
   
   # 가장 큰 영역 찾기
@@ -36,9 +36,7 @@ def FaceDetect():
   cv2.fillPoly(mask, [maxcnt], color)
 
   img_person = cv2.bitwise_and(img, mask)
-  
 
-  # 이미지 보여주기
   cv2.imwrite("./face/personal_color_check/image/skincolor_face.jpg", img_person)
   print("2")
 
@@ -56,7 +54,7 @@ def Check():
 
     for y in range(0, height):
       for x in range(0, width):
-          #컬러이미지의 (x,y)픽셀에 있는 픽셀의 l,a,b채널을 읽는다
+        #컬러이미지의 (x,y)픽셀에 있는 픽셀의 l,a,b채널을 읽는다
         l = image_color.item(y,x,0)
         a = image_color.item(y,x,1)
         b = image_color.item(y,x,2)

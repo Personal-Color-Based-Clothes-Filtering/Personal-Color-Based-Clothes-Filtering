@@ -1,5 +1,6 @@
 from ast import Del
 import imp
+from multiprocessing.spawn import old_main_modules
 from urllib import request
 from django.shortcuts import render
 from django.urls import reverse
@@ -33,12 +34,17 @@ def face_image_view(request):
 
 
 def success(request):
+    
     faceimg = CropFace()
     FaceDetect()
     check = Check()
     RmEyeLips()
     image_color = cv.imread("./face/personal_color_check/image/cropped.jpg", cv.IMREAD_COLOR)
-    roi = RoiCheek(image_color)
+    obj = RoiCheek()
+    roi = obj.roiCheek(image_color)
+    print(roi)
+    check2 = Check2()
     DelImg()
-
-    return render(request, 'face/face_result.html', {'roi' : roi, 'faceimg' : faceimg, 'check' : check})
+    # if roi == 'fail':
+    #     pass
+    return render(request, 'face/face_result.html', {'check' : check, 'check2' : check2, 'roi' : roi, 'faceimg' : faceimg})
