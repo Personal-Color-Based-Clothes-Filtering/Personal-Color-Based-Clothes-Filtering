@@ -21,21 +21,20 @@
             <label for="id_faceImg">업로드</label>
             <input type="file" name="faceImg" accept="image/*" id="id_faceImg" class="upload-hidden">
             <script type="text/javascript" src="../../static/face/js/face_upload.js"></script>
-            
         </div>
         {% csrf_token %}
         <!--{{ form.as_table }}-->
         <br> <br> 
-        <p style="font-size:18px; font-weight: bold;">참고사항</p> <br>
+        <p style="font-size:18px; font-weight: bold;"><참고사항></p> <br>
         <a>
-            1. 손이나 팔을 올리지 않아야 합니다. <br>
-            2. 민낯으로 찍은 정면 사진이어야 합니다. <br>
-            3. 여자의 경우 머리를 풀면 인식을 더 잘하며, 밝은 탈색모의 사진은 피해주세요. <br>
-            4. 배경색이 피부색과 비슷한 사진은 사용하지 말아주세요. <br>
+            1. 머리가 모두 나와야 하며 민낯으로 찍은 정면 사진이어야 합니다. <br>
+            2. 여자의 경우 머리카락을 내리면 인식을 더 잘하며 밝은 탈색모의 사진은 피해주세요. <br>
+            3. 배경색이 피부색과 비슷한 사진은 사용하지 말아주세요. <br>
+            4. 손이나 팔을 올리지 않아야 합니다. <br>
             5. (너무 밝거나 어둡지 않은) 흰 조명 아래 찍은 사진이어야 합니다.</a>
         <br><br><br> 
         <button type="submit">퍼스널 컬러 테스트하기</button>
-        {% comment %} <button type="submit"><a href="{% url 'face:success' %}" >퍼스널 컬러 테스트하기</a></button> {% endcomment %}
+        {% comment %} <button type="submit"><a href="{% url 'face:success' %}">퍼스널 컬러 테스트하기</a></button> {% endcomment %}
        
     </form>
     {% endblock body %}

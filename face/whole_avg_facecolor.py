@@ -55,6 +55,4 @@ class wholeAvgFacecolor:
       self.mean_b = mean_b
 
       print("4  mean_l:", round(mean_l, 2), " mean_a:", round(mean_a, 2), " mean_b:", round(mean_b,2))
-      #print("4")
-      #return mean_l, mean_a, mean_b
       break

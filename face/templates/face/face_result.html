@@ -13,7 +13,16 @@
     {% block body %}
     <div class='result'>    
         <br> 
-        {% if roi == "봄 웜톤" %}
+        {% if faceimg == "fail" or roi == "fail" or check == "fail" %}
+            <script type="text/javascript">
+                // if (confirm("어떤 버튼을 누르시겠습니까?"))
+                //         history.back();      
+                alert('퍼스널 컬러 인식에 실패했습니다.\n아래 참고사항을 유의하여 사진을 업로드해 주세요.');   
+                history.back();      
+                //window.location = '/face/';   //http://127.0.0.1:8000/face/        
+            </script> 
+
+        {% elif roi == "봄 웜톤" %}
             <div class='personal_color_result'>
                 <img src='{{faceimg}}' alt="upload.png" width=230 height=230 style="float: left; padding-right: 1%;"> 
                 <img src="/static/face/image/spring_text.png" alt="spring.png" width=auto height=230 style="float: left;"> 
@@ -44,6 +53,22 @@
                 <img src="/static/face/image/autumn.png" alt="autumn.png" width=500 height=auto>
             </div>
             <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/?tone=autumn'">어울리는 의류 보러가기</button>
+        {% elif roi == "겨울 쿨톤" %}
+            <div class='personal_color_result'>
+                <img src="{{faceimg}}" alt="upload.png" width=230 height=230 style="float: left; padding-right: 1%;"> 
+                <img src="/static/face/image/winter_text.png" alt="winter.png" width=auto height=230 style="float: left;"> 
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <hr>
+                <br>
+                <a>겨울에는 칼같이 차가운 바람과 회색조의 하늘, 앙상한 나뭇가지만 남은 황량한 풍경, 그리고 온 세상을 뒤덮은 은백색의 눈이 생각납니다. 겨울 타입은 이렇게 쨍하고 시리도록 차가운 색들을 가지고 있는데, 봄 타입과 마찬가지로 톤 영역이 좁습니다.
+                    겨울계절 타입의 특징으로는 윤기 있고 푸른빛이 도는 짙은 갈색, 검은색 머리카락, 푸르스름한 빛을 기반으로 차갑고 창백해 보이는 피부가 있습니다. 주로 윤기 있고 투명하지만, 누런 피부도 있습니다. 햇볕에 잘 타는 편으로, 태닝 후에는 피부가 황동색으로 변하며 원래의 피부색으로 돌아오는 데 시간이 많이 걸립니다.</a>
+            </div> 
+            <div class="personal_color_palette">
+                <h4>Your Color Palette</h4>
+                <img src="/static/face/image/winter.png" alt="winter.png" width=500 height=auto>
+            </div>
+            <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/?tone=winter'">어울리는 의류 보러가기</button>
+
         {% elif roi == "여름 쿨톤" %}
             <div class='personal_color_result'>
                 <img src="{{faceimg}}" alt="upload.png" width=230 height=230 style="float: left; padding-right: 1%;"> 
@@ -59,32 +84,7 @@
                 <img src="/static/face/image/summer.png" alt="summer.png" width=500 height=auto>
             </div>
             <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/?tone=summer'">어울리는 의류 보러가기</button>
-        {% elif roi == "겨울 쿨톤" %} <!-- 겨울 쿨톤-->
-            <div class='personal_color_result'>
-                <img src="{{faceimg}}" alt="upload.png" width=230 height=230 style="float: left; padding-right: 1%;"> 
-                <img src="/static/face/image/winter_text.png" alt="winter.png" width=auto height=230 style="float: left;"> 
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <hr>
-                <br>
-                <a>겨울에는 칼같이 차가운 바람과 회색조의 하늘, 앙상한 나뭇가지만 남은 황량한 풍경, 그리고 온 세상을 뒤덮은 은백색의 눈이 생각납니다. 겨울 타입은 이렇게 쨍하고 시리도록 차가운 색들을 가지고 있는데, 봄 타입과 마찬가지로 톤 영역이 좁습니다.
-                    겨울계절 타입의 특징으로는 윤기 있고 푸른빛이 도는 짙은 갈색, 검은색 머리카락, 푸르스름한 빛을 기반으로 차갑고 창백해 보이는 피부가 있습니다. 주로 윤기 있고 투명하지만, 누런 피부도 있습니다. 햇볕에 잘 타는 편으로, 태닝 후에는 피부가 황동색으로 변하며 원래의 피부색으로 돌아오는 데 시간이 많이 걸립니다.</a>
-            </div> 
-            <div class="personal_color_palette">
-                <h4>Your Color Palette</h4>
-                <img src="/static/face/image/winter.png" alt="winter.png" width=500 height=auto>
-            </div>
-            <button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/?tone=winter'">어울리는 의류 보러가기</button>
-        {% elif roi == "fail" %}
-            <script type="text/javascript">
-                alert("퍼스널 컬러 인식에 실패했습니다. 참고사항을 유의하여 사진을 업로드해 주세요.")
-                histroy.go(-1);
-            </script>
-            <!--<h3>퍼스널 컬러 인식에 실패했습니다. 참고사항을 유의하여 사진을 다시 업로드해 주세요.</h3>-->
         {% endif %}
-        
-        <!--<button type="submit" onClick="location.href='http://127.0.0.1:8000/shopping'">어울리는 의류 보러가기</button>-->
-
-
     </div>
     {% endblock body %}
 </body>

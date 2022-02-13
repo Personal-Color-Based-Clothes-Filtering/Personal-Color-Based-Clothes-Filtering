@@ -39,8 +39,6 @@ def success(request):
     RmEyeLips()
     image_color = cv.imread("./face/personal_color_check/image/cropped.jpg", cv.IMREAD_COLOR)
     roi = RoiCheek(image_color)
-    check2 = Check2()
     DelImg()
-    # if roi == 'fail':
-    #     pass
-    return render(request, 'face/face_result.html', {'check' : check, 'check2' : check2, 'roi' : roi, 'faceimg' : faceimg})
+
+    return render(request, 'face/face_result.html', {'roi' : roi, 'faceimg' : faceimg, 'check' : check})

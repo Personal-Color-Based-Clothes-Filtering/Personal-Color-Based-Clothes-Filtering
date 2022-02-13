@@ -6,9 +6,6 @@ from .crop_face import *
 from .face_detect import *
 from .rm_eye_lips import *
 from .whole_avg_facecolor import *
-#from .whole_avg_facecolor import wholeAvgFacecolor
-##from .whole_avg_facecolor import *
-##from .whole_avg_facecolor import mean_l, mean_a, mean_b
 
 def RoiCheek(image_color):
   try:
@@ -97,29 +94,8 @@ def RoiCheek(image_color):
       
     elif weigh_a<weigh_b and weigh_l>=65: #65.15
       return "봄 웜톤"
-      
+    
     else:
       return "가을 웜톤"
   except:
     return "fail"
-
-
-def Check2():
-  image_color = cv.imread("./face/personal_color_check/image/skincolor_face.jpg", cv.IMREAD_COLOR)
-  #obj = wholeAvgFacecolor
-  #obj.WholeAvgFacecolor(0, 0, 0)
-  result = RoiCheek(image_color)
-
-  image_color2 = cv.imread("./face/personal_color_check/image/removed_eyes.jpg", cv.IMREAD_COLOR)
-  #obj2 = wholeAvgFacecolor
-  #obj2.WholeAvgFacecolor(0, 0, 0)
-  result2 = RoiCheek(image_color2)
-
-  if result != result2:
-    print("unsuccessful processing2")
-    return "unsuccessful processing2"
-  else:
-    print("successful processing2")
-    return "successful processing2"
-
-#Check2()

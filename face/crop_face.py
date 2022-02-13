@@ -6,12 +6,12 @@ import os
 
 def Resize(img) :
     
-    width = 800
-    ratio = width/img.shape[1] # width * 사진 너비 = 비율
-    height = int(ratio*img.shape[0]) # 비율 * 사진 높이
- 
-    resize = cv2.resize(img, dsize = (width, height), interpolation = cv2.INTER_AREA)
-    return resize
+  width = 800
+  ratio = width/img.shape[1] # width * 사진 너비 = 비율
+  height = int(ratio*img.shape[0]) # 비율 * 사진 높이
+
+  resize = cv2.resize(img, dsize = (width, height), interpolation = cv2.INTER_AREA)
+  return resize
 
 def CropFace():
   # 이미지 파일 읽기
@@ -27,22 +27,24 @@ def CropFace():
     # 이미지 사이즈 조정 
     img = Resize(img)
 
-    # 얼굴 검출기와 랜드마크 검출기 생성 --- ①
-    detector = dlib.get_frontal_face_detector()
+    try:
+      # 얼굴 검출기와 랜드마크 검출기 생성 --- ①
+      detector = dlib.get_frontal_face_detector()
 
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    # 얼굴 영역 검출 --- ②
-    faces = detector(gray)
+      gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+      # 얼굴 영역 검출 --- ②
+      faces = detector(gray)
 
-    #얼굴영역 추출 후 사진 저장
-    for f in faces:
-      crop = img[f.top():f.bottom(), f.left():f.right()]
-    cv2.imwrite("./face/personal_color_check/image/cropped.jpg", crop)
-    print("1")
-
-    return image_url
+      #얼굴영역 추출 후 사진 저장
+      for f in faces:
+        crop = img[f.top():f.bottom(), f.left():f.right()]
+      cv2.imwrite("./face/personal_color_check/image/cropped.jpg", crop)
+      return image_url
+    
+    except:
+      return "fail"
     
   except:
-    pass
+    return "fail"
 
-#CropFace()
+CropFace()
