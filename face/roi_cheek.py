@@ -82,25 +82,31 @@ class RoiCheek:
       elif weigh_a>=16 and weigh_a-weigh_b>10:
         return "겨울 쿨톤"
       
-      elif weigh_a>=18 and weigh_b>30: #16, 27
+      elif weigh_a>=17.5 and weigh_b>27: 
         return "겨울 쿨톤"
       
+      elif weigh_l>=65 and weigh_a>=16 and weigh_b>23:
+        return "겨울 쿨톤"
+
       elif weigh_a>=16:
         return "여름 쿨톤"
       
-      elif weigh_a>=weigh_b and weigh_a-weigh_b>=2:
+      elif weigh_a>=weigh_b and weigh_a<13.7:
+        return "겨울 쿨톤"
+
+      elif weigh_a>=weigh_b and weigh_a-weigh_b>=2.6:
         return "여름 쿨톤"
       
-      elif weigh_a>=weigh_b and weigh_a-weigh_b<2:
+      elif weigh_a>=weigh_b and weigh_a-weigh_b<2.6:
         return "겨울 쿨톤"
       
-      elif weigh_a<weigh_b and weigh_a>=15.7: #14.6
+      elif weigh_a<weigh_b and weigh_a>=15.7: 
         return "겨울 쿨톤"
       
       elif weigh_a<weigh_b and weigh_b>20.3:
         return "가을 웜톤"
       
-      elif weigh_a<weigh_b and weigh_l>=65: #65.15
+      elif weigh_a<weigh_b and weigh_l>=65: 
         return "봄 웜톤"
       
       else:
