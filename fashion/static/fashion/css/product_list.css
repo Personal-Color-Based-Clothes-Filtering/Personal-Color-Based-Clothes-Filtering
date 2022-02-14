@@ -1,0 +1,105 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:1250px;
+    height: 90px;
+}
+.header h1{
+    font-size:35px;
+    color:#222222;
+}
+.header span{
+    font-size:20px;
+    color:#222222;
+    margin:0 15px;
+}
+.header ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:250px;
+}
+.header ul li a{
+    text-decoration: none;
+    color:#9E9E9E;
+}
+.header ul li a:hover{
+    color:#222222;
+    transition:0.2s;
+}
+
+hr{
+    width:100vw;
+    background-color:#dddddd;
+    border:none;
+    height:1px;
+    margin:0;
+}
+
+.filter{
+    width:1250px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter .category-filter .category{
+    background:transparent;
+    border:none;
+    cursor: pointer;
+    font-size: 16px;
+    color:#666666; 
+}
+.filter .category-filter .category:hover{
+    color:#222222;
+}
+.filter .color-filter .color{
+    width:25px;
+    height:25px;
+    border:none;
+    border-radius: 100px;
+    cursor: pointer;
+    color:transparent;
+}
+
+.clothes-list{
+    width:1250px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+}
+.clothes-item{
+    width:300px;
+    height:486px;
+}
+
+.clothes-item .thumbnail{
+    width:300px;
+    height: 380px;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+.clothes-item p{
+    margin:5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:#222222;
+}
+.clothes-item .price-box{
+    display: flex;
+    align-items: center;
+}
+.clothes-item .brand,
+.clothes-item .price{
+    font-weight: 700;
+    padding-bottom: 5px;
+}

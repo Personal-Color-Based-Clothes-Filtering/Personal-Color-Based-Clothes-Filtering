@@ -2,25 +2,18 @@ import cv2 as cv
 import numpy as np
 from numpy.lib.type_check import imag
 
-class wholeAvgFacecolor:
-  mean_l = 0.0
-  mean_a = 0.0
-  mean_b = 0.0 
+class WholeAvgFacecolor:
 
   def __init__(self, mean_l=0.0, mean_a=0.0, mean_b=0.0):
     self.mean_l = mean_l
     self.mean_a = mean_a
     self.mean_b = mean_b
 
-  def WholeAvgFacecolor(self, mean_l=0.0, mean_a=0.0, mean_b=0.0):
+  def wholeAvgFacecolor(self, mean_l=0.0, mean_a=0.0, mean_b=0.0):
     while True:
       mean_l = 0.0
       mean_a = 0.0
       mean_b = 0.0
-
-      #self.mean_l = mean_l
-      #self.mean_a = mean_a
-      #self.mean_b = mean_b
 
       img_color = cv.imread("./face/personal_color_check/image/removed_eyes.jpg", cv.IMREAD_COLOR)
       img_color = cv.cvtColor(img_color, cv.COLOR_BGR2LAB)
@@ -29,9 +22,6 @@ class wholeAvgFacecolor:
 
       #픽셀 접근방법: for 루프를 돌면서 (x,y)에 있는 픽셀을 하나씩 접근한다.
       count = 0 
-      #mean_l= 0
-      #mean_a= 0
-      #mean_b= 0
       for y in range(0, height):
         for x in range(0, width):
           #컬러이미지의 (x,y)픽셀에 있는 픽셀의 l,a,b채널을 읽는다
@@ -55,6 +45,4 @@ class wholeAvgFacecolor:
       self.mean_b = mean_b
 
       print("4  mean_l:", round(mean_l, 2), " mean_a:", round(mean_a, 2), " mean_b:", round(mean_b,2))
-      #print("4")
-      #return mean_l, mean_a, mean_b
       break

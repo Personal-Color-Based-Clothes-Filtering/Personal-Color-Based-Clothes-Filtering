@@ -4,49 +4,52 @@
 <!-- extra_head:css,스크립트파일(js) 넣는 블록-->
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'fashion/css/musinsa_view.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 {% endblock %}
  
 
  <body topmargin="0">
     {% block body %}
-    <!-- https://mibolee.tistory.com/19 -->
-    <!-- nav바 제외한 콘텐츠 영역, nav는 base.html로 이동-->
-    <div class="category">
+    <div class="category-container">
         <nav class="clearfix">
-          <ul class="clearfix">
-            <li><a href="http://127.0.0.1:8000/shopping/">ALL</a></li>
-            <li><a href="?category=collar">피케/카라 티셔츠</a></li>
-            <li><a href="?category=hoodie">후드 티셔츠</a></li>
-            <li><a href="?category=shirt">셔츠/블라우스</a></li>
-            <li><a href="?category=longsleeve">긴팔 티셔츠</a></li>
-            <li><a href="?category=shortsleeve">반팔 티셔츠</a></li>
-            <li><a href="?category=sleeveless">민소매 티셔츠</a></li>
-            <li><a href="?category=sweat">맨투맨/스웨트셔츠</a></li>
-            <li><a href="?category=sweater">니트/스웨터</a></li>
-        </ul>
-      </nav>
+            <button id='all' class="category" onclick="setOption(event);">ALL</button>
+            <button id='collar' class="category" onclick="setOption(event);">피케/카라 티셔츠</button>
+            <button id='hoodie' class="category" onclick="setOption(event);">후드 티셔츠</button>
+            <button id='shirt' class="category" onclick="setOption(event);">셔츠/블라우스</button>
+            <button id='longsleeve' class="category" onclick="setOption(event);">긴팔 티셔츠</button>
+            <button id='shortsleeve' class="category" onclick="setOption(event);">반팔 티셔츠</button>
+            <button id='sleeveless' class="category" onclick="setOption(event);">민소매 티셔츠</button>
+            <button id='sweat' class="category" onclick="setOption(event);">맨투맨/스웨트셔츠</button>
+            <button id='sweater' class="category" onclick="setOption(event);">니트/스웨터</button>
+        </nav>
     </div>
 
     <div class="pcolor">
-        <a style="color: #9D9C9B;" href="?color=3">■</a>
-        <a style="color: #EA3323;" href="?color=11">■</a>
-        <a style="color: #EA339E;" href="?color=10">■</a>
-        <a style="color: #EA4225;" href="?color=12">■</a>
-        <a style="color: #FBEB4F;" href="?color=9">■</a>
-        <a style="color: #50AD32;" href="?color=6">■</a>
-        <a style="color: #210AF5;" href="?color=7">■</a>
-        <a style="color: #4F0A6C;" href="?color=8">■</a>
-        <a style="color: #752F16;" href="?color=4">■</a>
-        <a style="color: #CAB494;" href="?color=29">■</a>
+        <button id='3' class="color" onclick="setOption(event);">회색</button>
+        <button id='11' class="color" onclick="setOption(event);">빨간색</button>
+        <button id='10' class="color" onclick="setOption(event);">분홍색</button>
+        <button id='12' class="color" onclick="setOption(event);">주황색</button>
+        <button id='9' class="color" onclick="setOption(event);">노란색</button>
+        <button id='6' class="color" onclick="setOption(event);">녹색</button>
+        <button id='7' class="color" onclick="setOption(event);">파란색</button>
+        <button id='8' class="color" onclick="setOption(event);">보라색</button>
+        <button id='4' class="color" onclick="setOption(event);">갈색</button>
+        <button id='29' class="color" onclick="setOption(event);">샌드</button>
+    </div>
+
+    <div class="tone-container">
+        <button id='spring' class="tone" onclick="setOption(event);">봄웜톤</button>
+        <button id='summer' class="tone" onclick="setOption(event);">여름쿨톤</button>
+        <button id='autumn' class="tone" onclick="setOption(event);">가을웜톤</button>
+        <button id='winter' class="tone" onclick="setOption(event);">겨울쿨톤</button>
     </div>
 
     <div class="clothes">
      <ul>
         <!-- 의류 카테고리별로 필터링해서 출력하는 기능은 views.py에서 필터링 기능 추가하면 됩니다!(구글링 참고)-->
 
-        <div id='clothes' class="clothes-list">
-            <script type="text/javascript" src="../../static/fashion/js/category_filter.js"></script>    
-            {% for c in selected_color %}
+        <div id='clothes' class="clothes-list">  
+            {% for c in clothes %}
                 <li>
                     <a href="{{c.url}}"><img src="{{ c.thumbnail }}" alt="{{s.name}}" width=150px height=150px></a><br>
                     <a href="{{c.url}}"><b style="font-weight: bold;">{{ c.brand }}</b><br>{{ c.name }}</a><br>{{c.category}} {{c.color}} {{c.tone}}<br>
@@ -81,5 +84,8 @@
         </div>
     </div> -->
     
+    {% endblock %}
+    {% block script %}
+        <script type="text/javascript" src="../../static/fashion/js/queryString.js"></script>  
     {% endblock %}
  </body>
