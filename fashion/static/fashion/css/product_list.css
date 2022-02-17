@@ -2,7 +2,6 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 .header{
     display:flex;
@@ -98,8 +97,25 @@ hr{
     display: flex;
     align-items: center;
 }
-.clothes-item .brand,
-.clothes-item .price{
+.clothes-item .brand{
     font-weight: 700;
     padding-bottom: 5px;
+}
+.clothes-item .price{
+    font-weight: 700;
+}
+
+.clothes-item .del-price{
+    color:#666666;
+    text-decoration: line-through;
+    margin-right: 7px;
+}
+.no-product{
+    width:400%;
+    height:calc(100vh - 300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    color:#cccccc;
 }

@@ -33,7 +33,6 @@ function setOption(e,tone){
         case 'color':
             color = e.target.id;
             store.dispatch({type:'CHANGE_COLOR',color:color});
-            console.log(color)
             break;
     }
 
@@ -63,14 +62,14 @@ function requestFilteringObjects(tone){
                 `)
             }else{
                 response.map((item,index)=>{
-                let id = item.pk;
+                // let id = item.pk;
                 let url = item.fields.url;
                 let thumbnail = item.fields.thumbnail;
                 let brand = item.fields.brand;
                 let name = item.fields.name;
-                let category = item.fields.category;
-                let color = item.fields.color;
-                let tone = item.fields.tone;
+                // let category = item.fields.category;
+                // let color = item.fields.color;
+                // let tone = item.fields.tone;
                 let price = item.fields.price;
                 let discount_price = item.fields.discount_price;
 
@@ -94,19 +93,28 @@ function requestFilteringObjects(tone){
                 clothes_name.className = 'name';
 
                 let clothes_price = document.createElement('p');
-                clothes_price.innerText = `${price}원`;
-                clothes_price.className = 'price';
-
                 let clothes_discount_price = document.createElement('p');
-                clothes_discount_price.innerText = `${discount_price}원`;
-                clothes_discount_price.className = 'discount_price';
-                
 
+                clothes_price.innerText = `${price}원`;
+                if(discount_price){
+                    clothes_price.className = 'del-price';
+                    clothes_discount_price.innerText = `${discount_price}원`;
+                    clothes_discount_price.className = 'price';
+                }else{
+                    clothes_price.className = 'price';
+                }
+
+                let price_box = document.createElement('div')
+                price_box.className = 'price-box'    
+                price_box.appendChild(clothes_price)
+                if(discount_price){
+                    price_box.appendChild(clothes_discount_price)
+                }
+                
                 clothes_url.appendChild(clothes_img)
                 clothes_url.appendChild(clothes_brand)
                 clothes_url.appendChild(clothes_name)
-                clothes_url.appendChild(clothes_price)
-                clothes_url.appendChild(clothes_discount_price)
+                clothes_url.appendChild(price_box)
                 clothes_item.appendChild(clothes_url)
                 clothes_list.appendChild(clothes_item)
             })
