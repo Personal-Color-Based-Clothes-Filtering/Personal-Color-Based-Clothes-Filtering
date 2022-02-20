@@ -4,13 +4,12 @@
 
 <!-- extra_head:css,스크립트파일(js) 넣는 블록-->
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'face/css/face_upload.css' %}">
+<link rel="stylesheet" href="{% static 'face/css/face_upload.css' %}">  
 {% endblock %}
  
-
 <body>
     {% block body %}
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">        
         <br><br>
         <h2>퍼스널 컬러 테스트</h2>
         <br>
@@ -32,10 +31,10 @@
             3. 배경색이 피부색과 비슷한 사진은 사용하지 말아주세요. <br>
             4. 손이나 팔을 올리지 않아야 합니다. <br>
             5. (너무 밝거나 어둡지 않은) 흰 조명 아래 찍은 사진이어야 합니다.</a>
-        <br><br><br> 
+        <br><br><br>
         <button type="submit">퍼스널 컬러 테스트하기</button>
-        {% comment %} <button type="submit"><a href="{% url 'face:success' %}">퍼스널 컬러 테스트하기</a></button> {% endcomment %}
-       
+        {% comment %}<button type="submit" onclick="javascript:test('LoadingImg.gif');"><a href="{% url 'face:success' %}">퍼스널 컬러 테스트하기</a></button>{% endcomment %}
+        <div id="loadingImg"></div>
     </form>
     {% endblock body %}
 </body>
