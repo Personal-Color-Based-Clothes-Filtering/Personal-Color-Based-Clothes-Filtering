@@ -3,6 +3,7 @@ from django.shortcuts import render
 import random
 from django.http import JsonResponse
 from django.core import serializers
+from django.core.paginator import Paginator
 
 # 무신사 데이터 가져오기
 from .models import Clothes
@@ -45,7 +46,7 @@ def all_list(request):
     # 톤 분류
     spring = Clothes.objects.filter(tone="spring")[num:num_range]
     summer = Clothes.objects.filter(tone="summer")[num:num_range]
-    autumn = Clothes.objects.filter(tone="fall")[num:num_range]
+    autumn = Clothes.objects.filter(tone="autumn")[num:num_range]
     winter = Clothes.objects.filter(tone="winter")[num:num_range]
 
     return render(request, 'fashion/all_list.html', 
@@ -53,9 +54,12 @@ def all_list(request):
 
 def spring_list(request):
     clothes = Clothes.objects.filter(tone="spring")
-
     category = request.GET.get('category',None)
     color = request.GET.get('color',None)
+
+    page = request.GET.get('page','1')
+    paginator = Paginator(clothes,50)
+    page_obj = paginator.get_page(page)
 
     if category != None or color != None:
         
@@ -124,14 +128,14 @@ def summer_list(request):
     })
 
 def autumn_list(request):
-    clothes = Clothes.objects.filter(tone="fall")
+    clothes = Clothes.objects.filter(tone="autumn")
 
     category = request.GET.get('category',None)
     color = request.GET.get('color',None)
 
     if category != None or color != None:
         
-        q = Q(tone='fall') # 쿼리스트링
+        q = Q(tone='autumn') # 쿼리스트링
         if category and category != 'all':
             q &= Q(category=category)
             print(category)

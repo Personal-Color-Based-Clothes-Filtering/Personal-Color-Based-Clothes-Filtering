@@ -12,7 +12,7 @@ from tone_extraction import *
 pd.set_option('mode.chained_assignment',  None)
 pd.set_option('display.max_colwidth', -1)
 
-df = pd.read_csv('../dataset/sweater.csv', index_col = 1)
+df = pd.read_csv('../midDataset/sand.csv', index_col = 0)
 
 # 데이터 삽입
 i = 0
@@ -38,10 +38,9 @@ for url in df.loc[:,'thumbnail']:
     err = e.read()
     code = e.getcode()
     print(code) ## 404
-    df.drop([i],axis=0)
 
   i += 1
   
-df.drop(['Unnamed: 0'], axis = 1, inplace = True)
-df.to_csv('../finalDataset/sweater_insert_tone.csv')
+#df.drop(['Unnamed: 0'], axis = 1, inplace = True)
+df.to_csv('../finalDataset/sand_tone.csv')
 
