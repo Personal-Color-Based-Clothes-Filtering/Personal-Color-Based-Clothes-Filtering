@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!-- extra_head:css,스크립트파일(js) 넣는 블록-->
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'fashion/css/all_list.css' %}">
 {% endblock %}
@@ -22,9 +21,9 @@
                     <img src={{ s.thumbnail }} alt="thumbnail"/>
                     <p class="brand">[{{ s.brand }}]</p>
                     <p class="name">{{ s.name }}</p>
-                    {% if s.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                    {% if s.discount_price %}
                         <p class="price">{{ s.discount_price }}원 </p>
-                    {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                    {% else %}
                         <p class="price">{{ s.price }}원 </p>
                     {% endif %}
                 </div>
@@ -50,9 +49,9 @@
                     <img src={{ sm.thumbnail }} alt="thumbnail"/>
                     <p class="brand">[{{ sm.brand }}]</p>
                     <p class="name">{{ sm.name }}</p>
-                    {% if sm.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                    {% if sm.discount_price %}
                         <p class="price">{{ sm.discount_price }}원 </p>
-                    {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                    {% else %}
                         <p class="price">{{ sm.price }}원 </p>
                     {% endif %}
                 </div>
@@ -78,9 +77,9 @@
                     <img src={{ at.thumbnail }} alt="thumbnail"/>
                     <p class="brand">[{{ at.brand }}]</p>
                     <p class="name">{{ at.name }}</p>
-                    {% if at.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                    {% if at.discount_price %}
                         <p class="price">{{ at.discount_price }}원 </p>
-                    {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                    {% else %}
                         <p class="price">{{ at.price }}원 </p>
                     {% endif %}
                 </div>
@@ -106,9 +105,9 @@
                     <img src={{ wt.thumbnail }} alt="thumbnail"/>
                     <p class="brand">[{{ wt.brand }}]</p>
                     <p class="name">{{ wt.name }}</p>
-                    {% if wt.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                    {% if wt.discount_price %}
                         <p class="price">{{ wt.discount_price }}원 </p>
-                    {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                    {% else %}
                         <p class="price">{{ wt.price }}원 </p>
                     {% endif %}
                 </div>

@@ -8,20 +8,16 @@ from urllib.error import URLError, HTTPError
 
 from tone_extraction import *
 
-#경고 안뜨게 설정
 pd.set_option('mode.chained_assignment',  None)
 pd.set_option('display.max_colwidth', -1)
 
 df = pd.read_csv('../midDataset/sand.csv', index_col = 0)
-
-# 데이터 삽입
 i = 0
 for url in df.loc[:,'thumbnail']:
   print(url,':',type(url))
   try:
     res = urlopen(url)
     print(res.status)
-    #품절 상품이 아니면
     if res.status == 200 or res.status != 404:
       try:
         tone_extraction_instance = ToneExtraction(url)
@@ -41,6 +37,6 @@ for url in df.loc[:,'thumbnail']:
 
   i += 1
   
-#df.drop(['Unnamed: 0'], axis = 1, inplace = True)
+df.drop(['Unnamed: 0'], axis = 1, inplace = True)
 df.to_csv('../finalDataset/sand_tone.csv')
 

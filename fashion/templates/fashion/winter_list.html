@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!-- extra_head:css,스크립트파일(js) 넣는 블록-->
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'fashion/css/product_list.css' %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -56,12 +55,12 @@
                             <p class="brand">{{ c.brand }}</p>
                             <p class="name">{{ c.name }}</p>
                         <p>{{c.category}} {{c.color}} {{c.tone}}</p>
-                        {% if c.discount_price %} <!--discount_price 값이 있으면 할인가로 출력-->
+                        {% if c.discount_price %}
                             <div class="price-box">
                                 <del class="del-price" style="color:gray;">{{c.price}}원</del> 
                                 <p class="price" style="font-weight: bold;">{{c.discount_price}}원</p>
                             </div>
-                        {% else %} <!--discount_price 값이 없으면 정가로 출력-->
+                        {% else %}
                             <p class="price" style="font-weight: bold;">{{c.price}}원</p>
                         {% endif %}
                         </a>
@@ -69,25 +68,6 @@
                 {% endfor %}
             </div>
     </section>
-    <!-- https://yj-code.tistory.com/3 -->
-    <!-- <div class="page_wrap">
-        <div class="page_nation" id="paging">
-           <a class="arrow pprev" href="#hoodie">&lt;&lt;</a>
-           <a class="arrow prev" href="#hoodie">&lt;</a>
-           <a href="#" class="active">1</a>
-           <a href="#">2</a>
-           <a href="#">3</a>
-           <a href="#">4</a>
-           <a href="#">5</a>
-           <a href="#">6</a>
-           <a href="#">7</a>
-           <a href="#">8</a>
-           <a href="#">9</a>
-           <a href="#">10</a>
-           <a class="arrow next" href="#">&gt;</a>
-           <a class="arrow nnext" href="#">&gt;&gt;</a>
-        </div>
-    </div> -->
     
     {% endblock %}
     {% block script %}

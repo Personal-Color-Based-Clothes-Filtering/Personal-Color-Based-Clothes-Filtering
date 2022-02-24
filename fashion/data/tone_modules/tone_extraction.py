@@ -56,16 +56,12 @@ class ToneExtraction(MainColorExtraction):
                 result = 'winter'
         return result            
 
-    # Euclidean distance
-    # row = [v, s, tone]
     def euclidean_distance(self, row1, row2):
         distance = 0.0
         for i in range(len(row1)):
             distance += (row1[i] - row2[i]) ** 2
         return sqrt(distance)
 
-
-    # 가장 가까운 점 찾기(num_neighbors개)
     def get_neighbors(self, tone_dataset, main_color_saturation_and_value, num_neighbors=1):
         distances = list()
         for tone_row in tone_dataset:
@@ -85,10 +81,3 @@ class ToneExtraction(MainColorExtraction):
         self.PCCS,self.SEASON = self.get_closet_personal_color(hue,saturation,value)
         return self.SEASON
 
-
-# img = 'https://image.msscdn.net/images/goods_img/20190905/1144999/1144999_3_500.jpg'
-# #img = 'https://image.msscdn.net/images/goods_img/20210914/2129973/2129973_1_500.gif'
-# tone_extraction_instance = ToneExtraction(img)
-# tone = tone_extraction_instance.extract_tone()
-
-# print(tone)

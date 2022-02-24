@@ -19,7 +19,6 @@ class MainColorExtraction:
         image_type = self.URL[-3:]
         img = self.read_rgb_image(image_type)
 
-        # mean_img = self.mean_shift_color(img)
         grabcut_img = self.grabcut(img)
         cluster = self.clustering_image_color(grabcut_img)
         self.COLOR = self.extract_main_color(cluster)
@@ -54,16 +53,15 @@ class MainColorExtraction:
         
     #grabcut 알고리즘을 이용한 전경 제거 메소드
     def grabcut(self,image):
-        init_mask = np.zeros(image.shape[:2],np.uint8) #초기 마스크
-        background_model = np.zeros((1,65),np.float64) #grabcut에 사용할 임시 배열
+        init_mask = np.zeros(image.shape[:2],np.uint8)
+        background_model = np.zeros((1,65),np.float64)
         foreground_model = np.zeros((1,65),np.float64)
         rect = (100,100,300,400)
 
         cv2.grabCut(image,init_mask,rect,background_model,foreground_model,5,cv2.GC_INIT_WITH_RECT)
-        closet_mask = np.where((init_mask==2)|(init_mask==0),0,1).astype('uint8') #배경인 곳은 0, 그 외에는 1로 설정한 마스크
+        closet_mask = np.where((init_mask==2)|(init_mask==0),0,1).astype('uint8')
         image = image * closet_mask[:,:,np.newaxis]
-        
-        #image = self.remove_grabcut_bg(image)
+
         return image
 
     #grabcut 적용 시 생기는 검정 배경 제거
@@ -119,7 +117,6 @@ class MainColorExtraction:
         main_color = [[clustering_color_list[0]['r'],clustering_color_list[0]['g'],clustering_color_list[0]['b']]]
         return main_color
     
-    # 5,6은 개발 과정에서 진행 확인 용도
     #5)대표 색상 확인을 위한 팔레트
     def rgb_palette(self,color):
         rgb = [
@@ -141,10 +138,3 @@ class MainColorExtraction:
         f.tight_layout()
         plt.show()
         
-        
-
-img = 'https://image.msscdn.net/images/goods_img/20190905/1144999/1144999_3_500.jpg'
-orange = 'https://image.msscdn.net/images/goods_img/20200904/1584002/1584002_1_500.jpg'
-gray = 'https://image.msscdn.net/images/goods_img/20210914/2129973/2129973_1_500.gif'
-tone_extraction_instance = MainColorExtraction(img)
-color = tone_extraction_instance.get_main_color()
