@@ -69,7 +69,47 @@
                 {% endfor %}
             </div>
     </section>
-    
+
+    <div id="paging">
+        <ul class="pagination">
+        {% if clothes.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ clothes.previous_page_number }}">
+            이전
+            </a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">
+            이전
+            </a>
+        </li>
+        {% endif %}
+        {% for page_number in clothes.paginator.page_range %}
+            {% if page_number == clothes.number %}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="?page={{page_number}}">
+                    {{page_number}}
+                </a>
+            </li>
+            {% else %}
+            <li class="page-item" aria-current="page">
+                <a class="page-link" href="?page={{page_number}}">
+                    {{page_number}}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+        {% if clothes.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ clothes.next_page_number }}">다음</a>
+        {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+            </li>
+        {% endif %}
+        </ul>
+    </div>
     {% endblock %}
     {% block script %}
         <script type="text/javascript" src="{% static 'fashion/js/queryString.js' %}"></script>

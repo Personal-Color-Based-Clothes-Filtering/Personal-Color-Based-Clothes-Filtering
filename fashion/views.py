@@ -30,10 +30,6 @@ def spring_list(request):
     category = request.GET.get('category',None)
     color = request.GET.get('color',None)
 
-    page = request.GET.get('page','1')
-    paginator = Paginator(clothes,50)
-    page_obj = paginator.get_page(page)
-
     if category != None or color != None:
         
         q = Q(tone='spring')
@@ -48,8 +44,12 @@ def spring_list(request):
         clothes_serialized = serializers.serialize('json',clothes)
         return JsonResponse(clothes_serialized,safe=False)
 
+    page = request.GET.get('page','1')
+    paginator = Paginator(clothes,80)
+    page_obj = paginator.get_page(page)
+
     return render(request,'fashion/spring_list.html',{
-        'clothes':clothes
+        'clothes':page_obj,
     })
 
 def summer_list(request):
