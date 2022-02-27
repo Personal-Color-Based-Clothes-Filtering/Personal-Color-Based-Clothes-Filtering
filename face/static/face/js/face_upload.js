@@ -38,11 +38,11 @@ $(document).ready(function(){
 
 //로딩중 구성 js.
 function test(imageName) {
-    LoadingWithMask('./face/static/face/image' + imageName);
+    LoadingWithMask('./face/static/face/image/' + imageName);
     setTimeout("closeLoadingWithMask()", 19000);
 }
  
-function LoadingWithMask() {
+function LoadingWithMask(gif) {
     //화면의 높이와 너비 구하기.
     var maskHeight = $(document).height();
     var maskWidth  = window.document.body.clientWidth;
@@ -51,7 +51,12 @@ function LoadingWithMask() {
     var mask       ="<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
     var loadingImg ='';
     
-    loadingImg +=" <img src='.face/static/face/image/loading.png' style='position: absolute; display: block; margin: 0px auto;'/>";
+    /*loadingImg +=" <div id='loadingImg'>";
+    loadingImg +=" <img src='.face/static/face/image/loading.png' style='position:absolute; z-index:9500; text-align:center; display:block; margin-top:300px; margin-left:750px;'/>";
+    loadingImg += "</div>";  */
+
+    loadingImg +=" <img src='"+ gif +"' style='position: absolute; display: block; margin: 0px auto;'/>";
+    //loadingImg +=" <img src='.face/static/face/image/loading.png' style='position: absolute; display: block; margin: 0px auto;'/>";
 
     //화면에 레이어 추가
     $('body')
