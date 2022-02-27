@@ -42,7 +42,7 @@ function test(imageName) {
     setTimeout("closeLoadingWithMask()", 19000);
 }
  
-function LoadingWithMask(gif) {
+function LoadingWithMask() {
     //화면의 높이와 너비 구하기.
     var maskHeight = $(document).height();
     var maskWidth  = window.document.body.clientWidth;
@@ -51,7 +51,7 @@ function LoadingWithMask(gif) {
     var mask       ="<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
     var loadingImg ='';
     
-    loadingImg +=" <img src='"+ gif +"' style='position: absolute; display: block; margin: 0px auto;'/>";
+    loadingImg +=" <img src='.face/static/face/image/loading.png' style='position: absolute; display: block; margin: 0px auto;'/>";
 
     //화면에 레이어 추가
     $('body')
