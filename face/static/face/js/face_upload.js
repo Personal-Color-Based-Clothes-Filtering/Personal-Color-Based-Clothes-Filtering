@@ -29,7 +29,6 @@ $(document).ready(function(){
              var reader = new FileReader();
              reader.onload = function(e){
                  var src = e.target.result;
-                 //var src = 'face/personal_color_check/image/original.jpg'
                  document.getElementById("preview-image").src=src;
              }
              reader.readAsDataURL($(this)[0].files[0]);

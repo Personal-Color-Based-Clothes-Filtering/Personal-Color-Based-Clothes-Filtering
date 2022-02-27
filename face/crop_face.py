@@ -21,8 +21,6 @@ def CropFace():
     
     cv2.imwrite("./media/origin/original.jpg", img)
     image_url = '/media/origin/original.jpg'
-    # cv2.imwrite("./face/personal_color_check/image/original.jpg", img)
-    # image_url = '/face/personal_color_check/image/original.jpg'
 
     # 이미지 사이즈 조정 
     img = Resize(img)
