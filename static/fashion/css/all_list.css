@@ -1,0 +1,87 @@
+.product-container{
+    width:1250px;
+    margin:0 auto;
+    position: relative;
+    border-bottom: 1px solid #DDDDDD;
+}
+.container-wrapper{
+    width:1250px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.product-container .category-title{
+    display: flex;
+    width:100%;
+    align-items: center;
+    justify-content: space-between;
+    margin:28px 0;
+}
+
+.product-container .category-title button{
+    height:38px;
+    width:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    border: 1px solid black;
+    background: transparent;
+}
+
+.product-wrapper{
+    width:100%;
+    /* display: grid;
+    grid-template-columns: repeat(4,1fr); */
+    display: flex;
+    flex-wrap: nowrap;
+    /* overflow: hidden; */
+    gap: 16px;
+    padding-bottom:20px;
+}
+.product-wrapper .product{
+    width:300px;
+    height:486px;
+}
+.product-wrapper .product img{
+    width:300px;
+    height: 400px;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+.product-wrapper .product p{
+    margin:5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.product-wrapper .product .price,
+.product-wrapper .product .brand{
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+.product-container .carousel-button{
+    position: absolute;
+    top:48%;
+    display: flex;
+    justify-content: space-between;
+    width:1400px;
+}
+.carousel-button button{
+    border: none;
+    width:48px;
+    height:48px;
+    padding:1px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.carousel-button .next{
+    background-image: url(../image/chevron-right.svg);
+}
+.carousel-button .prev{
+    background-image: url(../image/chevron-left.svg);
+}

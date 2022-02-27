@@ -38,7 +38,7 @@ $(document).ready(function(){
 
 //로딩중 구성 js.
 function test(imageName) {
-    LoadingWithMask('./face/static/face/image/' + imageName);
+    LoadingWithMask("{%static 'face/image'%}"+imageName);
     setTimeout("closeLoadingWithMask()", 19000);
 }
  
@@ -52,10 +52,10 @@ function LoadingWithMask(gif) {
     var loadingImg ='';
     
     /*loadingImg +=" <div id='loadingImg'>";
-    loadingImg +=" <img src='.face/static/face/image/loading.png' style='position:absolute; z-index:9500; text-align:center; display:block; margin-top:300px; margin-left:750px;'/>";
-    loadingImg += "</div>";  */
+    loadingImg +=" <img src='{%static 'face/image/loader.gif'%}' style='position:absolute; z-index:9500; text-align:center; display:block; margin-top:300px; margin-left:750px;'/>";
+    loadingImg += "</div>"; */
 
-    loadingImg +=" <img src='"+ gif +"' style='position: absolute; display: block; margin: 0px auto;'/>";
+    loadingImg +=" <img src='{%static 'face/image%}'"+ gif +"' style='position: absolute; display: block; margin: 0px auto;'/>";
     //loadingImg +=" <img src='.face/static/face/image/loading.png' style='position: absolute; display: block; margin: 0px auto;'/>";
 
     //화면에 레이어 추가
