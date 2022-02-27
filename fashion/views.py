@@ -47,9 +47,10 @@ def spring_list(request):
     page = request.GET.get('page','1')
     paginator = Paginator(clothes,80)
     page_obj = paginator.get_page(page)
+    print(category,color,page_obj)
 
     return render(request,'fashion/spring_list.html',{
-        'clothes':page_obj,
+        'clothes':page_obj
     })
 
 def summer_list(request):

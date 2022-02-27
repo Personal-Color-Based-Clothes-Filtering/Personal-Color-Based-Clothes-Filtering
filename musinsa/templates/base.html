@@ -14,12 +14,13 @@
     </head>
     <body>
         {% block nav %}
-        <nav class="navbar">
-            <a class="logo" type="submit" onClick="location.href='http://127.0.0.1:8000/'">SMWU X MUSINSA</a>
-            
-            <div class="menu">
-                <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/face'">퍼스널 컬러 테스트</a>
-                <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/'">쇼핑하기</a>
+        <nav class="nav-bar">
+            <div class="nav-wrapper">
+                <a class="logo" type="submit" onClick="location.href='http://127.0.0.1:8000/'">SMWU X MUSINSA</a>
+                <div class="menu">
+                    <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/face'">퍼스널 컬러 테스트</a>
+                    <a class='move' type="submit" onClick="location.href='http://127.0.0.1:8000/shopping/'">쇼핑하기</a>
+                </div>
             </div>
         </nav>
         {% endblock %}

@@ -3,6 +3,8 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'fashion/css/product_list.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/5.0.0-alpha.0/redux.js"></script>
 {% endblock %}
@@ -21,7 +23,7 @@
     <hr>
     <section class="filter">
         <div class="category-filter">
-            <button id='collar' class="category" onclick="setOption(event,'spring');">PK/Collar</button>
+            <input type="radio" id='collar' class="category" href="#?category=collar">PK/Collar</input>
             <button id='hoodie' class="category" onclick="setOption(event,'spring');">Hoodie</button>
             <button id='shirt' class="category" onclick="setOption(event,'spring');">Shirt</button>
             <button id='longsleeve' class="category" onclick="setOption(event,'spring');">Longsleeve</button>
@@ -51,14 +53,14 @@
                 {% for c in clothes %}
                     <div class="clothes-item">
                         <a href="{{c.url}}">
-                            <img class="thumbnail" src="{{ c.thumbnail }}" alt="{{s.name}}">
+                            <img class="product-thumbnail" src="{{ c.thumbnail }}" alt="{{s.name}}">
                         
                             <p class="brand">{{ c.brand }}</p>
                             <p class="name">{{ c.name }}</p>
                         <p>{{c.category}} {{c.color}} {{c.tone}}</p>
                         {% if c.discount_price %} 
                             <div class="price-box">
-                                <del class="del-price" style="color:gray;">{{c.price}}원</del> 
+                                <del class="del-price">{{c.price}}원</del> 
                                 <p class="price" style="font-weight: bold;">{{c.discount_price}}원</p>
                             </div>
                         {% else %}
