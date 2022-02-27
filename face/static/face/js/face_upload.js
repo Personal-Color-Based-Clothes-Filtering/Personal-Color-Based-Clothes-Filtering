@@ -38,8 +38,8 @@ $(document).ready(function(){
 
 //로딩중 구성 js.
 function test(imageName) {
-    LoadingWithMask('./static/face/image' + imageName);
-    setTimeout("closeLoadingWithMask()", 3000);
+    LoadingWithMask('./face/static/face/image' + imageName);
+    setTimeout("closeLoadingWithMask()", 19000);
 }
  
 function LoadingWithMask(gif) {
@@ -50,9 +50,9 @@ function LoadingWithMask(gif) {
     //화면에 출력할 마스크 설정하기.
     var mask       ="<div id='mask' style='position:absolute; z-index:9000; background-color:#000000; display:none; left:0; top:0;'></div>";
     var loadingImg ='';
-      
-    loadingImg +=" <img src='"+ gif +"' style='position: absolute; display: block; margin: 0px auto;'/>";
- 
+    
+    loadingImg +=" <img src='.face/static/face/image"+ gif +"' style='position: absolute; display: block; margin: 0px auto;'/>";
+
     //화면에 레이어 추가
     $('body')
         .append(mask)

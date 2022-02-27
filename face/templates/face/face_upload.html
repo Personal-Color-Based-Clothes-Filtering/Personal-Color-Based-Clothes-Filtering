@@ -4,10 +4,8 @@
 
 <!-- extra_head:css,스크립트파일(js) 넣는 블록-->
 {% block extra_head %}
-<link rel="stylesheet" type="text/css" href="{% static 'face/css/icons.css.css' %}"/>
-<script type="text/javascript" src="${static 'face/js//loadingoverlay.min.js"></script>
-
 <link rel="stylesheet" href="{% static 'face/css/face_upload.css' %}">  
+<script type = "text/javascript" src="../../static/face/js/face_upload.js"></script>
 {% endblock %}
  
 <body>
@@ -36,16 +34,8 @@
             5. (너무 밝거나 어둡지 않은) 흰 조명 아래 찍은 사진이어야 합니다.</a>
         <br><br><br>
 
-        <button type="submit">퍼스널 컬러 테스트하기</button>
-        {% comment %}<script type="text/javascript"><button type="submit"><a href="{% url 'face:success' %}">퍼스널 컬러 테스트하기</a></button>
-            $.LoadingOverlay("show", {
-            background       : "rgba(0, 0, 0, 0.5)",
-            image            : "",
-            maxSize          : 60,
-            fontawesome      : "fa fa-spinner fa-pulse fa-fw",
-            fontawesomeColor : "#FFFFFF",
-        });
-        </script>{% endcomment %}        
+        <button type="submit" onclick="javascript:test('loader.gif');">퍼스널 컬러 테스트하기</button>
+        {% comment %}<button type="submit"><a href="{% url 'face:success' %}">퍼스널 컬러 테스트하기</a></button>{% endcomment %}        
     </form>
     {% endblock body %}
 </body>
