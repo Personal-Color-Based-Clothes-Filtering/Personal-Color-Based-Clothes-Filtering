@@ -18,6 +18,7 @@ class MainColorExtraction:
     def get_main_color(self):
         image_type = self.URL[-3:]
         img = self.read_rgb_image(image_type)
+        img = cv2.resize(img,dsize=(500,500),interpolation=cv2.INTER_AREA)
 
         grabcut_img = self.grabcut(img)
         cluster = self.clustering_image_color(grabcut_img)
