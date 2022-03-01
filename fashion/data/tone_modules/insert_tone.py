@@ -38,5 +38,5 @@ for url in df.loc[:,'thumbnail']:
   i += 1
   
 #df.drop(['Unnamed: 0'], axis = 1, inplace = True)
-df.to_csv('../finalDataset/ex.csv')
+df.to_csv('../finalDataset/ex2.csv')
 

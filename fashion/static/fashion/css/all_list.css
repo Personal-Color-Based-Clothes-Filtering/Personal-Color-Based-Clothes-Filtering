@@ -27,8 +27,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 0;
-    border: 1px solid black;
+    border: 1px solid #222;
     background: transparent;
+    transition:0.1s
+}
+.product-container .category-title button:hover{
+    border:none;
+    background:#222;
+    color:white;
+    transition:0.1s
 }
 
 .product-wrapper{

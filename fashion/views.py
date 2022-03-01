@@ -26,12 +26,12 @@ def all_list(request):
     {'spring' : spring, 'summer' : summer, 'autumn' : autumn, 'winter' : winter})
 
 def spring_list(request):
-    clothes = Clothes.objects.filter(tone="spring")
+    clothes = Clothes.objects.filter(tone="spring").order_by('index')
     category = request.GET.get('category',None)
     color = request.GET.get('color',None)
+    print(category,color)
 
     if category != None or color != None:
-        
         q = Q(tone='spring')
         if category and category != 'all':
             q &= Q(category=category)
@@ -39,28 +39,26 @@ def spring_list(request):
         if color and color != 'all':
             q &= Q(color=color)
             print(color)
-    
         clothes = Clothes.objects.filter(q).distinct()
-        clothes_serialized = serializers.serialize('json',clothes)
-        return JsonResponse(clothes_serialized,safe=False)
 
     page = request.GET.get('page','1')
-    paginator = Paginator(clothes,80)
+    paginator = Paginator(clothes,48)
     page_obj = paginator.get_page(page)
     print(category,color,page_obj)
 
     return render(request,'fashion/spring_list.html',{
-        'clothes':page_obj
+        'clothes':page_obj,
+        'category':category,
+        'color':color
     })
 
 def summer_list(request):
-    clothes = Clothes.objects.filter(tone="summer")
-
+    clothes = Clothes.objects.filter(tone="summer").order_by('index')
     category = request.GET.get('category',None)
     color = request.GET.get('color',None)
+    print(category,color)
 
     if category != None or color != None:
-        
         q = Q(tone='summer')
         if category and category != 'all':
             q &= Q(category=category)
@@ -68,47 +66,26 @@ def summer_list(request):
         if color and color != 'all':
             q &= Q(color=color)
             print(color)
-    
         clothes = Clothes.objects.filter(q).distinct()
-        clothes_serialized = serializers.serialize('json',clothes)
-        return JsonResponse(clothes_serialized,safe=False)
+
+    page = request.GET.get('page','1')
+    paginator = Paginator(clothes,48)
+    page_obj = paginator.get_page(page)
+    print(category,color,page_obj)
 
     return render(request,'fashion/summer_list.html',{
-        'clothes':clothes
-    })
-
-def summer_list(request):
-    clothes = Clothes.objects.filter(tone="summer")
-
-    category = request.GET.get('category',None)
-    color = request.GET.get('color',None)
-
-    if category != None or color != None:
-        
-        q = Q(tone='summer')
-        if category and category != 'all':
-            q &= Q(category=category)
-            print(category)
-        if color and color != 'all':
-            q &= Q(color=color)
-            print(color)
-    
-        clothes = Clothes.objects.filter(q).distinct()
-        clothes_serialized = serializers.serialize('json',clothes)
-        return JsonResponse(clothes_serialized,safe=False)
-
-    return render(request,'fashion/summer_list.html',{
-        'clothes':clothes
+        'clothes':page_obj,
+        'category':category,
+        'color':color
     })
 
 def autumn_list(request):
-    clothes = Clothes.objects.filter(tone="autumn")
-
+    clothes = Clothes.objects.filter(tone="autumn").order_by('index')
     category = request.GET.get('category',None)
     color = request.GET.get('color',None)
+    print(category,color)
 
     if category != None or color != None:
-        
         q = Q(tone='autumn')
         if category and category != 'all':
             q &= Q(category=category)
@@ -116,23 +93,26 @@ def autumn_list(request):
         if color and color != 'all':
             q &= Q(color=color)
             print(color)
-    
         clothes = Clothes.objects.filter(q).distinct()
-        clothes_serialized = serializers.serialize('json',clothes)
-        return JsonResponse(clothes_serialized,safe=False)
+
+    page = request.GET.get('page','1')
+    paginator = Paginator(clothes,48)
+    page_obj = paginator.get_page(page)
+    print(category,color,page_obj)
 
     return render(request,'fashion/autumn_list.html',{
-        'clothes':clothes
+        'clothes':page_obj,
+        'category':category,
+        'color':color
     })
 
 def winter_list(request):
-    clothes = Clothes.objects.filter(tone="winter")
-
+    clothes = Clothes.objects.filter(tone="winter").order_by('index')
     category = request.GET.get('category',None)
     color = request.GET.get('color',None)
+    print(category,color)
 
     if category != None or color != None:
-        
         q = Q(tone='winter')
         if category and category != 'all':
             q &= Q(category=category)
@@ -140,11 +120,15 @@ def winter_list(request):
         if color and color != 'all':
             q &= Q(color=color)
             print(color)
-    
         clothes = Clothes.objects.filter(q).distinct()
-        clothes_serialized = serializers.serialize('json',clothes)
-        return JsonResponse(clothes_serialized,safe=False)
+
+    page = request.GET.get('page','1')
+    paginator = Paginator(clothes,48)
+    page_obj = paginator.get_page(page)
+    print(category,color,page_obj)
 
     return render(request,'fashion/winter_list.html',{
-        'clothes':clothes
+        'clothes':page_obj,
+        'category':category,
+        'color':color
     })

@@ -18,16 +18,16 @@ class ToneExtraction(MainColorExtraction):
     
     #톤 범위:명도(0~25/25~50/50~75/75~100,25/50/75)->범위의 중간값으로 설정. 채도(0~30/30~60/60~90/90~100)->중간값으로 설정
     PCCS_TONE_DATASET = [
-        [93.75, 15, 'p'], [87.5, 45, 'lt'], [75, 75, 'b'],
-        [62.5, 15, 'ltg'], [62.5, 45, 'sf'], [50, 75, 's'], [50, 95, 'v'],
-        [37.5, 15, 'g'], [37.5, 45, 'd'], [25, 75, 'dp'],
-        [6.5, 15, 'dkg'], [12.5, 45, 'd']
+        [93.75, 15, 'p'], [93.75, 45, 'lt'], [87.5, 75, 'b'],
+        [68.5, 15, 'ltg'], [68.5, 45, 'sf'], [50, 75, 's'], [50, 95, 'v'],
+        [37.5, 15, 'g'], [37.5, 45, 'd'], [18.75, 75, 'dp'],
+        [12.5, 15, 'dkg'], [12.5, 45, 'd']
     ]
     # season
     SPRING = ['p', 'lt', 'b', 'v']
-    SUMMER = ['p', 'lt', 'b', 'ltg', 'sf', 'g', 'd']
+    SUMMER = ['p', 'lt', 'b', 'ltg', 'sf', 'g']
     FALL = ['ltg', 'sf', 's', 'g', 'd', 'dp', 'dkg', 'dk']
-    WINTER = ['s', 'v', 'dp', 'dkg', 'dk']
+    WINTER = ['s', 'v', 'dp', 'd', 'dkg', 'dk']
 
 
     def __init__(self,image_url):
@@ -101,12 +101,12 @@ class ToneExtraction(MainColorExtraction):
     
     def get_season_tone(self,hue,b,tone):
         result = ''
-        if b > 0 or hue < 180:
+        if b > 0:
             if tone in self.SPRING:
                 result = 'spring'
             else:
                 result = 'autumn'
-        elif b < 0 or hue > 180:
+        elif b <= 0:
             if tone in self.SUMMER:
                 result = 'summer'
             else:

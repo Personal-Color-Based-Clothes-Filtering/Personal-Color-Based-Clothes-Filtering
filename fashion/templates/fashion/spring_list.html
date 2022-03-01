@@ -3,8 +3,6 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'fashion/css/product_list.css' %}">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/5.0.0-alpha.0/redux.js"></script>
 {% endblock %}
@@ -21,39 +19,59 @@
         </ul>
     </header>
     <hr>
-    <section class="filter">
-        <div class="category-filter">
-            <input type="radio" id='collar' class="category" href="#?category=collar">PK/Collar</input>
-            <button id='hoodie' class="category" onclick="setOption(event,'spring');">Hoodie</button>
-            <button id='shirt' class="category" onclick="setOption(event,'spring');">Shirt</button>
-            <button id='longsleeve' class="category" onclick="setOption(event,'spring');">Longsleeve</button>
-            <button id='shortsleeve' class="category" onclick="setOption(event,'spring');">Shortsleeve</button>
-            <button id='sleeveless' class="category" onclick="setOption(event,'spring');">Sleeveless</button>
-            <button id='sweat' class="category" onclick="setOption(event,'spring');">Sweatshirt</button>
-            <button id='sweater' class="category" onclick="setOption(event,'spring');">Knit</button>
-        </div>
+   
+    <form action="" method="get" class="filter">
+        <div class="filter-container">
+            <div class="category-filter">
+                <input id="all" type="radio" name="category" class="category" value="all" {% if category == 'all' %} checked {% endif %}>
+                <label for="all">All</label>
 
-        <div class="color-filter">
-        <!-- 회 빨 핑 주 노 초 파 보 갈 베-->
-            <button id='3' class="color" style="background:#9D9C9B;" onclick="setOption(event,'spring');">gray</button>
-            <button id='11' class="color" style="background:#FF0000;" onclick="setOption(event,'spring');">red</button>
-            <button id='10' class="color" style="background:#FF00FF;" onclick="setOption(event,'spring');">pink</button>
-            <button id='12' class="color" style="background:#ff7f00;"onclick="setOption(event,'spring');">orange</button>
-            <button id='9' class="color" style="background:#FBEB4F;" onclick="setOption(event,'spring');">yellow</button>
-            <button id='6' class="color" style="background:#50AD32;" onclick="setOption(event,'spring');">green</button>
-            <button id='7' class="color" style="background:#210AF5;" onclick="setOption(event,'spring');">blue</button>
-            <button id='8' class="color" style="background:#8b00ff;" onclick="setOption(event,'spring');">purple</button>
-            <button id='4' class="color" style="background:#752F16;" onclick="setOption(event,'spring');">brown</button>
-            <button id='29' class="color" style="background:#CAB494;" onclick="setOption(event,'spring');">sand</button>
+                <input id="collar" type="radio" name="category" class="category" value="collar" {% if category == 'collar' %} checked {% endif %}>
+                <label for="collar">Collar</label>
+
+                <input id="hoodie" type="radio" name="category" class="category" value="hoodie" {% if category == 'hoodie' %} checked {% endif %}>
+                <label for="hoodie">Hoodie</label>
+
+                <input id="shirt" type="radio" name="category" class="category" value="shirt" {% if category == 'shirt' %} checked {% endif %}>
+                <label for="shirt">Shirt</label>
+
+                <input id="longsleeve" type="radio" name="category" class="category" value="longsleeve" {% if category == 'longsleeve' %} checked {% endif %}>
+                <label for="longsleeve">Longsleeve</label>
+
+                <input id="shortsleeve" type="radio" name="category" class="category" value="shortsleeve" {% if category == 'shortsleeve' %} checked {% endif %}>
+                <label for="shortsleeve">Shortsleeve</label>
+
+                <input id="sleeveless" type="radio" name="category" class="category" value="sleeveless" {% if category == 'sleeveless' %} checked {% endif %}>
+                <label for="sleeveless">Sleeveless</label>
+
+                <input id="sweat" type="radio" name="category" class="category" value="sweat" {% if category == 'sweat' %} checked {% endif %}>
+                <label for="sweat">Sweat</label>
+                
+                <input id="sweater" type="radio" name="category" class="category" value="sweater" {% if category == 'sweater' %} checked {% endif %}>
+                <label for="sweater">Sweater</label>
+            </div>
+            <div class="color-filter">
+                <input id="gray" type="radio" name="color" class="color" value="3" data-value="gray" style="background-color:#9D9C9B" {% if color == '3' %} checked {% endif %}/>
+                <input id="red" type="radio" name="color" class="color" value="11" data-value="red" style="background-color:#FF0000" {% if color == '11' %} checked {% endif %}/>
+                <input id="pink" type="radio" name="color" class="color" value="10" data-value="pink" style="background-color:#FF00FF" {% if color == '10' %} checked {% endif %}/>
+                <input id="orange" type="radio" name="color" class="color" value="12" data-value="orange" style="background-color:#ff7f00" {% if color == '12' %} checked {% endif %}/>
+                <input id="yellow" type="radio" name="color" class="color" value="9" data-value="yellow" style="background-color:#FBEB4F" {% if color == '9' %} checked {% endif %}/>
+                <input id="green" type="radio" name="color" class="color" value="6" data-value="green" style="background-color:#50AD32" {% if color == '6' %} checked {% endif %}/>
+                <input id="blue" type="radio" name="color" class="color" value="7" data-value="blue" style="background-color:#210AF5" {% if color == '7' %} checked {% endif %}/>
+                <input id="purple" type="radio" name="color" class="color" value="8" data-value="purple" style="background-color:#8b00ff" {% if color == '8' %} checked {% endif %}/>
+                <input id="brown" type="radio" name="color" class="color" value="4" data-value="brown" style="background-color:#752F16" {% if color == '4' %} checked {% endif %}/>
+                <input id="sand" type="radio" name="color" class="color" value="29" data-value="sand" style="background-color:#CAB494" {% if color == '29' %} checked {% endif %}/>
+            </div>
         </div>
-    </section>
+        <input type="submit" name="submit" value="상세 검색" class="submit"/>
+    </form>
 
     <section id="clothes-container">
         <div id='clothes-list' class="clothes-list">  
                 {% for c in clothes %}
                     <div class="clothes-item">
                         <a href="{{c.url}}">
-                            <img class="product-thumbnail" src="{{ c.thumbnail }}" alt="{{s.name}}">
+                            <img class="thumbnail" src="{{ c.thumbnail }}" alt="{{s.name}}">
                         
                             <p class="brand">{{ c.brand }}</p>
                             <p class="name">{{ c.name }}</p>
@@ -72,49 +90,53 @@
             </div>
     </section>
 
-    <div id="paging">
+    <section id="paging">
         <ul class="pagination">
         {% if clothes.has_previous %}
         <li class="page-item">
-            <a class="page-link" href="?page={{ clothes.previous_page_number }}">
+            <button class="page-link" onclick="createPagingUrl({{clothes.previous_page_number}});">
             이전
-            </a>
+            </button>
         </li>
         {% else %}
         <li class="page-item disabled">
-            <a class="page-link" tabindex="-1" aria-disabled="true" href="#">
+            <button class="page-link" tabindex="-1" aria-disabled="true" href="#">
             이전
-            </a>
+            </button>
         </li>
         {% endif %}
         {% for page_number in clothes.paginator.page_range %}
-            {% if page_number == clothes.number %}
-            <li class="page-item active" aria-current="page">
-                <a class="page-link" href="?page={{page_number}}">
-                    {{page_number}}
-                </a>
-            </li>
-            {% else %}
-            <li class="page-item" aria-current="page">
-                <a class="page-link" href="?page={{page_number}}">
-                    {{page_number}}
-                </a>
-            </li>
+            {% if page_number >= clothes.number|add:-5 and page_number <= clothes.number|add:5 %}
+                {% if page_number == clothes.number %}
+                <li class="page-item active" aria-current="page">
+                    <button class="page-link" onclick="createPagingUrl({{page_number}});">
+                        {{page_number}}
+                    </button>
+                </li>
+                {% else %}
+                <li class="page-item" aria-current="page">
+                    <button class="page-link" onclick="createPagingUrl({{page_number}});">
+                        {{page_number}}
+                    </button>
+                </li>
+                {% endif %}
             {% endif %}
         {% endfor %}
         {% if clothes.has_next %}
             <li class="page-item">
-                <a class="page-link" href="?page={{ clothes.next_page_number }}">다음</a>
+                <button class="page-link" onclick="createPagingUrl({{clothes.next_page_number }});">다음</button>
+            </li>
         {% else %}
             <li class="page-item disabled">
-                <a class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</a>
+                <button class="page-link" tabindex="-1" aria-disabled="true" href="#">다음</button>
             </li>
         {% endif %}
         </ul>
-    </div>
+    </section>
     {% endblock %}
     {% block script %}
         <script type="text/javascript" src="{% static 'fashion/js/queryString.js' %}"></script>
+        <script type="text/javascript" src="{% static 'fashion/js/paging.js' %}"></script>
     {% endblock %}
  </body>
 
