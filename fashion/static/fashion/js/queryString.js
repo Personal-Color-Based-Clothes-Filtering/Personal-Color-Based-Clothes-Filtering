@@ -39,6 +39,79 @@ function setOption(e,tone){
     requestFilteringObjects(tone);
 }
 
+function createItemDOMList(response){
+    let clothes_list = document.createElement('div');
+    clothes_list.setAttribute('id','clothes-list');
+    clothes_list.className = 'clothes-list';
+
+    if(!response.length){
+        console.log('No product')
+        $('#clothes-list').html(`
+            <div class="no-product">해당하는 상품이 존재하지 않습니다.</div>
+        `)
+    }else{
+        response.map((item,index)=>{
+        // let id = item.pk;
+        let url = item.fields.url;
+        let thumbnail = item.fields.thumbnail;
+        let brand = item.fields.brand;
+        let name = item.fields.name;
+        // let category = item.fields.category;
+        // let color = item.fields.color;
+        // let tone = item.fields.tone;
+        let price = item.fields.price;
+        let discount_price = item.fields.discount_price;
+
+        let clothes_item = document.createElement('div');
+        clothes_item.className = 'clothes-item';
+
+        let clothes_url = document.createElement('a');
+        clothes_url.setAttribute('href',url);
+
+        let clothes_img = document.createElement('img');
+        clothes_img.setAttribute('src',thumbnail);
+        clothes_img.setAttribute('alt',name);
+        clothes_img.className = 'product-thumbnail';
+
+        let clothes_brand = document.createElement('p');
+        clothes_brand.innerText = brand;
+        clothes_brand.className = 'brand';
+
+        let clothes_name = document.createElement('p');
+        clothes_name.innerText = name;
+        clothes_name.className = 'name';
+
+        let clothes_price = document.createElement('p');
+        let clothes_discount_price = document.createElement('p');
+
+        clothes_price.innerText = `${price}원`;
+        if(discount_price){
+            clothes_price.className = 'del-price';
+            clothes_discount_price.innerText = `${discount_price}원`;
+            clothes_discount_price.className = 'price';
+        }else{
+            clothes_price.className = 'price';
+        }
+
+        let price_box = document.createElement('div')
+        price_box.className = 'price-box'    
+        price_box.appendChild(clothes_price)
+        if(discount_price){
+            price_box.appendChild(clothes_discount_price)
+        }
+        
+        clothes_url.appendChild(clothes_img)
+        clothes_url.appendChild(clothes_brand)
+        clothes_url.appendChild(clothes_name)
+        clothes_url.appendChild(price_box)
+        clothes_item.appendChild(clothes_url)
+        clothes_list.appendChild(clothes_item)
+    })
+
+    $('#clothes-container').html(clothes_list)
+    }
+}
+
 function requestFilteringObjects(tone){
     let category = store.getState().category;
     let color = store.getState().color;
@@ -50,77 +123,10 @@ function requestFilteringObjects(tone){
             color:color
         },
         success:function(response){
-            let clothes_list = document.createElement('div');
-            clothes_list.setAttribute('id','clothes-list');
-            clothes_list.className = 'clothes-list';
+            console.log('success')
+            //location.href=`/shopping/list/${tone}/?category=${category}&color=${color}`
             response = JSON.parse(response);
-
-            if(!response.length){
-                console.log('No product')
-                $('#clothes-list').html(`
-                    <div class="no-product">해당하는 상품이 존재하지 않습니다.</div>
-                `)
-            }else{
-                response.map((item,index)=>{
-                // let id = item.pk;
-                let url = item.fields.url;
-                let thumbnail = item.fields.thumbnail;
-                let brand = item.fields.brand;
-                let name = item.fields.name;
-                // let category = item.fields.category;
-                // let color = item.fields.color;
-                // let tone = item.fields.tone;
-                let price = item.fields.price;
-                let discount_price = item.fields.discount_price;
-
-                let clothes_item = document.createElement('div');
-                clothes_item.className = 'clothes-item';
-
-                let clothes_url = document.createElement('a');
-                clothes_url.setAttribute('href',url);
-
-                let clothes_img = document.createElement('img');
-                clothes_img.setAttribute('src',thumbnail);
-                clothes_img.setAttribute('alt',name);
-                clothes_img.className = 'thumbnail';
-
-                let clothes_brand = document.createElement('p');
-                clothes_brand.innerText = brand;
-                clothes_brand.className = 'brand';
-
-                let clothes_name = document.createElement('p');
-                clothes_name.innerText = name;
-                clothes_name.className = 'name';
-
-                let clothes_price = document.createElement('p');
-                let clothes_discount_price = document.createElement('p');
-
-                clothes_price.innerText = `${price}원`;
-                if(discount_price){
-                    clothes_price.className = 'del-price';
-                    clothes_discount_price.innerText = `${discount_price}원`;
-                    clothes_discount_price.className = 'price';
-                }else{
-                    clothes_price.className = 'price';
-                }
-
-                let price_box = document.createElement('div')
-                price_box.className = 'price-box'    
-                price_box.appendChild(clothes_price)
-                if(discount_price){
-                    price_box.appendChild(clothes_discount_price)
-                }
-                
-                clothes_url.appendChild(clothes_img)
-                clothes_url.appendChild(clothes_brand)
-                clothes_url.appendChild(clothes_name)
-                clothes_url.appendChild(price_box)
-                clothes_item.appendChild(clothes_url)
-                clothes_list.appendChild(clothes_item)
-            })
-
-            $('#clothes-container').html(clothes_list)
-            }
+            createItemDOMList(response)
         }
     })
 }

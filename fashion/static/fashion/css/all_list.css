@@ -27,8 +27,15 @@
     justify-content: center;
     align-items: center;
     border-radius: 0;
-    border: 1px solid black;
+    border: 1px solid #222;
     background: transparent;
+    transition:0.1s
+}
+.product-container .category-title button:hover{
+    border:none;
+    background:#222;
+    color:white;
+    transition:0.1s
 }
 
 .product-wrapper{
@@ -45,6 +52,7 @@
     width:300px;
     height:486px;
 }
+
 .product-wrapper .product img{
     width:300px;
     height: 400px;
@@ -56,11 +64,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color:#222222;
 }
 .product-wrapper .product .price,
 .product-wrapper .product .brand{
     font-weight: 700;
     padding-bottom: 5px;
+    color:#222222;
 }
 
 .product-container .carousel-button{

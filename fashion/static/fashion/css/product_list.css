@@ -2,6 +2,8 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 21px;
+    border-bottom: 1px solid #dadada;
 }
 .header{
     display:flex;
@@ -13,6 +15,9 @@ main{
 .header h1{
     font-size:35px;
     color:#222222;
+    margin:0;
+    display: flex;
+    align-items: center;
 }
 .header span{
     font-size:20px;
@@ -24,6 +29,7 @@ main{
     justify-content: space-between;
     align-items: center;
     width:250px;
+    margin:0;
 }
 .header ul li a{
     text-decoration: none;
@@ -42,33 +48,6 @@ hr{
     margin:0;
 }
 
-.filter{
-    width:1250px;
-    height: 90px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.filter .category-filter .category{
-    background:transparent;
-    border:none;
-    cursor: pointer;
-    font-size: 16px;
-    color:#666666; 
-}
-.filter .category-filter .category:hover{
-    color:#222222;
-}
-.filter .color-filter .color{
-    width:25px;
-    height:25px;
-    border:none;
-    border-radius: 100px;
-    cursor: pointer;
-    color:transparent;
-}
-
 .clothes-list{
     width:1250px;
     display: grid;
@@ -84,14 +63,15 @@ hr{
     width:300px;
     height: 380px;
     object-fit: cover;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .clothes-item p{
-    margin:5px 0;
+    margin:0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     color:#222222;
+    line-height: 1.3em;
 }
 .clothes-item .price-box{
     display: flex;
@@ -118,4 +98,101 @@ hr{
     align-items: center;
     font-size: 35px;
     color:#cccccc;
+}
+
+#clothes-container{
+    margin-bottom:10px;
+}
+#paging{
+    margin:30px 0;
+}
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination .page-item{
+    margin:0 2px;
+}
+
+.pagination .page-item .page-link{
+    text-decoration: none;
+    background: transparent;
+    border:none;
+    color:gray;
+    font-weight: 400;
+}
+
+.pagination .active .page-link{
+    color:black;
+    font-weight: 400;
+}
+
+.filter{
+    width:1250px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.filter .filter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter .category-filter{
+    padding-right:10px;
+}
+.filter .category{
+    display: none;
+    cursor: pointer;
+}
+.filter .category:checked + label{
+    color:#222222;
+    font-weight: 400;
+    border-bottom:1px solid #222;
+}
+.filter label{
+    margin-right:10px;
+    cursor: pointer;
+    font-size: 16px;
+    color:#888;
+    font-weight: 400;
+}
+
+.filter .color{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width:20px;
+    height:20px;
+    cursor: pointer;
+    border-radius: 100%;
+    margin:0 2px;
+}
+.filter .color-filter{
+    padding-left:20px;
+    border-left: 1px solid #dddddd;
+}
+.filter .color:checked{
+    border:2px solid #222222
+}
+
+.filter .submit{
+    height:38px;
+    width:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    border: 1px solid #222;
+    color:#222;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.filter .submit:hover{
+    background:#222;
+    color:#fff;
+    transition: 0.1s;
+    border:none;
 }

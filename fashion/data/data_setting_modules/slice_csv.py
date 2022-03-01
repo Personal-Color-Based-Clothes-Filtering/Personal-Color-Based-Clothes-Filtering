@@ -1,11 +1,6 @@
 import pandas as pd
 import os
 
-#csv를 읽는다.
-#category별로 행을 읽는다.
-#해당 행들을 따로 모은다. https://hogni.tistory.com/9
-#원본에서 행을 제거하고, 다른 파일로 저장한다.
-#다른 csv파일로 저장한다.
 def devide_csv():
     df = pd.read_csv('../dataset/clothes.csv')
 
