@@ -50,6 +50,7 @@
                 <label for="sweater">Sweater</label>
             </div>
             <div class="color-filter">
+                <!--수정 부분 (다영)--> <input id="gray" type="image" name="color" class="color" value="3" data-value="gray" src="/media/rainbow/rainbow.png"/>
                 <input id="gray" type="radio" name="color" class="color" value="3" data-value="gray" style="background-color:#9D9C9B" {% if color == '3' %} checked {% endif %}/>
                 <input id="red" type="radio" name="color" class="color" value="11" data-value="red" style="background-color:#FF0000" {% if color == '11' %} checked {% endif %}/>
                 <input id="pink" type="radio" name="color" class="color" value="10" data-value="pink" style="background-color:#FF00FF" {% if color == '10' %} checked {% endif %}/>
@@ -74,7 +75,6 @@
                         
                             <p class="brand">{{ c.brand }}</p>
                             <p class="name">{{ c.name }}</p>
-                        <p>{{c.category}} {{c.color}} {{c.tone}}</p>
                         {% if c.discount_price %}
                             <div class="price-box">
                                 <del class="del-price" style="color:gray;">{{c.price}}원</del> 
