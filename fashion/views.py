@@ -5,18 +5,15 @@ from django.http import JsonResponse
 from django.core import serializers
 from django.core.paginator import Paginator
 
-# 무신사 데이터 가져오기
 from .models import Clothes
 from django.db.models import Q
 
 def all_list(request):
-    clothes = Clothes.objects.all() # 전체
+    clothes = Clothes.objects.all()
 
     num = random.randrange(1, 200)
     num_range = num + 8
 
-    print(num,num_range)
-    # 톤 분류
     spring = Clothes.objects.filter(tone="spring")[num:num_range]
     summer = Clothes.objects.filter(tone="summer")[num:num_range]
     autumn = Clothes.objects.filter(tone="autumn")[num:num_range]
