@@ -8,22 +8,13 @@ class ToneExtraction(MainColorExtraction):
     PCCS = ''
     SEASON = ''
 
-    # PCCS tone dataset [v(명도), s(채도), PCCS tone]
-    # PCCS_TONE_DATASET = [
-    #     [93.75, 22.22222222, 'p'], [93.75, 55.55555555, 'lt'], [87.5, 88.88888888, 'b'],
-    #     [68.75, 22.22222222, 'ltg'], [68.75, 55.55555555, 'sf'], [50, 88.88888888, 's'], [50, 100, 'v'],
-    #     [37.5, 22.22222222, 'g'], [37.5, 55.55555555, 'd'], [18.75, 88.88888888, 'dp'],
-    #     [12.5, 22.22222222, 'dkg'], [12.5, 55.55555555, 'd']
-    # ]
-    
-    #톤 범위:명도(0~25/25~50/50~75/75~100,25/50/75)->범위의 중간값으로 설정. 채도(0~30/30~60/60~90/90~100)->중간값으로 설정
     PCCS_TONE_DATASET = [
         [93.75, 15, 'p'], [93.75, 45, 'lt'], [87.5, 75, 'b'],
         [68.5, 15, 'ltg'], [68.5, 45, 'sf'], [50, 75, 's'], [50, 95, 'v'],
         [37.5, 15, 'g'], [37.5, 45, 'd'], [18.75, 75, 'dp'],
         [12.5, 15, 'dkg'], [12.5, 45, 'd']
     ]
-    # season
+    
     SPRING = ['p', 'lt', 'b', 'v']
     SUMMER = ['p', 'lt', 'b', 'ltg', 'sf', 'g']
     FALL = ['ltg', 'sf', 's', 'g', 'd', 'dp', 'dkg', 'dk']
@@ -35,7 +26,6 @@ class ToneExtraction(MainColorExtraction):
     
     def convert_rgb_to_hsv(self,color):
         hsv = colorsys.rgb_to_hsv(color[0][0] / 255, color[0][1] / 255, color[0][2] / 255)
-        #h는 0~360,s와 v는 0~100로 정규화
         hue = round(hsv[0] * 360) 
         saturation = round(hsv[1] * 100)  
         value = round(hsv[2] * 100) 
@@ -64,9 +54,9 @@ class ToneExtraction(MainColorExtraction):
         XYZ[1] = round(Y,4)
         XYZ[2] = round(Z,4)
 
-        XYZ[0] = float(XYZ[0]) / 95.047         # ref_X =  95.047   Observer= 2°, Illuminant= D65
-        XYZ[1] = float(XYZ[1]) / 100.0          # ref_Y = 100.000
-        XYZ[2] = float(XYZ[2]) / 108.883        # ref_Z = 108.883
+        XYZ[0] = float(XYZ[0]) / 95.047        
+        XYZ[1] = float(XYZ[1]) / 100.0          
+        XYZ[2] = float(XYZ[2]) / 108.883     
 
         num = 0
         for value in XYZ :
@@ -88,7 +78,6 @@ class ToneExtraction(MainColorExtraction):
         Lab[1] = round(a,4)
         Lab[2] = round(b,4)
 
-        print(Lab)
         return Lab
 
     def get_closet_personal_color(self,hue,saturation,value,b):
@@ -101,12 +90,12 @@ class ToneExtraction(MainColorExtraction):
     
     def get_season_tone(self,hue,b,tone):
         result = ''
-        if b > 0:
+        if b > 0 or hue < 180:
             if tone in self.SPRING:
                 result = 'spring'
             else:
                 result = 'autumn'
-        elif b <= 0:
+        elif b <= 0 or hue > 180:
             if tone in self.SUMMER:
                 result = 'summer'
             else:
@@ -137,37 +126,4 @@ class ToneExtraction(MainColorExtraction):
         hue,saturation,value = self.convert_rgb_to_hsv(self.COLOR)
         b = self.convert_rgb_to_lab(self.COLOR)[2]
         self.PCCS,self.SEASON = self.get_closet_personal_color(hue,saturation,value,b)
-        print(self.PCCS,self.SEASON)
         return self.SEASON
-
-
-# sm_mint = 'https://image.msscdn.net/images/goods_img/20220221/2375190/2375190_1_500.jpg'
-# sm_mint2 = 'https://image.msscdn.net/images/goods_img/20220222/2376456/2376456_1_500.jpg'
-# sp_green = 'https://image.msscdn.net/images/goods_img/20180403/748059/748059_7_500.jpg'
-# sp_green2 = 'https://image.msscdn.net/images/goods_img/20220216/2362923/2362923_1_500.jpg'
-# warm_pk = 'https://image.msscdn.net/images/goods_img/20220212/2356432/2356432_1_500.jpg'
-# warm_pk2 = 'https://image.msscdn.net/images/goods_img/20190401/1000708/1000708_1_500.jpg'
-# cool_pk = 'https://image.msscdn.net/images/goods_img/20210310/1836752/1836752_1_500.jpg'
-# cool_pk2 = 'https://image.msscdn.net/images/goods_img/20220214/2357035/2357035_1_500.jpg'
-# wm = 'https://image.msscdn.net/data/curating/23658/23658_1_org.jpg'
-
-# sm1 = ToneExtraction(sm_mint)
-# sm2 = ToneExtraction(sm_mint2)
-# sp1 = ToneExtraction(sp_green)
-# sp2 = ToneExtraction(sp_green2)
-# wp1 = ToneExtraction(warm_pk)
-# wp2 = ToneExtraction(warm_pk2)
-# cp1 = ToneExtraction(cool_pk)
-# cp2 = ToneExtraction(cool_pk2)
-
-# sm1_tone = sm1.extract_tone()
-# sm2_tone = sm2.extract_tone()
-# sp1_tone = sp1.extract_tone()
-# sp2_tone = sp2.extract_tone()
-# wp1_tone = wp1.extract_tone()
-# wp2_tone = wp2.extract_tone()
-# cp1_tone = cp1.extract_tone()
-# cp2_tone = cp2.extract_tone()
-
-
-# print(yellow_tone,blue_tone)

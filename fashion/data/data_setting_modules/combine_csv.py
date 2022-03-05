@@ -34,9 +34,9 @@ def delete_unnamed():
     df.to_csv('../finalDataset/clothes.csv')
 
 def delete_nan():
-    df = pd.read_csv('../finalDataset/final1.csv')
+    df = pd.read_csv('../finalDataset/ex3.csv')
     nulldf = df[df['tone'].notna()]
     nulldf.to_csv('../finalDataset/nulldf.csv',index=False)
         
-    
+delete_nan()
 set_index()

@@ -50,7 +50,13 @@
                 <label for="sweater">Sweater</label>
             </div>
             <div class="color-filter">
-                <!--수정 부분 (다영)--> <input id="gray" type="image" name="color" class="color" value="3" data-value="gray" src="/media/rainbow/rainbow.png"/>
+                <input 
+                    id="all" type="radio" name="color" class="color" value="all" data-value="all" {% if color == 'all' %} checked {% endif %}
+                    style="background:
+                        linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+                        linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+                        linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);" 
+                />
                 <input id="gray" type="radio" name="color" class="color" value="3" data-value="gray" style="background-color:#9D9C9B" {% if color == '3' %} checked {% endif %}/>
                 <input id="red" type="radio" name="color" class="color" value="11" data-value="red" style="background-color:#FF0000" {% if color == '11' %} checked {% endif %}/>
                 <input id="pink" type="radio" name="color" class="color" value="10" data-value="pink" style="background-color:#FF00FF" {% if color == '10' %} checked {% endif %}/>
