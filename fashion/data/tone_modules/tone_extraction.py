@@ -12,7 +12,7 @@ class ToneExtraction(MainColorExtraction):
         [93.75, 15, 'p'], [93.75, 45, 'lt'], [87.5, 75, 'b'],
         [68.5, 15, 'ltg'], [68.5, 45, 'sf'], [50, 75, 's'], [50, 95, 'v'],
         [37.5, 15, 'g'], [37.5, 45, 'd'], [18.75, 75, 'dp'],
-        [12.5, 15, 'dkg'], [12.5, 45, 'd']
+        [12.5, 15, 'dkg'], [12.5, 45, 'dk']
     ]
     
     SPRING = ['p', 'lt', 'b', 'v']
@@ -126,4 +126,5 @@ class ToneExtraction(MainColorExtraction):
         hue,saturation,value = self.convert_rgb_to_hsv(self.COLOR)
         b = self.convert_rgb_to_lab(self.COLOR)[2]
         self.PCCS,self.SEASON = self.get_closet_personal_color(hue,saturation,value,b)
+        print('pccs:',self.PCCS,',tone:',self.SEASON)
         return self.SEASON

@@ -23,8 +23,8 @@ class MainColorExtraction:
         cluster = self.clustering_image_color(grabcut_img)
         self.COLOR = self.extract_main_color(cluster)
 
-        # palette = self.rgb_palette(self.COLOR)
-        # self.show_img_compar(grabcut_img,palette)
+        palette = self.rgb_palette(self.COLOR)
+        self.show_img_compar(grabcut_img,palette)
         
         return self.COLOR
 
